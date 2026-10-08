@@ -1,0 +1,5 @@
+requests
+numpy
+scikit-learn
+sentence-transformers
+umap-learn
