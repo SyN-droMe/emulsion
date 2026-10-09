@@ -8,7 +8,14 @@ An emulsion is two things that don't naturally mix, held together anyway. That i
 or less what the slider does here. Ingredient similarity and technique similarity often
 disagree completely about which dishes are related.
 
-**[Live demo](https://syn-drome.github.io/emulsion/)** (no backend, it all runs in the page)
+**[Live demo](https://emulsion.ayushkuriakose.workers.dev/)** (no backend, it all runs in the page)
+
+![A route across the map from Pad Thai to Chocolate Chip Cookies I, passing through a
+Zambian vegetable stir-fry, carrot dishes and a Sachertorte](media/preview.png)
+
+*Pad Thai to Chocolate Chip Cookies I. The panel shows what each step shares with the
+one before it, which is how you can tell the route is following something real rather
+than wandering.*
 
 ## What you can do
 

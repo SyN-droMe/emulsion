@@ -32,11 +32,12 @@ const state = {
 
 const canvas = document.getElementById('map');
 // Palette lives in style.css; the canvas reads it rather than repeating hex codes.
-let ACCENT = '#5bb8d4';
+let ACCENT = '#5bb8d4', BG = '#0f1317';
 try {
-  ACCENT = getComputedStyle(document.documentElement)
-    .getPropertyValue('--accent').trim() || ACCENT;
-} catch { /* no computed styles available; the literal above is the same value */ }
+  const css = getComputedStyle(document.documentElement);
+  ACCENT = css.getPropertyValue('--accent').trim() || ACCENT;
+  BG = css.getPropertyValue('--bg').trim() || BG;
+} catch { /* no computed styles available; the literals above are the same values */ }
 const ctx = canvas.getContext('2d');
 const tooltip = document.getElementById('tooltip');
 
@@ -395,7 +396,7 @@ document.getElementById('pantry').addEventListener('input', (e) => {
 /* ---------- drawing ---------- */
 
 function draw() {
-  ctx.fillStyle = '#12100e';
+  ctx.fillStyle = BG;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   const dpr = devicePixelRatio;
   const onPath = new Set(state.path);
@@ -456,13 +457,50 @@ function draw() {
     ctx.fill();
   }
 
-  // Label only the path and the hovered node: labelling 3226 points is noise.
+  /* Label only the path and the hovered node: labelling every point is noise.
+   * Routes often pass through a tight cluster, and drawing a label per step there
+   * stacks four titles on top of each other into an unreadable smear, so a label is
+   * skipped when its box would overlap one already drawn. Endpoints are drawn first
+   * so they win the space, and long titles near the right edge get pulled back inside
+   * instead of running off screen. */
   ctx.font = `${12 * dpr}px Inter, sans-serif`;
-  ctx.fillStyle = '#f2efe8';
+  ctx.textBaseline = 'alphabetic';
   const labelled = state.path.length ? state.path : (state.hover >= 0 ? [state.hover] : []);
-  for (const idx of labelled) {
+  const order = state.path.length
+    ? [state.path[0], state.path[state.path.length - 1],
+       ...state.path.slice(1, -1)]
+    : labelled;
+
+  const placed = [];
+  const pad = 3 * dpr, lineH = 15 * dpr;
+  // The usable width ends at the side panel, not at the window edge, or endpoint
+  // labels slide underneath it and get cut in half.
+  const panel = document.getElementById('panel');
+  const rect = panel ? panel.getBoundingClientRect() : null;
+  // offsetParent is always null for a position:fixed element, so visibility has to be
+  // judged from the rect. On narrow screens the panel moves to the bottom, where it
+  // does not take horizontal space, so it only constrains the width when it is right.
+  const onRight = rect && rect.width > 0 && rect.left > window.innerWidth * 0.5;
+  const panelLeft = onRight ? rect.left * dpr : canvas.width;
+  const rightEdge = Math.min(canvas.width, panelLeft) - 10 * dpr;
+  for (const idx of order) {
+    const title = state.nodes[idx].title;
     const [x, y] = toScreen(state.nodes[idx]);
-    ctx.fillText(state.nodes[idx].title, x + 8 * dpr, y - 8 * dpr);
+    const w = ctx.measureText(title).width;
+    let lx = x + 8 * dpr, ly = y - 8 * dpr;
+    if (lx + w > rightEdge) lx = Math.max(6 * dpr, x - 8 * dpr - w);
+    const box = { l: lx - pad, r: lx + w + pad, t: ly - lineH, b: ly + pad };
+    if (placed.some((p) => box.l < p.r && box.r > p.l && box.t < p.b && box.b > p.t)) {
+      continue;
+    }
+    placed.push(box);
+    // A dark backing keeps a title readable where it crosses a dense patch of dots.
+    ctx.fillStyle = BG;
+    ctx.globalAlpha = 0.72;
+    ctx.fillRect(box.l, box.t, box.r - box.l, box.b - box.t);
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = '#f2efe8';
+    ctx.fillText(title, lx, ly);
   }
 }
 
