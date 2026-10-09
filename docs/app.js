@@ -62,6 +62,7 @@ async function load() {
   /* The headline count comes from the data, not the markup. It was hardcoded as 3,226
    * and drifted to a different number from the footer as the parser improved. */
   document.getElementById('count').textContent = state.n.toLocaleString();
+  updateSearchLabel();
 
   const counts = {};
   for (const node of state.nodes) if (node.cuisine) counts[node.cuisine] = (counts[node.cuisine] || 0) + 1;
@@ -96,6 +97,7 @@ function applyFilterChange() {
   if (state.start >= 0 && state.end >= 0) state.path = route(state.start, state.end);
   updateFilterRead();
   renderRoute();
+  updateSearchLabel();
   draw();
 }
 
@@ -357,12 +359,36 @@ function setPantry(text) {
   renderPantryList();
 }
 
+/* Routing by search only works if you can tell what the next pick will do. Without
+ * this the panel still says "Find a dish" after you have chosen a start, so picking a
+ * second dish looks like it replaced the first rather than completing a route. */
+function updateSearchLabel() {
+  const label = document.getElementById('searchLbl');
+  if (!label) return;
+  if (state.start >= 0 && state.end >= 0) label.textContent = 'Find a dish (starts a new route)';
+  else if (state.start >= 0) label.textContent = 'Now find a destination';
+  else label.textContent = 'Find a dish';
+}
+
+function clearSearch() {
+  const box = document.getElementById('search');
+  if (box) box.value = '';
+  const results = document.getElementById('results');
+  if (results) results.innerHTML = '';
+  state.topResult = -1;
+}
+
 function focusNode(i) {
   select(i);
   const [x, y] = toScreen(state.nodes[i]);
   state.view.x += canvas.width / 2 - x;
   state.view.y += canvas.height / 2 - y;
   draw();
+}
+
+function focusFromSearch(i) {
+  focusNode(i);
+  clearSearch();
 }
 
 function renderPantryList() {
@@ -596,6 +622,7 @@ function select(i) {
     state.path = route(state.start, state.end);
   }
   renderRoute();
+  updateSearchLabel();
   draw();
 }
 
@@ -611,7 +638,7 @@ function renderRoute() {
   list.innerHTML = '';
 
   if (state.start < 0) {
-    stateEl.textContent = 'Click a dish on the map to set the start.';
+    stateEl.textContent = 'Click a dish on the map, or search for one, to set the start.';
     clear.hidden = true;
     return;
   }
@@ -657,7 +684,7 @@ function renderRoute() {
 
 document.getElementById('clear').addEventListener('click', () => {
   state.start = state.end = -1; state.path = [];
-  renderRoute(); draw();
+  renderRoute(); updateSearchLabel(); draw();
 });
 
 /* ---------- slider + search ---------- */
@@ -671,6 +698,15 @@ document.getElementById('alpha').addEventListener('input', (e) => {
   if (state.start >= 0 && state.end >= 0) state.path = route(state.start, state.end);
   renderRoute();
   draw();
+});
+
+/* Enter picks the top hit. A search box where Enter does nothing reads as broken:
+ * you type a dish, press Enter, nothing is selected, and the next dish you click
+ * looks like it replaced a selection that was never made. */
+document.getElementById('search').addEventListener('keydown', (e) => {
+  if (e.key !== 'Enter') return;
+  e.preventDefault();
+  if (state.topResult >= 0) focusFromSearch(state.topResult);
 });
 
 document.getElementById('search').addEventListener('input', (e) => {
@@ -688,14 +724,15 @@ document.getElementById('search').addEventListener('input', (e) => {
     if (!inTitle && !ingredient) continue;
     scored.push([n, inTitle ? 0 : 1, ingredient]);   // title matches rank first
   }
+  scored.sort((a, b) => a[1] - b[1]);
+  state.topResult = scored.length ? scored[0][0].i : -1;
   scored
-    .sort((a, b) => a[1] - b[1])
     .slice(0, 14)
     .forEach(([n, , ingredient]) => {
       const row = document.createElement('div');
       row.innerHTML = `<span>${n.title}</span>` +
         (ingredient ? `<span class="badge">${ingredient}</span>` : '') + recipeLink(n);
-      row.onclick = () => focusNode(n.i);
+      row.onclick = () => focusFromSearch(n.i);
       box.appendChild(row);
     });
 });
