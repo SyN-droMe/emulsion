@@ -615,6 +615,15 @@ window.addEventListener('resize', () => { fitView(); draw(); });
 /* ---------- route panel ---------- */
 
 function select(i) {
+  /* Picking the same dish twice is the normal way to use this: you search for it to
+   * find out where it is, which selects it, and then you click its dot because that
+   * is what selecting a thing looks like. Counting that as two picks set the
+   * destination to the start, producing a route from a dish to itself and a "no path"
+   * message, and the next dish then looked like it wiped the selection. */
+  if (i === state.start && state.end < 0) return;
+  // Same reasoning for the destination: clicking the dot of the dish you just routed
+  // to would otherwise throw the finished route away and start a new one from it.
+  if (i === state.end) return;
   if (state.start < 0 || (state.start >= 0 && state.end >= 0)) {
     state.start = i; state.end = -1; state.path = [];
   } else {
@@ -653,7 +662,7 @@ function renderRoute() {
   if (!state.path.length) {
     stateEl.textContent = (!allowed(state.start) || !allowed(state.end))
       ? 'One endpoint is excluded by the current filter.'
-      : 'No path within this filter -- loosen it or move the slider.';
+      : 'No path at this slider position. Try loosening the filter or moving the slider.';
     return;
   }
 

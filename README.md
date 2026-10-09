@@ -195,7 +195,8 @@ building any interface:
 ```bash
 python src/route.py "Pad Thai" "Chocolate Chip Cookies I"
 python -m src.compare_spaces --pairs 200
-python tests/test_pipeline.py
+python tests/test_pipeline.py     # data pipeline
+node tests/test_ui.js             # the page, driven the way a person drives it
 ```
 
 ## Files
@@ -211,6 +212,7 @@ src/embed.py            both similarity measures, UMAP layout, point separation
 src/route.py            reference routing and the smoothness metric
 src/compare_spaces.py   strategy comparison over many random routes
 src/find_synonyms.py    looks for one food under two page names, for manual review
-tests/test_pipeline.py  regression tests, one per bug that actually happened
+tests/test_pipeline.py  data regression tests, one per bug that actually happened
+tests/test_ui.js        interaction tests, same idea, run against docs/app.js
 docs/                   the site itself
 ```
