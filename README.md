@@ -43,8 +43,9 @@ tamarind tells you a lot. So rarer ingredients count for more. That weighting is
 turns text into numbers based on meaning rather than exact words. That way "braise" ends
 up close to "simmer gently" even though they share no words at all.
 
-Each dish ends up as two lists of 64 numbers, one per measure, and both lists ship to the
-browser inside the page. Moving the slider just reweights them and recompares, which is
+Both measures start out much wider than 64 numbers, so each gets squeezed down to 64
+with PCA, which keeps the variation that separates dishes and discards the rest. That is
+what makes the whole thing small enough to ship inside the page. Moving the slider just reweights them and recompares, which is
 why nothing talks to a server.
 
 ## How the map is laid out
@@ -110,7 +111,8 @@ dots on screen share its label, against how often that would happen by chance:
 favourite thing to fall out of this. Indian is the tightest cluster of any real size at
 47% off 116 recipes, Nigerian 42%, Italian 41%. At the other end American scores **3%**
 and English 11%, completely scattered, because a dish filed under either is built from
-the same butter, flour, sugar and onion as everything else in a Western-leaning corpus.
+the same butter, flour, sugar and onion as most other dishes in a Western-leaning set
+of recipes.
 Nothing in the ingredients or the method marks a dish as American. An explainable failure
 convinces me more than everything clustering neatly.
 
@@ -131,7 +133,7 @@ convinces me more than everything clustering neatly.
 * **The pantry bands are absolute**, so a pantry of N items can only reach dishes with
   N+2 ingredients or fewer. One ingredient can never make anything "within two", which is
   why the panel lists everything that uses it instead.
-* **The corpus has near-duplicates.** Guacamole I, II and III are 99% identical, as are
+* **The data has near-duplicates.** Guacamole I, II and III are 99% identical, as are
   Chocolate Chip Cookies I through IV. I nudge overlapping dots apart just enough to hover
   them separately, since they really are different recipes.
 * **Ingredients used in only one recipe are ignored.** An ingredient that appears once
@@ -146,7 +148,7 @@ API.
 Cleaning that data took longer than the modelling and is where every real bug in this
 project has been. None of them threw an error. The map just quietly meant less than it
 claimed, which is the part worth knowing: a parser that only read bullet lists was
-silently dropping a quarter of the corpus because those recipes use tables instead, and
+silently dropping a quarter of all recipes because those use tables instead, and
 "Chopping" was the fourth most common ingredient in the whole set, because ingredient
 lines link to technique pages exactly like they link to ingredients.
 
