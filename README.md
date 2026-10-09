@@ -23,6 +23,11 @@ the page)
 * **Filter** by diet (veg, vegan, non-veg) or by any of 71 cuisines. Filters constrain
   what the router can walk through, so "veg only" gives you an actually vegetarian path
   rather than a path that just looks filtered.
+* **Type what is in your kitchen** into the pantry box. Dishes you can make right now
+  go green, dishes within two ingredients go amber, everything else fades out. Salt,
+  water, pepper, oil and sugar are assumed, because the median recipe has eight
+  ingredients and three of them are usually staples, which makes a literal reading of a
+  pantry list useless.
 
 ## The two similarity spaces
 
@@ -73,6 +78,31 @@ The ingredient route bridges savoury to sweet through nuts. The technique route 
 through casseroles and baked dishes, connecting things that share a *method* and almost
 no ingredients. Smoothness measures ingredient continuity, so ingredient-weighted
 routing scoring highest on it is the expected result rather than a lucky one.
+
+One route is an anecdote though, so `src/compare_spaces.py` runs the same comparison
+over 200 random recipe pairs:
+
+| Strategy | Reachable | Median steps | Smoothness | Worst gap |
+|---|---|---|---|---|
+| ingredients only | 96% | 7 | 0.327 | 0.178 |
+| 70/30 ingredients | 98% | 7 | 0.304 | 0.166 |
+| balanced | 100% | 7 | 0.285 | 0.145 |
+| 30/70 ingredients | 99% | 6 | 0.246 | 0.102 |
+| technique only | 100% | 7 | 0.167 | 0.036 |
+
+Smoothness falls monotonically as the slider moves toward technique, so the single route
+above was not a fluke. "Worst gap" is the average of each route's single worst
+consecutive-step overlap, which is what actually makes a path feel jarring: one bad jump
+ruins a route even when its average looks fine. Technique-only routing sits at 0.036
+there, meaning nearly every technique route contains a step with essentially no
+ingredient continuity at all.
+
+The thing I did not expect is the **reachability tradeoff**. Ingredient-only routing has
+the *worst* connectivity at 96%, while technique-only and balanced both reach 100%.
+Ingredient space fragments, because a recipe with an unusual ingredient set has no close
+neighbours and strands itself, whereas every dish shares cooking methods with something.
+So balanced is the best default on evidence rather than on taste, which is why the
+slider starts there.
 
 **Position encodes real structure.** Comparing each dish's eight spatial neighbours
 against chance:
@@ -174,6 +204,14 @@ building any of the interface:
 python src/route.py "Pad Thai" "Chocolate Chip Cookies I"
 ```
 
+Tests cover the parser and the diet classifier. Every case in there is a bug that
+actually shipped at some point, so they are regression tests rather than decoration:
+
+```bash
+python tests/test_pipeline.py
+python -m src.compare_spaces --pairs 200
+```
+
 ## Files
 
 ```
@@ -185,5 +223,7 @@ src/fetch_cuisines.py   cuisine and course labels from page categories
 src/classify_diet.py    ingredient classification and recipe diet labels
 src/embed.py            both embedding spaces, UMAP layout, point separation
 src/route.py            reference routing and the path smoothness metric
+src/compare_spaces.py   embedding strategy comparison over many random routes
+tests/test_pipeline.py  regression tests, one per bug that actually happened
 docs/                   the site itself, served by GitHub Pages
 ```

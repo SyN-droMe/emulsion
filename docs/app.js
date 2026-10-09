@@ -25,6 +25,8 @@ const state = {
   neighbourCache: new Map(),
   hover: -1, start: -1, end: -1, path: [],
   filter: { diet: 'all', cuisine: 'all' },
+  pantry: null,        // Set of lowercased ingredient names, or null when unused
+  missing: null,       // per-node count of ingredients the pantry lacks
   view: { x: 0, y: 0, scale: 1 },
 };
 
@@ -80,7 +82,9 @@ function updateFilterRead() {
 }
 
 function applyFilterChange() {
-  state.neighbourCache.clear();   // neighbour sets depend on what is allowed
+  state.neighbourCache.clear();
+  const pantryInput = document.getElementById('pantry');
+  if (pantryInput && pantryInput.value.trim()) setPantry(pantryInput.value);   // neighbour sets depend on what is allowed
   if (state.start >= 0 && state.end >= 0) state.path = route(state.start, state.end);
   updateFilterRead();
   renderRoute();
@@ -212,6 +216,59 @@ function hueFor(cuisine) {
   return h;
 }
 
+/* ---------- pantry ---------- */
+
+/* Assumed to be in every kitchen. Without this, almost nothing is ever "makeable":
+ * the median recipe has 8 ingredients and salt/water/oil are three of them, so a
+ * literal reading of a pantry list makes the feature useless. */
+const STAPLES = new Set([
+  'salt', 'water', 'pepper', 'black pepper', 'sugar', 'oil', 'vegetable oil',
+  'olive oil', 'oil and fat', 'cooking oil',
+]);
+
+function setPantry(text) {
+  const items = text.split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
+  if (!items.length) {
+    state.pantry = null;
+    state.missing = null;
+    document.getElementById('pantryRead').textContent =
+      'Staples (salt, water, pepper, oil, sugar) assumed.';
+    return;
+  }
+
+  state.pantry = new Set(items);
+  state.missing = new Int16Array(state.n);
+
+  for (let i = 0; i < state.n; i++) {
+    let short = 0;
+    for (const ingredient of state.nodes[i].ingredients) {
+      const low = ingredient.toLowerCase();
+      if (STAPLES.has(low)) continue;
+      // Substring match both ways so "onion" covers "Red Onion" and vice versa.
+      let have = false;
+      for (const owned of state.pantry) {
+        if (low.includes(owned) || owned.includes(low)) { have = true; break; }
+      }
+      if (!have) short++;
+    }
+    state.missing[i] = short;
+  }
+
+  let now = 0, close = 0;
+  for (let i = 0; i < state.n; i++) {
+    if (!allowed(i)) continue;
+    if (state.missing[i] === 0) now++;
+    else if (state.missing[i] <= 2) close++;
+  }
+  document.getElementById('pantryRead').textContent =
+    `${now} makeable now · ${close} within 2 ingredients`;
+}
+
+document.getElementById('pantry').addEventListener('input', (e) => {
+  setPantry(e.target.value);
+  draw();
+});
+
 /* ---------- drawing ---------- */
 
 function draw() {
@@ -250,12 +307,24 @@ function draw() {
     const hue = hueFor(node.cuisine);
     const ok = allowed(i);
 
+    // In pantry mode, proximity to "I can cook this" replaces cuisine colour, since
+    // two colour scales at once is unreadable.
+    let radius = special ? 4.6 : ok ? 2.1 : 1.1;
+    let fill;
+    if (special) fill = '#e2733a';
+    else if (!ok) fill = 'rgba(120,114,104,.16)';
+    else if (state.missing) {
+      const short = state.missing[i];
+      if (short === 0) { fill = 'rgba(127,195,120,.95)'; radius = 3.4; }
+      else if (short <= 2) { fill = 'rgba(214,183,96,.72)'; radius = 2.6; }
+      else fill = 'rgba(120,114,104,.14)';
+    }
+    else if (hue !== null) fill = `hsla(${hue},42%,62%,.82)`;
+    else fill = 'rgba(148,141,128,.5)';
+
     ctx.beginPath();
-    ctx.arc(x, y, (special ? 4.6 : ok ? 2.1 : 1.1) * dpr, 0, Math.PI * 2);
-    if (special) ctx.fillStyle = '#e2733a';
-    else if (!ok) ctx.fillStyle = 'rgba(120,114,104,.16)';
-    else if (hue !== null) ctx.fillStyle = `hsla(${hue},42%,62%,.82)`;
-    else ctx.fillStyle = 'rgba(148,141,128,.5)';
+    ctx.arc(x, y, radius * dpr, 0, Math.PI * 2);
+    ctx.fillStyle = fill;
     ctx.fill();
   }
 
@@ -298,9 +367,14 @@ canvas.addEventListener('mousemove', (e) => {
     tooltip.style.left = Math.min(e.clientX + 14, window.innerWidth - 300) + 'px';
     tooltip.style.top = (e.clientY + 14) + 'px';
     const tags = [node.cuisine, node.course, node.diet].filter(Boolean).join(' · ');
+    const shortfall = state.missing
+      ? (state.missing[hit] === 0
+          ? '<div class="c">you can make this now</div>'
+          : `<div class="c">missing ${state.missing[hit]} ingredient${state.missing[hit] > 1 ? 's' : ''}</div>`)
+      : '';
     tooltip.innerHTML =
       `<div class="t">${node.title}</div>` +
-      (tags ? `<div class="c">${tags}</div>` : '') +
+      (tags ? `<div class="c">${tags}</div>` : '') + shortfall +
       `<div class="i">${node.ingredients.slice(0, 10).join(' · ')}` +
       (node.ingredients.length > 10 ? ` +${node.ingredients.length - 10} more` : '') + `</div>`;
   } else {
