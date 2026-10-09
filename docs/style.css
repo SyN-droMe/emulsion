@@ -53,11 +53,18 @@ input[type=text]{
 }
 input[type=text]:focus{ outline:none; border-color:var(--accent); }
 
-#results{ margin-top:6px; max-height:190px; overflow-y:auto; }
-#results div{
+#results, #pantryList{ margin-top:6px; max-height:190px; overflow-y:auto; }
+#results div, #pantryList div{
+  display:flex; align-items:baseline; justify-content:space-between; gap:8px;
   padding:6px 8px; border-radius:5px; cursor:pointer; font-size:13px;
 }
-#results div:hover{ background:#221e19; color:var(--accent); }
+#results div:hover, #pantryList div:hover{ background:#221e19; color:var(--accent); }
+#pantryList{ max-height:168px; }
+.badge{
+  flex:none; font-family:var(--mono, ui-monospace, monospace); font-size:11px;
+  color:var(--dim); letter-spacing:.02em;
+}
+#results div:hover .badge, #pantryList div:hover .badge{ color:var(--accent); }
 
 .seg{ display:flex; gap:4px; margin-bottom:8px; }
 .seg button{

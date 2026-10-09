@@ -231,16 +231,19 @@ function setPantry(text) {
   if (!items.length) {
     state.pantry = null;
     state.missing = null;
+    state.matched = null;
+    state.pantryHits = null;
     document.getElementById('pantryRead').textContent =
       'Staples (salt, water, pepper, oil, sugar) assumed.';
+    renderPantryList();
     return;
   }
 
   state.pantry = new Set(items);
   state.missing = new Int16Array(state.n);
-
+  state.matched = new Int16Array(state.n);
   for (let i = 0; i < state.n; i++) {
-    let short = 0;
+    let short = 0, hits = 0;
     for (const ingredient of state.nodes[i].ingredients) {
       const low = ingredient.toLowerCase();
       if (STAPLES.has(low)) continue;
@@ -249,19 +252,53 @@ function setPantry(text) {
       for (const owned of state.pantry) {
         if (low.includes(owned) || owned.includes(low)) { have = true; break; }
       }
-      if (!have) short++;
+      if (have) hits++;
+      else short++;
     }
     state.missing[i] = short;
+    state.matched[i] = hits;
   }
 
-  let now = 0, close = 0;
+  /* A dish only counts if it uses at least one thing you actually typed. Without this,
+   * anything built purely from assumed staples (simple syrup, boiled water) shows up as
+   * "makeable" no matter what you own, which is noise dressed up as a result. */
+  const makeable = [], nearly = [];
   for (let i = 0; i < state.n; i++) {
-    if (!allowed(i)) continue;
-    if (state.missing[i] === 0) now++;
-    else if (state.missing[i] <= 2) close++;
+    if (!allowed(i) || state.matched[i] === 0) continue;
+    if (state.missing[i] === 0) makeable.push(i);
+    else if (state.missing[i] <= 2) nearly.push(i);
   }
+  state.pantryHits = { makeable, nearly };
   document.getElementById('pantryRead').textContent =
-    `${now} makeable now · ${close} within 2 ingredients`;
+    `${makeable.length} makeable now · ${nearly.length} within 2 ingredients`;
+  renderPantryList();
+}
+
+function focusNode(i) {
+  select(i);
+  const [x, y] = toScreen(state.nodes[i]);
+  state.view.x += canvas.width / 2 - x;
+  state.view.y += canvas.height / 2 - y;
+  draw();
+}
+
+function renderPantryList() {
+  const box = document.getElementById('pantryList');
+  if (!box) return;
+  box.innerHTML = '';
+  if (!state.pantryHits) return;
+
+  const { makeable, nearly } = state.pantryHits;
+  const rows = [
+    ...makeable.slice(0, 12).map((i) => [i, 'now']),
+    ...nearly.slice(0, 12).map((i) => [i, `-${state.missing[i]}`]),
+  ];
+  for (const [i, badge] of rows) {
+    const row = document.createElement('div');
+    row.innerHTML = `<span>${state.nodes[i].title}</span><span class="badge">${badge}</span>`;
+    row.onclick = () => focusNode(i);
+    box.appendChild(row);
+  }
 }
 
 document.getElementById('pantry').addEventListener('input', (e) => {
@@ -315,8 +352,9 @@ function draw() {
     else if (!ok) fill = 'rgba(120,114,104,.16)';
     else if (state.missing) {
       const short = state.missing[i];
-      if (short === 0) { fill = 'rgba(127,195,120,.95)'; radius = 3.4; }
-      else if (short <= 2) { fill = 'rgba(214,183,96,.72)'; radius = 2.6; }
+      const uses = state.matched && state.matched[i] > 0;
+      if (uses && short === 0) { fill = 'rgba(127,195,120,.95)'; radius = 3.4; }
+      else if (uses && short <= 2) { fill = 'rgba(214,183,96,.72)'; radius = 2.6; }
       else fill = 'rgba(120,114,104,.14)';
     }
     else if (hue !== null) fill = `hsla(${hue},42%,62%,.82)`;
@@ -400,7 +438,7 @@ canvas.addEventListener('mousemove', () => { if (dragging) moved = true; }, { ca
 /* Zoom is clamped relative to the initial fitted scale. Unbounded zoom lets you
  * scroll until the whole map is a single pixel or one dot fills the screen, and in
  * both cases there is no obvious way back. */
-const ZOOM_MIN = 0.55, ZOOM_MAX = 14;
+const ZOOM_MIN = 0.9, ZOOM_MAX = 8;
 
 canvas.addEventListener('wheel', (e) => {
   e.preventDefault();
@@ -508,19 +546,25 @@ document.getElementById('search').addEventListener('input', (e) => {
   const box = document.getElementById('results');
   box.innerHTML = '';
   if (!q || !state.n) return;   // respond from the first character
-  state.nodes
-    .filter((n) => n.title.toLowerCase().includes(q) && allowed(n.i))
-    .slice(0, 12)
-    .forEach((n) => {
+  /* Searching ingredients as well as titles: five recipes USE paneer but only two say
+   * so in the name, and a title-only search made the rest invisible. */
+  const scored = [];
+  for (const n of state.nodes) {
+    if (!allowed(n.i)) continue;
+    const inTitle = n.title.toLowerCase().includes(q);
+    const ingredient = inTitle ? null : n.ingredients.find((x) => x.toLowerCase().includes(q));
+    if (!inTitle && !ingredient) continue;
+    scored.push([n, inTitle ? 0 : 1, ingredient]);   // title matches rank first
+  }
+  scored
+    .sort((a, b) => a[1] - b[1])
+    .slice(0, 14)
+    .forEach(([n, , ingredient]) => {
       const row = document.createElement('div');
-      row.textContent = n.title;
-      row.onclick = () => {
-        select(n.i);
-        const [x, y] = toScreen(n);
-        state.view.x += canvas.width / 2 - x;
-        state.view.y += canvas.height / 2 - y;
-        draw();
-      };
+      row.innerHTML = ingredient
+        ? `<span>${n.title}</span><span class="badge">${ingredient}</span>`
+        : `<span>${n.title}</span>`;
+      row.onclick = () => focusNode(n.i);
       box.appendChild(row);
     });
 });

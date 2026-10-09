@@ -13,6 +13,8 @@ the page)
 
 ## What you can do with it
 
+* **Search** by dish name or by ingredient. Five recipes use paneer but only two say so
+  in the title, so a title-only search hid most of them.
 * **Hover** a dish to see its ingredients and light up its twelve nearest neighbours at
   the current slider setting.
 * **Click two dishes** to route between them. You get the full path, plus which
@@ -24,10 +26,14 @@ the page)
   what the router can walk through, so "veg only" gives you an actually vegetarian path
   rather than a path that just looks filtered.
 * **Type what is in your kitchen** into the pantry box. Dishes you can make right now
-  go green, dishes within two ingredients go amber, everything else fades out. Salt,
-  water, pepper, oil and sugar are assumed, because the median recipe has eight
-  ingredients and three of them are usually staples, which makes a literal reading of a
-  pantry list useless.
+  go green, dishes within two ingredients go amber, everything else fades out, and both
+  sets are listed under the box so you can click straight to one. Salt, water, pepper,
+  oil and sugar are assumed, because the median recipe has eight ingredients and three
+  of them are usually staples, which makes a literal reading of a pantry list useless.
+  A dish only lights up if it uses at least one thing you actually typed. Without that
+  rule, assuming staples meant Chapati lit up for a pantry of paneer and tomato, which
+  is technically true and completely useless. It cuts "within two ingredients" from 562
+  dishes to 330 on a pantry of flour, butter, egg and milk.
 
 ## The two similarity spaces
 
@@ -141,7 +147,12 @@ I would rather state these than have someone find them.
   separate fields in the data rather than baked into one opaque label.
 * **Cuisine coverage is partial.** 964 of 3,226 recipes have a cuisine label, because
   that comes from page categories and not every page is categorised. Unlabelled dishes
-  show grey and are excluded when you filter by cuisine.
+  show grey and are excluded when you filter by cuisine, so a cuisine filter is a filter
+  on *labelled* dishes, not on the whole corpus. Chocolate Sandesh contains paneer and is
+  plainly Indian, but it has no category, so an Indian filter will not show it.
+* **Pantry matching is substring based**, in both directions, so "onion" correctly finds
+  "Red Onion" but "cream" also matches "Cream of Tartar". The looser rule catches far
+  more real matches than it invents false ones, so I kept it.
 * **UMAP distances are only locally meaningful.** You cannot read "Indian is twice as
   far from Italian as from Thai" off this map. Cluster sizes and the gaps between
   distant clusters do not mean anything either. Local neighbourhoods are the only thing
