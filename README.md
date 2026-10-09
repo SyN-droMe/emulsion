@@ -19,6 +19,9 @@ the page)
   the current slider setting.
 * **Click two dishes** to route between them. You get the full path, plus which
   ingredients each step shares with the one before it.
+* **Open the actual recipe** from any search result, pantry match or route step. The
+  map only encodes how dishes relate, so the instructions live on Wikibooks and the
+  link goes straight there. No route needed to get at one.
 * **Drag the slider** between pure technique and pure ingredients. With a route active
   it re-routes live, and watching the same A to B path change character is the thing
   worth playing with.

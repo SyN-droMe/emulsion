@@ -130,3 +130,14 @@ input[type=range]{ width:100%; accent-color:var(--accent); }
 }
 a.dish{ color:inherit; text-decoration:none; border-bottom:1px dotted var(--dim); }
 a.dish:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+
+/* "recipe" link on list rows and on a single selected dish. Kept quiet until hover so
+ * it does not compete with the dish name for attention. */
+a.ext{
+  flex:none; font-family:var(--mono); font-size:10px; letter-spacing:.04em;
+  color:var(--dim); text-decoration:none; border-bottom:1px solid transparent;
+}
+a.ext:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+#results div:hover a.ext, #pantryList div:hover a.ext{ color:var(--fg, #f2efe8); }
+#results div:hover a.ext:hover, #pantryList div:hover a.ext:hover{ color:var(--accent); }
+#routeState a.ext{ font-size:11px; }

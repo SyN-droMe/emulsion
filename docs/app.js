@@ -145,13 +145,29 @@ function pantryStatus(ingredient) {
 }
 
 function ingredientMarkup(node, limit) {
-  const shown = limit ? node.ingredients.slice(0, limit) : node.ingredients;
+  /* Ingredients are alphabetical, so a flat truncation hid the very thing the pantry
+   * matched: Paneer is 13th of 16 in Paneer Butter Masala, so "paneer" lit the dish
+   * green while the tooltip showed ten ingredients, none of them paneer. What you
+   * have goes first whenever a pantry is set. */
+  let order = node.ingredients;
+  if (state.pantry) {
+    const have = order.filter((i) => pantryStatus(i) === 'have');
+    order = have.concat(order.filter((i) => pantryStatus(i) !== 'have'));
+  }
+  const shown = limit ? order.slice(0, limit) : order;
   const parts = shown.map((ing) => {
     const status = pantryStatus(ing);
     return status ? `<span class="${status}">${ing}</span>` : ing;
   });
-  const extra = node.ingredients.length - shown.length;
+  const extra = order.length - shown.length;
   return parts.join(' · ') + (extra > 0 ? ` +${extra} more` : '');
+}
+
+/* An "open the recipe" affordance that does not require building a route first.
+ * stopPropagation so clicking it does not also select the dish and start a route. */
+function recipeLink(node) {
+  return `<a class="ext" href="${sourceUrl(node)}" target="_blank" rel="noopener"` +
+    ` title="Open the recipe on Wikibooks" onclick="event.stopPropagation()">recipe</a>`;
 }
 
 /* Filters constrain the ROUTABLE GRAPH, not just what is drawn. Excluded dishes are
@@ -356,7 +372,8 @@ function renderPantryList() {
   ];
   for (const [i, badge] of rows) {
     const row = document.createElement('div');
-    row.innerHTML = `<span>${state.nodes[i].title}</span><span class="badge">${badge}</span>`;
+    row.innerHTML = `<span>${state.nodes[i].title}</span>` +
+      `<span class="badge">${badge}</span>` + recipeLink(state.nodes[i]);
     row.onclick = () => focusNode(i);
     box.appendChild(row);
   }
@@ -475,7 +492,7 @@ canvas.addEventListener('mousemove', (e) => {
       `<div class="t">${node.title}</div>` +
       (tags ? `<div class="c">${tags}</div>` : '') + shortfall +
       `<div class="i">${ingredientMarkup(node, 10)}</div>` +
-      `<div class="src">click to route · open the full recipe from the route panel</div>`;
+      `<div class="src">click to route · "recipe" opens the full instructions</div>`;
   } else {
     tooltip.hidden = true;
   }
@@ -551,7 +568,9 @@ function renderRoute() {
   clear.hidden = false;
 
   if (state.end < 0) {
-    stateEl.innerHTML = `From <strong>${state.nodes[state.start].title}</strong>. Now click a destination.`;
+    const from = state.nodes[state.start];
+    stateEl.innerHTML = `From <strong>${from.title}</strong>. ` +
+      `Click a destination, or ${recipeLink(from)}.`;
     return;
   }
   if (!state.path.length) {
@@ -624,9 +643,8 @@ document.getElementById('search').addEventListener('input', (e) => {
     .slice(0, 14)
     .forEach(([n, , ingredient]) => {
       const row = document.createElement('div');
-      row.innerHTML = ingredient
-        ? `<span>${n.title}</span><span class="badge">${ingredient}</span>`
-        : `<span>${n.title}</span>`;
+      row.innerHTML = `<span>${n.title}</span>` +
+        (ingredient ? `<span class="badge">${ingredient}</span>` : '') + recipeLink(n);
       row.onclick = () => focusNode(n.i);
       box.appendChild(row);
     });
