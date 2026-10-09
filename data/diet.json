@@ -11,28 +11,35 @@
   "African Star Apple": "plant",
   "Agar": "plant",
   "Agave Syrup": "plant",
+  "Ager": "plant",
   "Aidan Fruit": "plant",
   "Aji Amarillo": "plant",
-  "Aj\u00ed Dulce": "plant",
+  "Aji amarillo": "plant",
+  "Aj\u00ed dulce": "plant",
   "Akamu Paste": "plant",
   "Akpi": "plant",
-  "Albanian Mixed Vegetables": "plant",
-  "Alfalfa Sprouts": "plant",
+  "Alcohol": "plant",
+  "Alfalfa": "plant",
   "Alfredo Sauce": "plant",
+  "All-purpose flour": "plant",
   "Alligator Pepper": "plant",
   "Allspice": "plant",
   "Almond": "plant",
-  "Almond Butter": "dairy",
+  "Almond Butter": "plant",
   "Almond Extract": "plant",
   "Almond Flour": "plant",
-  "Almond Milk II": "dairy",
+  "Almond Meal": "plant",
+  "Almond Milk": "plant",
   "Almond Oil": "plant",
   "Aluminium Foil": "plant",
   "Amaranth": "plant",
   "Amchoor": "plant",
+  "Amchur": "plant",
+  "American Cheese": "dairy",
   "Anchovy": "meat",
-  "Anchovy Paste": "plant",
+  "Anchovy paste": "plant",
   "Anise": "plant",
+  "Aniseed": "plant",
   "Annatto": "plant",
   "Aperol Spritz": "plant",
   "Apple": "plant",
@@ -46,6 +53,7 @@
   "Arugula": "plant",
   "Asafoetida": "plant",
   "Ashanti Pepper": "plant",
+  "Ashwe": "plant",
   "Asiago": "plant",
   "Asparagus": "plant",
   "Atama": "plant",
@@ -54,13 +62,19 @@
   "Bacon": "meat",
   "Bagel": "plant",
   "Bagoong Alamang": "plant",
+  "Bagoong alamang": "plant",
   "Baguette": "plant",
   "Baharat": "plant",
   "Baked Beans": "plant",
-  "Baker's Ammonia": "plant",
   "Baker's Percentage": "plant",
+  "Baking Chocolate": "plant",
   "Baking Powder": "plant",
   "Baking Soda": "plant",
+  "Baking Sugar": "plant",
+  "Baking powder": "plant",
+  "Baking soda": "plant",
+  "Baking sugar": "plant",
+  "Balsamic vinegar": "plant",
   "Bambara Bean": "plant",
   "Bamboo Shoot": "plant",
   "Banana": "plant",
@@ -69,67 +83,80 @@
   "Baobab": "plant",
   "Barbecue Chicken Rub": "meat",
   "Barbecue Rub": "plant",
-  "Barbecue Sauce I": "plant",
+  "Barbecue Sauce": "plant",
   "Barberry": "plant",
   "Barley": "plant",
-  "Bartending/Alcohol/Spirits": "plant",
-  "Bartending/Alcohol/Spirits#Tequila": "plant",
-  "Basic Mulling Spice": "plant",
   "Basic Pizza Crust": "plant",
   "Basic Pizza Sauce": "plant",
   "Basic Polenta": "plant",
-  "Basic Scrambled Eggs": "egg",
   "Basil": "plant",
+  "Basmati rice": "plant",
   "Bay Leaf": "plant",
-  "Bay Leaf#Varieties": "plant",
+  "Bay leaf": "plant",
+  "Bean": "plant",
   "Bean Sprout": "plant",
+  "Beans": "plant",
+  "Beaten Egg": "egg",
+  "Beating": "plant",
   "Beef": "meat",
-  "Beef Stock": "meat",
-  "Beef#Brisket": "meat",
-  "Beef#Chuck": "meat",
-  "Beef#Flank": "meat",
-  "Beef#Loin": "meat",
-  "Beef#Round": "meat",
-  "Beef#Sirloin": "meat",
   "Beer": "plant",
   "Beer Batter": "plant",
-  "Beer#Ale": "plant",
   "Beet": "plant",
+  "Beetroot": "plant",
   "Bell Pepper": "plant",
+  "Bell pepper": "plant",
   "Bellini": "plant",
   "Bengali Five-Spice Mix (Panch Puran)": "plant",
   "Berbere": "plant",
   "Berry": "plant",
+  "Besan": "plant",
   "Biltong": "plant",
   "Biscuit": "plant",
   "Bison": "meat",
   "Bitter Bean": "plant",
+  "Bitter Leaf": "plant",
   "Bitter Melon": "plant",
   "Bitterleaf": "plant",
+  "Bittersweet chocolate": "plant",
+  "Black Bean": "plant",
   "Black Bean Sauce": "plant",
+  "Black Beans": "plant",
   "Black Cardamom": "plant",
+  "Black Olive": "plant",
+  "Black Pepper": "plant",
   "Black Salt": "plant",
+  "Black pepper": "plant",
+  "Black-eyed Pea": "plant",
   "Blackberry": "plant",
+  "Blackcurrant": "plant",
   "Blender": "plant",
   "Blue Cheese": "dairy",
   "Blueberry": "plant",
-  "Boiled Yellow Split Peas": "plant",
+  "Boil": "plant",
+  "Boiled Beef and Vegetables in Broth (Nilagang Baka)": "meat",
+  "Boiled Pasta": "plant",
+  "Boiled potatoes": "plant",
   "Bok Choy": "plant",
   "Bologna": "plant",
   "Bonito Flakes": "meat",
   "Boondi (Chickpea Fritters)": "plant",
+  "Bouillon Cube": "plant",
   "Bouquet Garni": "plant",
   "Bourbon": "plant",
   "Brandy": "plant",
   "Brandy Butter": "dairy",
   "Bread": "plant",
+  "Bread Crumb": "plant",
   "Bread Crumbs": "plant",
+  "Breadcrumbs": "plant",
   "Breakfast Cereal": "plant",
-  "Brewing/Ingredients#Bittering": "plant",
+  "Bream": "plant",
   "Brie Cheese": "dairy",
   "Brioche": "plant",
+  "Broad Bean": "plant",
   "Broccoli": "plant",
   "Broccoli Rabe": "plant",
+  "Broth": "meat",
   "Broth and Stock": "meat",
   "Brown Rice Syrup": "plant",
   "Brown Stock": "plant",
@@ -143,78 +170,102 @@
   "Burdock": "plant",
   "Burrito": "plant",
   "Butter": "dairy",
+  "Butter Bean": "dairy",
   "Buttercream": "dairy",
   "Buttermilk": "dairy",
-  "Buttermilk Ranch Dressing": "dairy",
-  "Butternut Squash": "dairy",
+  "Butternut Squash": "plant",
   "Butterscotch": "dairy",
-  "B\u00e9chamel Sauce": "meat",
-  "B\u00e9chamel Sauce (Louisiannaise)": "meat",
+  "Button Mushroom": "plant",
+  "B\u00e9chamel Sauce": "dairy",
+  "B\u00e9chamel Sauce Louisiannaise": "meat",
   "Cabbage": "plant",
   "Caffeine": "plant",
   "Cajun Seasoning": "plant",
+  "Cake": "plant",
+  "Cake Flour": "plant",
   "Cake Mix": "plant",
   "Calabash Nutmeg": "plant",
   "Calamansi": "plant",
+  "California cuisine": "plant",
   "Candlenut": "plant",
+  "Cane Sugar": "plant",
   "Cane Syrup": "plant",
   "Cannabis": "plant",
+  "Canola Oil": "plant",
   "Caper": "plant",
+  "Capsicum": "plant",
   "Caramel": "plant",
   "Caramelized Sweet and Sour Onion Marmalade": "plant",
   "Caraway": "plant",
   "Caraway Seed": "plant",
   "Carbonated Water": "plant",
   "Cardamom": "plant",
+  "Cargamanto": "plant",
   "Carp": "meat",
   "Carrot": "plant",
   "Carrots Cooked Kinpira Style": "plant",
   "Cashew": "plant",
-  "Cashew Butter": "dairy",
+  "Cashew Butter": "plant",
   "Cassava": "plant",
-  "Category:Recipes for cake": "plant",
-  "Category:Recipes for curry": "plant",
+  "Cassava Flour": "plant",
+  "Caster Sugar": "plant",
+  "Caster sugar": "plant",
+  "Castor Sugar": "plant",
+  "Castor sugar": "plant",
   "Catfish": "meat",
   "Cauliflower": "plant",
   "Caviar": "meat",
   "Cayenne Hot Sauce": "plant",
   "Cayenne Pepper": "plant",
+  "Cayenne pepper": "plant",
   "Celery": "plant",
   "Celery Root": "plant",
   "Celery Salt": "plant",
   "Celery Seed": "plant",
   "Cereal": "plant",
   "Chaat Masala": "plant",
-  "Chai Tea": "plant",
-  "Champagne Vinaigrette": "meat",
+  "Chai": "plant",
+  "Champagne Vinaigrette": "plant",
   "Chard": "plant",
   "Cheddar Cheese": "dairy",
+  "Cheddar cheese": "dairy",
   "Cheese": "dairy",
   "Cheese Curds": "dairy",
-  "Cheese Pierogi Filling": "dairy",
-  "Cheesecloth": "dairy",
   "Chenna": "plant",
   "Cherry": "plant",
   "Chervil": "plant",
   "Chestnut": "plant",
   "Chicken": "meat",
+  "Chicken Broth": "meat",
   "Chicken Stock": "meat",
   "Chicken Tikka": "meat",
   "Chicken breast": "meat",
-  "Chicken#Breast": "meat",
-  "Chicken#Cuts": "meat",
-  "Chicken#Leg": "meat",
-  "Chicken#Other": "meat",
-  "Chicken#Wing": "meat",
   "Chickpea": "plant",
+  "Chickpea Flour": "plant",
   "Chicory": "plant",
   "Chile": "plant",
   "Chile Flakes": "plant",
   "Chile Paste and Sauce": "plant",
+  "Chile Pepper": "plant",
+  "Chile Powder": "plant",
+  "Chile flakes": "plant",
+  "Chile pepper": "plant",
+  "Chile peppers": "plant",
   "Chiles": "plant",
+  "Chili": "plant",
+  "Chili (dish)": "plant",
   "Chili Garlic Sauce": "plant",
+  "Chili Paste": "plant",
+  "Chili Pepper": "plant",
   "Chili Powder": "plant",
-  "Chili con Carne": "plant",
+  "Chili flakes": "plant",
+  "Chili pepper": "plant",
+  "Chili peppers": "plant",
+  "Chili powder": "plant",
+  "Chilli": "plant",
+  "Chilli Pepper": "plant",
+  "Chilli Powder": "plant",
+  "Chilli pepper": "plant",
   "Chimichurri": "plant",
   "Chinese Herbs": "plant",
   "Chip": "plant",
@@ -222,40 +273,57 @@
   "Chipotle BBQ Sauce": "plant",
   "Chipotle Chili": "plant",
   "Chipotle Pepper": "plant",
+  "Chips": "plant",
   "Chive": "plant",
+  "Chives": "plant",
   "Chocolate": "plant",
+  "Chocolate Chip": "plant",
   "Chocolate Chip Cookies": "plant",
-  "Chocolate#Bittersweet and Semi-Sweet Chocolate": "plant",
-  "Chocolate#Chocolate Chips": "plant",
-  "Chocolate#Cocoa Powder": "plant",
-  "Chocolate#Dark Chocolate": "plant",
+  "Chocolate Chips": "plant",
+  "Chocolate chip": "plant",
+  "Chocolate chips": "plant",
   "Chop Rub": "plant",
   "Chorizo": "meat",
   "Chutney": "plant",
+  "Ciabatta": "plant",
+  "Cider": "plant",
   "Cider Vinegar": "plant",
   "Cider vinegar": "plant",
   "Cilantro": "plant",
   "Cinnamon": "plant",
   "Cinnamon Sugar": "plant",
   "Citric Acid": "plant",
+  "Citric acid": "plant",
   "Citrus": "plant",
   "Clam": "meat",
   "Clarified Butter": "dairy",
+  "Clarified butter": "dairy",
   "Classic American Apple Pie": "plant",
+  "Clear soup": "plant",
+  "Clementine": "plant",
   "Clotted Cream": "dairy",
   "Clove": "plant",
   "Cloves": "plant",
+  "Cm": "plant",
+  "Cocoa": "plant",
+  "Cocoa Powder": "plant",
+  "Cocoa powder": "plant",
   "Coconut": "plant",
+  "Coconut Cream": "plant",
+  "Coconut Milk": "plant",
   "Coconut Oil": "plant",
   "Coconut Sugar": "plant",
   "Coconut Water": "plant",
+  "Coconut oil": "plant",
+  "Cocoyam": "plant",
   "Cod": "meat",
   "Coffee": "plant",
+  "Coffee Concentrate": "plant",
   "Coffee Liqueur": "plant",
-  "Coffee#Espresso": "plant",
   "Cognac": "plant",
   "Cola": "plant",
   "Cola BBQ Sauce": "plant",
+  "Collard Green": "plant",
   "Collard Greens": "plant",
   "Common Bean": "plant",
   "Common Mushroom": "plant",
@@ -263,26 +331,31 @@
   "Comt\u00e9": "plant",
   "Comt\u00e9 Cheese": "dairy",
   "Condensed Milk": "dairy",
+  "Condensed milk": "dairy",
+  "Confectioners' Sugar": "plant",
+  "Confectioners' sugar": "plant",
   "Consomm\u00e9": "plant",
-  "Coobook:Grating": "plant",
-  "Cookbook : Bouillon Cube": "plant",
-  "Cookbook : Nigerian Smoked Fish": "meat",
-  "Cookbook :Cup": "plant",
   "Cookie": "plant",
   "Cooking Spoon": "plant",
   "Cooking Spray": "plant",
   "Coriander": "plant",
   "Corn": "plant",
-  "Corn Flakes": "plant",
   "Corn Flour": "plant",
+  "Corn Masa": "plant",
+  "Corn Oil": "plant",
+  "Corn Starch": "plant",
   "Corn Syrup": "plant",
+  "Corn flakes": "plant",
   "Corn sugar": "plant",
+  "Cornbread": "plant",
   "Cornbread (disambiguation)": "plant",
   "Corned Beef": "meat",
+  "Cornish Game Hen": "plant",
   "Cornmeal": "plant",
   "Cornstarch": "plant",
   "Cotija Cheese": "dairy",
   "Cottage Cheese": "dairy",
+  "Cottage cheese": "dairy",
   "Cottonseed": "plant",
   "Coulis": "plant",
   "Country Roast Chicken Seasoning": "meat",
@@ -293,25 +366,28 @@
   "Cranberry": "plant",
   "Cranberry Sauce": "plant",
   "Crawfish": "meat",
+  "Crayfish": "meat",
   "Cream": "dairy",
   "Cream Cheese": "dairy",
   "Cream of Mushroom Soup": "dairy",
-  "Cream of Tartar": "dairy",
+  "Cream of Tartar": "plant",
   "Cream of Wheat": "dairy",
   "Cream stabilizer": "dairy",
   "Creamed Corn": "dairy",
+  "Creme Anglaise": "dairy",
   "Crouton": "plant",
   "Crown Daisy": "plant",
   "Crumb Crust": "plant",
+  "Crushed red pepper": "plant",
   "Crystallised ginger": "plant",
   "Crystallized ginger": "plant",
   "Cr\u00e8me Anglaise": "plant",
   "Cr\u00e8me Chantilly": "plant",
   "Cr\u00e8me Fraiche": "plant",
-  "Cr\u00e8me P\u00e2tissi\u00e8re": "plant",
-  "Cr\u00eapes": "plant",
+  "Cr\u00e8me Fra\u00eeche": "plant",
+  "Cr\u00e8me p\u00e2tissi\u00e8re": "plant",
+  "Cr\u00eape": "plant",
   "Cucumber": "plant",
-  "Cuisine of California": "plant",
   "Cuisine of India": "plant",
   "Cuisine of Italy": "plant",
   "Cuisine of Nepal": "plant",
@@ -319,21 +395,31 @@
   "Cumin": "plant",
   "Curd": "dairy",
   "Currant": "plant",
+  "Curry": "plant",
   "Curry Leaf": "plant",
   "Curry Paste": "plant",
   "Curry Powder": "plant",
   "Custard": "egg",
   "Custard Powder": "dairy",
+  "Daikon": "plant",
   "Dal": "plant",
+  "Dark chocolate": "plant",
+  "Dashi": "meat",
   "Dashi (Japanese Soup Stock)": "plant",
   "Date": "plant",
   "Date Syrup": "plant",
+  "Dawadawa": "plant",
+  "Deep frying": "plant",
   "Dehydrated Broth": "meat",
   "Deli Meat": "meat",
   "Digestive Biscuit": "plant",
+  "Dijon Mustard": "plant",
   "Dill": "plant",
+  "Djansang": "plant",
+  "Dl": "plant",
   "Doenjang": "plant",
   "Double Boiler": "plant",
+  "Double Cream": "dairy",
   "Douchi": "plant",
   "Dough": "plant",
   "Drag\u00e9es": "plant",
@@ -352,19 +438,29 @@
   "Egg": "egg",
   "Egg Roll": "egg",
   "Egg Wash": "egg",
+  "Egg White": "egg",
+  "Egg Yolk": "egg",
   "Egg noodles": "egg",
+  "Egg yolk": "egg",
   "Eggnog": "egg",
-  "Eggplant": "egg",
+  "Eggplant": "plant",
+  "Eggs": "egg",
   "Egusi Seed": "plant",
+  "Ehuru": "plant",
   "Einkorn": "plant",
   "Elephant Grass": "plant",
   "Emmental Cheese": "dairy",
+  "Endive": "plant",
   "English Muffins": "plant",
   "Enoki Mushroom": "plant",
   "Epazote": "plant",
   "Espagnole Sauce": "plant",
+  "Espagnole sauce": "plant",
   "Eulachon": "plant",
+  "Evaporated milk": "dairy",
   "Falafel": "plant",
+  "Farmer Cheese": "dairy",
+  "Fat": "plant",
   "Fava Bean": "plant",
   "Fennel": "plant",
   "Fenugreek": "plant",
@@ -378,6 +474,7 @@
   "Fish Oil": "meat",
   "Fish Sauce": "meat",
   "Fish Stock (Fumet de poisson)": "meat",
+  "Fish sauce": "meat",
   "Fishball": "meat",
   "Five Spice Powder": "plant",
   "Flaky Pie Crust": "plant",
@@ -386,38 +483,44 @@
   "Floret": "plant",
   "Flounder": "plant",
   "Flour": "plant",
-  "Flour#Wheat Flour": "plant",
-  "Flour#Wheat flour": "plant",
+  "Flour Tortilla": "plant",
   "Fluted Pumpkin": "plant",
-  "Focaccia (Genovese)": "plant",
+  "Focaccia Genovese Dough": "plant",
+  "Fond brun de boeuf": "plant",
+  "Fond brun de veau": "plant",
   "Fontina": "plant",
   "Food Coloring": "plant",
   "Food Processor": "plant",
   "Forcemeat": "meat",
   "Freekeh": "plant",
   "French Bread": "plant",
-  "French Fries": "plant",
   "French Meringue": "plant",
-  "French Onion Soup": "plant",
-  "Fried Eggs": "egg",
+  "Frisee": "plant",
   "Frito Pie Chili": "plant",
   "Fromage Frais": "plant",
-  "Frosting and Icing": "plant",
   "Fructose": "plant",
   "Fruit": "plant",
   "Fruit Preserves": "plant",
   "Fruit mix": "plant",
+  "Fry": "plant",
   "Frying Pan": "plant",
+  "Fusilli": "plant",
+  "G": "plant",
   "Galangal": "plant",
+  "Game": "meat",
   "Garam Masala": "plant",
+  "Garam masala": "plant",
+  "Garbanzo": "plant",
   "Garden Egg": "egg",
   "Garlic": "plant",
-  "Garlic Croutons I": "plant",
+  "Garlic Croutons": "plant",
   "Garlic Powder": "plant",
-  "Garlic Press": "plant",
   "Garlic Salt": "plant",
-  "Gelatin": "meat",
+  "Garlic powder": "plant",
+  "Gelatine": "meat",
   "Gelato": "plant",
+  "Ghee": "dairy",
+  "Gheera": "dairy",
   "Giblets": "plant",
   "Gin": "plant",
   "Ginger": "plant",
@@ -425,7 +528,6 @@
   "Ginseng": "plant",
   "Glazing": "plant",
   "Glucose": "plant",
-  "Glucose#Glucose syrup": "plant",
   "Gluten": "plant",
   "Gluten-Free": "plant",
   "Gluten-Free Flour": "plant",
@@ -433,82 +535,100 @@
   "Goat": "meat",
   "Goat Cheese": "dairy",
   "Goat Cheese Cakes": "dairy",
+  "Gochugaru": "plant",
   "Gochujang": "plant",
   "Golden Syrup": "plant",
   "Goose": "meat",
   "Gorgonzola Cheese": "dairy",
-  "Graham Cracker": "meat",
+  "Graham Cracker": "plant",
   "Grains": "plant",
   "Grains of Paradise": "plant",
   "Granola": "plant",
   "Granola Bar": "plant",
+  "Granulated Sugar": "plant",
   "Grape": "plant",
   "Grape Leaf": "plant",
+  "Grape Seed Oil": "plant",
   "Grapefruit": "plant",
   "Grated": "plant",
   "Grater": "plant",
   "Gravy": "plant",
   "Greek Yogurt Sauce": "dairy",
   "Green Bean": "plant",
+  "Green Beans": "plant",
   "Green Chili Beef Stew": "meat",
+  "Green Olive": "plant",
   "Green Onion": "plant",
   "Green Pepper": "plant",
+  "Green bean": "plant",
+  "Green beans": "plant",
+  "Green chilly": "plant",
   "Green garlic": "plant",
+  "Green onion": "plant",
+  "Green pepper": "plant",
   "Grenadine": "plant",
   "Griddle": "plant",
   "Grill Seasoning": "plant",
   "Grits": "plant",
+  "Ground Beef": "meat",
   "Ground Crayfish": "meat",
+  "Ground beef": "meat",
   "Groundnut": "plant",
   "Gruy\u00e8re Cheese": "dairy",
-  "Guacamole I": "plant",
+  "Guacamole": "plant",
   "Guanciale": "meat",
   "Guava": "plant",
+  "Gula Jawa": "plant",
   "Gum Arabic": "plant",
   "Habanero": "plant",
   "Haddock": "meat",
   "Hake": "plant",
+  "Half & half": "plant",
+  "Half and Half": "plant",
   "Halibut": "plant",
   "Ham": "meat",
   "Hamburger": "meat",
-  "Hard Cider": "plant",
-  "Hard Cooked Eggs": "egg",
   "Hard Tack": "plant",
   "Hash Browns": "plant",
   "Hazelnut": "plant",
   "Hazelnut Oil": "plant",
   "Heart": "plant",
+  "Heavy Cream": "dairy",
+  "Herb": "plant",
   "Herbes de Provence": "plant",
-  "Herbs and Spices": "plant",
+  "Herbs": "plant",
   "Herring": "meat",
+  "Hibiscus": "plant",
   "Hickory BBQ Rub": "plant",
-  "Hogao (Colombian Scallion Tomato Sauce)": "plant",
+  "Hogao": "plant",
   "Hoisin Sauce": "plant",
   "Hollandaise Sauce": "plant",
   "Homemade Cider Vinegar": "plant",
-  "Homemade Mixed Spice": "plant",
-  "Homemade Pancake Mix": "plant",
   "Homemade Tortilla Chips": "plant",
-  "Homemade Wheat Tortillas": "plant",
   "Homi": "plant",
   "Hominy": "plant",
   "Hominy Grits": "plant",
   "Honey": "plant",
+  "Honey Bean": "plant",
   "Hops": "plant",
+  "Horn salt": "plant",
   "Horse": "meat",
   "Horseradish": "plant",
   "Hot Chocolate": "plant",
   "Hot Dog": "plant",
-  "Hot Fudge Sauce": "plant",
+  "Hot Fudge": "plant",
   "Hot Pepper Sauce": "plant",
   "Hot Sauce": "plant",
   "Hot Wings": "plant",
   "Huckleberry": "plant",
   "Ice Cream": "dairy",
-  "Ice Cream#Sherbet": "dairy",
+  "Icing": "plant",
+  "Icing Sugar": "plant",
+  "Icing sugar": "plant",
   "Iguana": "meat",
   "Imitation Crab": "meat",
-  "Imitation Whipped Cream": "dairy",
+  "Imitation Whipped Topping": "plant",
+  "Injera": "plant",
   "Instant Noodles": "plant",
   "Iru": "plant",
   "Italian Bread": "plant",
@@ -517,11 +637,14 @@
   "Italian Tomato Sauce": "plant",
   "Jackfruit": "plant",
   "Jaggery": "plant",
+  "Jalapeno": "plant",
   "Jalape\u00f1o": "plant",
-  "Jam (recipe)": "plant",
-  "Jamaican Jerk Spice I": "plant",
+  "Jam": "plant",
+  "Jamaican Jerk Spice": "plant",
+  "Jams and Jellies": "plant",
   "Japanese Plum": "plant",
   "Jello": "plant",
+  "Jelly": "plant",
   "Jicama": "plant",
   "Jointing": "plant",
   "Juice": "plant",
@@ -529,7 +652,9 @@
   "Jute": "plant",
   "Kabocha": "plant",
   "Kaffir Lime": "plant",
+  "Kaffir Lime Leaf": "plant",
   "Kale": "plant",
+  "Kangkung": "plant",
   "Kansas City Barbecue Sauce": "plant",
   "Kaong": "plant",
   "Kashkaval": "plant",
@@ -538,27 +663,39 @@
   "Kefir": "dairy",
   "Kelp": "plant",
   "Ketchup": "plant",
+  "Kg": "plant",
   "Khoa": "plant",
   "Kidney": "meat",
+  "Kidney Bean": "meat",
   "Kipper": "plant",
   "Kirsch": "plant",
-  "Knoephla (Small Flour Dumplings)": "plant",
+  "Knoephla": "plant",
   "Kohlrabi": "plant",
   "Kosher": "plant",
   "Kosher Salt": "plant",
   "Kuli Kuli": "plant",
+  "L": "plant",
   "Lady Finger Cookies (Savoiardi)": "plant",
+  "Lamb": "meat",
   "Lamb and Mutton": "meat",
   "Lard": "meat",
   "Lavender": "plant",
   "Laver": "plant",
+  "Lb": "plant",
   "Leaf Masala": "plant",
   "Lecithin": "plant",
   "Leek": "plant",
+  "Legumes": "plant",
   "Lemon": "plant",
   "Lemon Balm": "plant",
+  "Lemon Juice": "plant",
   "Lemon Pepper": "plant",
+  "Lemon Rind": "plant",
   "Lemon Verbena": "plant",
+  "Lemon extract": "plant",
+  "Lemon juice": "plant",
+  "Lemon rind": "plant",
+  "Lemon zest": "plant",
   "Lemonade": "plant",
   "Lemongrass": "plant",
   "Lentil": "plant",
@@ -567,53 +704,65 @@
   "Lima Bean": "plant",
   "Lime": "plant",
   "Limewater": "plant",
+  "Limoncello": "plant",
   "Linguine": "plant",
   "Liqueur": "plant",
   "Liquid Aminos": "plant",
   "Liquid Seasoning": "plant",
   "Liquid Smoke": "plant",
+  "Liquorice": "plant",
   "Liver": "meat",
   "Loaf Pan": "plant",
   "Lobster": "meat",
   "Locust Bean": "plant",
-  "Long Island Roast Duckling": "meat",
   "Lotus Root": "plant",
-  "Low-Sodium Cooking": "plant",
+  "Low-sodium Cooking": "plant",
+  "ML": "plant",
   "MSG": "plant",
-  "Macadamia": "plant",
+  "Macadamia Nut": "plant",
   "Macaroni": "plant",
+  "Mace": "plant",
   "Mackerel": "meat",
-  "Madeira Wine": "plant",
+  "Madeira": "plant",
+  "Madeira wine": "plant",
+  "Maggi": "plant",
   "Mahi-mahi": "meat",
+  "Maida": "plant",
+  "Maize": "plant",
   "Malt": "plant",
+  "Malt vinegar": "plant",
   "Mandarin Orange": "plant",
   "Mandarin orange": "plant",
   "Mandoline": "plant",
   "Mango": "plant",
-  "Mango Chutney (Chunky)": "plant",
+  "Mango Chutney": "plant",
   "Manioc Flour": "plant",
   "Maple Barbecue Sauce": "plant",
+  "Maple Syrup": "plant",
   "Maple Syrup and Sugar": "plant",
   "Maraschino Cherry": "plant",
   "Margarine": "plant",
+  "Marijuana": "plant",
   "Marinara Sauce": "plant",
   "Marjoram": "plant",
   "Marmalade": "plant",
   "Marrow Bone": "plant",
+  "Marrowfat peas": "plant",
   "Marsala Wine": "plant",
   "Marshmallow": "plant",
+  "Marshmallow Creme": "dairy",
   "Marzipan": "plant",
   "Masa (Hausa Rice Pancake)": "plant",
   "Mascarpone Cheese": "dairy",
   "Mashed Potatoes": "plant",
-  "Masyaura (Nepali Fermented Vegetable Balls)": "plant",
+  "Masyaura": "plant",
   "Matzo": "plant",
   "Matzo Meal": "plant",
   "Mayonnaise": "egg",
   "Meat": "meat",
-  "Meat and Poultry#Game": "meat",
+  "Meat and Poultry": "meat",
+  "Meat and poultry": "meat",
   "Meringue": "egg",
-  "Meringue#Crisp Baked Meringues": "plant",
   "Mexican Seasoning": "plant",
   "Microplane": "plant",
   "Microwave": "plant",
@@ -627,7 +776,8 @@
   "Mirin": "plant",
   "Miso": "plant",
   "Mixed Herbs": "plant",
-  "Mixing#Tossing": "plant",
+  "Mixed Spice": "plant",
+  "Mixed vegetables": "plant",
   "Mocha Buttercream": "dairy",
   "Molasses": "plant",
   "Monterey Jack Cheese": "dairy",
@@ -635,18 +785,20 @@
   "Moringa": "plant",
   "Mortadella": "plant",
   "Mortar and Pestle": "plant",
+  "Mozzarella": "plant",
   "Mozzarella Cheese": "dairy",
+  "Mulling Spices": "plant",
   "Mung Bean": "plant",
   "Mushroom": "plant",
   "Mushroom Soup": "plant",
-  "Mushroom#Chanterelle": "plant",
-  "Mushroom#Shiitake": "plant",
   "Muskrat": "plant",
   "Mussel": "meat",
   "Mustard": "plant",
   "Mustard Greens": "plant",
   "Mustard Seed": "plant",
-  "Mustard#Dry mustard": "plant",
+  "Mustard seed": "plant",
+  "Mutton": "meat",
+  "Nappa Cabbage": "plant",
   "Nata de Coco": "plant",
   "Nattomoto": "plant",
   "Navy Bean": "plant",
@@ -654,35 +806,42 @@
   "Nettle": "plant",
   "Nigella": "plant",
   "Nigerian Brown Bean": "plant",
-  "Nilagang Baka (Boiled Beef and Vegetables in Broth)": "meat",
+  "Nigerian Smoked Fish": "meat",
   "Niter Kibbeh": "plant",
   "Njangsa": "plant",
   "Nondairy Milk": "dairy",
   "Noodle": "plant",
   "Nori": "plant",
   "North Carolina-Style BBQ Ribs": "plant",
+  "Nut": "plant",
   "Nutella": "plant",
   "Nutmeg": "plant",
   "Nutritional Yeast": "plant",
+  "Nutritional Yeast Flakes": "plant",
   "Nuts and Seeds": "plant",
-  "Oat Flour": "plant",
-  "Oat Milk": "dairy",
+  "Nuts and seeds": "plant",
+  "Oat Milk": "plant",
+  "Oat flour": "plant",
   "Oatmeal": "plant",
   "Oats": "plant",
   "Ogiri": "plant",
   "Oha": "plant",
+  "Oil": "plant",
   "Oil Palm Fruit": "plant",
-  "Oil Palm Fruit#Uses": "plant",
   "Oil and Fat": "plant",
-  "Okoho": "plant",
+  "Oil and fat": "plant",
   "Okra": "plant",
   "Olive": "plant",
   "Olive Oil": "plant",
+  "Olive oil": "plant",
   "Onion": "plant",
   "Onion Confit": "plant",
   "Onion Paste": "plant",
   "Onion Powder": "plant",
   "Onion Salt": "plant",
+  "Onion Soup": "plant",
+  "Onion powder": "plant",
+  "Onions": "plant",
   "Orange": "plant",
   "Orange Flower Water": "plant",
   "Orange Juice": "plant",
@@ -695,25 +854,31 @@
   "Oven": "plant",
   "Oyster": "meat",
   "Oyster sauce": "meat",
+  "Oz": "plant",
   "Palm Oil": "plant",
+  "Palm Sugar": "plant",
   "Palm oil": "plant",
   "Palmyra Palm Fruit": "plant",
-  "Pan-fried Beef Steak": "meat",
   "Pancake": "plant",
+  "Pancake Mix": "plant",
   "Pancetta": "meat",
+  "Panch Puran": "plant",
   "Pandan": "plant",
   "Pandan Essence": "plant",
   "Paneer": "dairy",
   "Panla": "meat",
   "Papaya": "plant",
   "Paprika": "plant",
+  "Parboil": "plant",
   "Parmesan Cheese": "dairy",
+  "Parmigiano Reggiano": "plant",
   "Parsley": "plant",
   "Parsley Root": "plant",
   "Parsnip": "plant",
   "Passion Fruit": "plant",
   "Pasta": "plant",
   "Pasta Sauce": "plant",
+  "Pasta of Italy": "plant",
   "Pasta seasoning": "plant",
   "Pastrami": "plant",
   "Pastry Cream": "dairy",
@@ -725,9 +890,11 @@
   "Peach": "plant",
   "Peach Nectar": "plant",
   "Peanut": "plant",
-  "Peanut Butter": "dairy",
+  "Peanut Butter": "plant",
   "Peanut Oil": "plant",
   "Pear": "plant",
+  "Pearl Sugar": "plant",
+  "Peas": "plant",
   "Pecan": "plant",
   "Pecorino Romano Cheese": "dairy",
   "Pectin": "plant",
@@ -736,6 +903,7 @@
   "Pennyroyal": "plant",
   "Pepper": "plant",
   "Pepper Jack": "plant",
+  "Peppercorn": "plant",
   "Peppermint": "plant",
   "Pepperoncini": "plant",
   "Pepperoni": "meat",
@@ -743,12 +911,15 @@
   "Periwinkle (mollusc)": "meat",
   "Pesto": "plant",
   "Phyllo Dough": "plant",
+  "Phyllo dough": "plant",
   "Pickle": "plant",
   "Pickling Salt": "plant",
   "Pico de Gallo": "plant",
   "Pie": "plant",
   "Pie Crust": "plant",
   "Pie and Tart Pans": "plant",
+  "Pierogie Filling:Cheese Filling": "dairy",
+  "Pierogie Filling:Saurkraut Filling": "plant",
   "Pigeon": "plant",
   "Pigeon Pea": "plant",
   "Pigeon pea": "plant",
@@ -757,8 +928,11 @@
   "Pine Nut": "plant",
   "Pine needles": "plant",
   "Pineapple": "plant",
+  "Pinto Bean": "plant",
+  "Pinto Beans Recipe from South Texas": "plant",
   "Pistachio": "plant",
   "Pita": "plant",
+  "Pizza Sauce": "plant",
   "Placenta": "plant",
   "Plantain": "plant",
   "Plum": "plant",
@@ -770,18 +944,23 @@
   "Poppy Seed": "plant",
   "Porcini Mushroom": "plant",
   "Pork": "meat",
-  "Pork#Loin": "meat",
-  "Pork#Side": "meat",
   "Port Wine": "plant",
+  "Portobello Mushroom": "plant",
   "Pot Cheese": "dairy",
   "Potash": "plant",
   "Potato": "plant",
   "Potato Chips": "plant",
   "Potato Flour": "plant",
   "Potato Starch": "plant",
-  "Potato#Starchy": "plant",
+  "Potatoes": "plant",
+  "Poultry": "meat",
   "Poultry Shake": "meat",
-  "Pretzels (Soft)": "plant",
+  "Pound Cake": "plant",
+  "Powdered Milk": "dairy",
+  "Powdered Sugar": "plant",
+  "Powdered sugar": "plant",
+  "Prawn": "meat",
+  "Pretzel": "plant",
   "Prickly Pear": "plant",
   "Prime Rib Seasoning": "plant",
   "Processed Cheese": "dairy",
@@ -790,14 +969,17 @@
   "Psyllium": "plant",
   "Pudding Mix": "plant",
   "Puff Pastry": "plant",
+  "Puff pastry": "plant",
   "Puffed rice": "plant",
-  "Pulses": "plant",
   "Pumpernickel": "plant",
   "Pumpkin": "plant",
-  "Pumpkin Pie I": "plant",
+  "Pumpkin Pie": "plant",
   "Pumpkin Seed": "plant",
+  "Puree": "plant",
+  "Puri": "plant",
   "Puri (Indian Fried Flatbread)": "plant",
   "Purslane": "plant",
+  "Pur\u00e9e": "plant",
   "Quail": "meat",
   "Quark": "dairy",
   "Queso Fresco": "plant",
@@ -807,9 +989,12 @@
   "Quinoa": "plant",
   "Quorn": "plant",
   "Rabbit": "meat",
+  "Radicchio": "plant",
   "Radish": "plant",
   "Raisin": "plant",
   "Ramen Noodle": "plant",
+  "Ranch Dressing": "plant",
+  "Rapeseed Oil": "plant",
   "Raspberry": "plant",
   "Ravioli": "plant",
   "Reblochon Cheese": "dairy",
@@ -817,31 +1002,44 @@
   "Red Chile Sauce": "plant",
   "Red Pepper": "plant",
   "Red Snapper": "plant",
+  "Red Wine": "plant",
+  "Red curry paste": "plant",
+  "Red onion": "plant",
+  "Red pepper flakes": "plant",
   "Refried Beans": "plant",
   "Relish": "plant",
+  "Rennet": "meat",
   "Rhubarb": "plant",
   "Rib Rub": "plant",
   "Rice": "plant",
   "Rice Flour": "plant",
-  "Rice Milk": "dairy",
+  "Rice Milk": "plant",
   "Rice Vinegar": "plant",
   "Rice Wafer": "plant",
   "Rice and Lentils (Mejadra)": "plant",
+  "Rice flour": "plant",
+  "Rice vinegar": "plant",
   "Ricotta": "dairy",
   "Risotto": "plant",
+  "Roast Duck": "meat",
+  "Rock Sugar": "plant",
   "Roe": "meat",
   "Rolled Oats": "plant",
+  "Rolled oats": "plant",
   "Rolling Pin": "plant",
+  "Rolls": "plant",
+  "Romaine Lettuce": "plant",
+  "Romaine lettuce": "plant",
   "Rosehip": "plant",
   "Roselle": "plant",
   "Rosemary": "plant",
   "Rosewater": "plant",
-  "Roux#Brown Roux (Roux brun)": "plant",
   "Royal Icing": "plant",
   "Rum": "plant",
   "Runner Beans": "plant",
   "Rutabaga": "plant",
   "Rye": "plant",
+  "Safflower Oil": "plant",
   "Saffron": "plant",
   "Sage": "plant",
   "Sago": "plant",
@@ -852,44 +1050,50 @@
   "Salmon Seasoning": "meat",
   "Salsa": "plant",
   "Salsa Fresca": "plant",
-  "Salsa#Salsa verde": "plant",
   "Salt": "plant",
   "Salt Pork": "meat",
   "Salt cod": "meat",
   "Salt pork": "meat",
-  "Salt#Types of salt": "plant",
   "Saltine Cracker": "plant",
-  "Salza Criolla (South American Onion Relish)": "plant",
+  "San Francisco Sourdough Bread": "plant",
+  "Sandwich Cookie": "plant",
   "Sardine": "meat",
   "Sarsaparilla": "plant",
+  "Sarza Criolla": "plant",
+  "Sauce": "plant",
   "Sauces": "plant",
   "Sauerkraut": "plant",
-  "Sauerkraut Pierogi Filling": "plant",
   "Sausage": "meat",
-  "Sausage Casing": "meat",
+  "Sausage casing": "meat",
+  "Saut\u00e9": "plant",
   "Savory": "plant",
   "Saz\u00f3n": "plant",
+  "Scald": "plant",
+  "Scallion": "plant",
   "Scallop": "meat",
   "Scent Leaf": "plant",
   "Schmaltz": "meat",
   "Schnapps": "plant",
   "Scotch Bonnet Chile": "plant",
   "Scotch Bonnet Pepper Poppers": "plant",
+  "Scrambled Eggs": "egg",
   "Sea bass": "plant",
   "Seafood": "meat",
-  "Seasoned Flour": "plant",
-  "Seasoned Salt I": "plant",
+  "Seasoned Salt": "plant",
+  "Seasoned flour": "plant",
   "Seasoning Salt": "plant",
   "Seasoning salt": "plant",
   "Seaweed": "plant",
   "Seitan": "plant",
   "Self-rising Flour": "plant",
   "Semolina": "plant",
-  "Serrano Chili": "plant",
+  "Separate": "plant",
+  "Serrano chili": "plant",
   "Sesame Leaf": "plant",
   "Sesame Oil": "plant",
   "Sesame Seed": "plant",
   "Sev": "plant",
+  "Shaki": "plant",
   "Shallot": "plant",
   "Shanghai noodle": "plant",
   "Shatkora": "plant",
@@ -900,11 +1104,13 @@
   "Shortcrust Pastry": "plant",
   "Shortening": "plant",
   "Shrimp": "meat",
-  "Shrimp Paste": "meat",
+  "Shrimp paste": "meat",
+  "Sift": "plant",
   "Sifter": "plant",
   "Simple Syrup": "plant",
   "Skewer": "plant",
   "Slice": "plant",
+  "Smoke Point": "plant",
   "Smoke Powder": "plant",
   "Smoked Salmon": "meat",
   "Smoky Chipotle Hot Sauce": "plant",
@@ -913,72 +1119,89 @@
   "Snow Pea": "plant",
   "Soaking": "plant",
   "Soda": "plant",
+  "Soda Cracker": "plant",
   "Soda Pop": "plant",
-  "Soft Boiled Eggs": "egg",
   "Sorghum": "plant",
   "Sorrel": "plant",
-  "Soup": "plant",
   "Soup Spoon": "plant",
   "Sour Cream": "dairy",
-  "Sour Cream Chili Sauce": "dairy",
+  "Sour cream": "dairy",
+  "Sour cream chili sauce": "dairy",
   "Sourdough Starter": "plant",
-  "South Texan Pinto Beans": "plant",
-  "Soy Bean": "plant",
+  "Soy": "plant",
   "Soy Flour": "plant",
-  "Soy Milk I": "dairy",
+  "Soy Milk": "plant",
   "Soy Protein": "plant",
   "Soy Sauce": "plant",
+  "Soy sauce": "plant",
+  "Soybean": "plant",
   "Spaetzle": "plant",
   "Spaghetti": "plant",
   "Spaghetti Sauce": "plant",
   "Spelt": "plant",
+  "Spice": "plant",
   "Spice Rub for Chicken": "meat",
+  "Spices": "plant",
+  "Spices and Herbs": "plant",
+  "Spices and herbs": "plant",
   "Spicy Garlic Oil": "plant",
   "Spinach": "plant",
   "Spirits": "plant",
   "Spirulina": "plant",
   "Split Pea": "plant",
   "Split Peas": "plant",
-  "Sponge Cake I": "plant",
+  "Sponge Cake": "plant",
+  "Spring Onion": "plant",
   "Sprinkles": "plant",
   "Squash": "plant",
   "Squid": "meat",
   "Sriracha": "plant",
   "Star Anise": "plant",
+  "Steak": "plant",
   "Steak Rub": "plant",
-  "Steamed Basmati Rice": "plant",
   "Steamed Rice": "plant",
   "Steamed Sweet Rice": "plant",
   "Stevia": "plant",
   "Stew": "plant",
+  "Stock Cube": "plant",
   "Stockfish": "meat",
   "Straining": "plant",
   "Strawberry": "plant",
+  "String beans": "plant",
   "Stuffing": "plant",
   "Sucuk": "plant",
   "Suet": "meat",
   "Sugar": "plant",
-  "Sugar#Brown sugar": "plant",
-  "Sugar#Highly refined (white)": "plant",
-  "Sugar#Less-refined": "plant",
+  "Sultana": "plant",
+  "Sultanas": "plant",
   "Sumac": "plant",
+  "Sumak": "plant",
+  "Sun-dried Tomato": "plant",
   "Sun-dried Tomatoes": "plant",
   "Sunflower": "plant",
+  "Sunflower Oil": "plant",
   "Sunflower Seeds": "plant",
+  "Superfine Sugar": "plant",
   "Sushi Rice": "plant",
   "Suya Spice": "plant",
+  "Swede": "plant",
+  "Sweet Marjoram": "plant",
   "Sweet Potato": "plant",
-  "Sweet and Sour Sauce": "plant",
-  "Sweeteners": "plant",
+  "Sweet and Sour": "plant",
+  "Sweetened Condensed Milk": "dairy",
   "Sweetfish": "meat",
+  "Swiss Cheese": "dairy",
   "Swiss Meringue": "plant",
   "Syrup": "plant",
   "Szechuan Pepper": "plant",
+  "Tabasco Sauce": "plant",
+  "Taco": "plant",
   "Taco seasoning": "plant",
   "Tahini": "plant",
   "Tall Quiche Shell": "plant",
+  "Tamari": "plant",
   "Tamarind": "plant",
-  "Tandoori Masala": "plant",
+  "Tandoori masala": "plant",
   "Tangerine": "plant",
   "Tapioca": "plant",
   "Tapioca Pearls": "plant",
@@ -989,25 +1212,27 @@
   "Tater Tots": "plant",
   "Tatsoi": "plant",
   "Taurine": "plant",
+  "Tbsp": "plant",
   "Tea": "plant",
   "Tea Extract": "plant",
   "Tea Leaf": "plant",
   "Tea Leaves": "plant",
+  "Tea spoon": "plant",
   "Teff": "plant",
   "Tempeh": "plant",
   "Tempero Baiano": "plant",
-  "Tempoyak (Fermented Durian)": "plant",
+  "Tempoyak": "plant",
   "Tequila": "plant",
+  "Terasi": "plant",
+  "Teriyaki": "plant",
   "Teriyaki Sauce": "plant",
   "Textured Vegetable Protein": "plant",
   "Thai Chili Paste": "plant",
   "Thai Red Curry Paste": "plant",
-  "Themes in Literature/Isolation and Community/Much Madness": "plant",
   "Thousand Island Dressing": "plant",
   "Thyme": "plant",
   "Tiger Nut": "plant",
   "Tilapia": "plant",
-  "Toast": "plant",
   "Toaster": "plant",
   "Toffee": "plant",
   "Tofu": "plant",
@@ -1024,13 +1249,16 @@
   "Tortilla": "plant",
   "Tortilla Chip": "plant",
   "Tortilla chips": "plant",
-  "Traditional Pound Cake": "plant",
+  "Trassi": "plant",
   "Treacle": "plant",
   "Tripe": "meat",
   "Triple Sec": "plant",
   "Trout": "meat",
   "Truffle": "plant",
+  "Tsp": "plant",
+  "Tumeric": "plant",
   "Tuna": "meat",
+  "Turbinado Sugar": "plant",
   "Turkey": "meat",
   "Turmeric": "plant",
   "Turnip": "plant",
@@ -1038,37 +1266,36 @@
   "Ube": "plant",
   "Udon": "plant",
   "Ugba": "plant",
-  "Units of measurement#Nigeria": "plant",
   "Urad Bean": "plant",
   "Utazi": "plant",
+  "Uziza": "plant",
   "Vanilla": "plant",
-  "Vanilla Ice Cream (Egg-Free)": "dairy",
+  "Vanilla Bean": "plant",
+  "Vanilla Extract": "plant",
+  "Vanilla Ice Cream": "dairy",
+  "Vanilla Sugar": "plant",
   "Veal": "meat",
-  "Veal Stock": "meat",
-  "Vegan cuisine#Milks (Nut, Grain and Legume Liquids)": "dairy",
   "Vegemite": "plant",
   "Vegetable": "plant",
   "Vegetable Oil": "plant",
+  "Vegetable Stock": "plant",
+  "Vegetable oil": "plant",
   "Vegetarian cuisine": "plant",
+  "Velveeta": "plant",
   "Velveeta Cheese": "dairy",
   "Venison": "meat",
   "Vermicelli": "plant",
   "Vermouth": "plant",
   "Vinegar": "plant",
-  "Vinegar#Balsamic Vinegar": "plant",
-  "Vinegar#Balsamic vinegar": "plant",
-  "Vinegar#White vinegar": "plant",
   "Vodka": "plant",
-  "W:Pea": "plant",
-  "W:chilli padi": "plant",
   "Wafer Paper": "plant",
   "Wakame": "plant",
   "Walnut": "plant",
+  "Walnuts": "plant",
   "Wasabi": "plant",
   "Water": "plant",
   "Water Celery": "plant",
   "Water Chestnut": "plant",
-  "Water Spinach": "plant",
   "Watercress": "plant",
   "Waterleaf": "plant",
   "Watermelon": "plant",
@@ -1079,685 +1306,42 @@
   "Wheat-Free Baking Mix": "plant",
   "Whey": "dairy",
   "Whipped Cream": "dairy",
+  "Whipped topping": "plant",
+  "Whipping": "plant",
+  "Whipping Cream": "dairy",
   "Whiskey": "plant",
   "White Bread": "plant",
   "White Chocolate": "plant",
-  "White Radish": "plant",
+  "White Pepper": "plant",
   "White Sauce": "plant",
-  "White Stock": "plant",
+  "White Sugar": "plant",
+  "White Wine": "plant",
+  "White stock": "plant",
+  "White sugar": "plant",
+  "Whole Wheat": "plant",
   "Whole Wheat Flour": "plant",
+  "Wholemeal": "plant",
   "Wine": "plant",
+  "Wine vinegar": "plant",
   "Wintergreen": "plant",
-  "Wonton Wrappers": "plant",
+  "Wonton Wrapper": "plant",
   "Worcestershire Sauce": "meat",
   "Xanthan Gum": "plant",
+  "Xanthan gum": "plant",
   "Yam": "plant",
   "Yeast": "plant",
-  "Yeast Extract": "plant",
-  "Yeasted Rolls II": "plant",
+  "Yeast extract": "plant",
+  "Yellow split peas": "plant",
   "Yerba Mate": "plant",
+  "Yoghurt": "dairy",
   "Yogurt": "dairy",
   "Yorkshire Pudding": "plant",
   "Za'atar": "plant",
   "Zante currant": "plant",
   "Zest": "plant",
   "Zester": "plant",
-  "Zhug I": "plant",
-  "Zucchini": "plant",
-  "alcohol": "plant",
-  "all-purpose flour": "plant",
-  "allspice": "plant",
-  "almond": "plant",
-  "anchovy": "meat",
-  "apple": "plant",
-  "artichoke": "plant",
-  "arugula": "plant",
-  "avocado": "plant",
-  "bacon": "meat",
-  "bagoong alamang": "plant",
-  "baking powder": "plant",
-  "baking soda": "plant",
-  "banana": "plant",
-  "barley": "plant",
-  "basil": "plant",
-  "basmati rice": "plant",
-  "bay leaf": "plant",
-  "bean": "plant",
-  "beans": "plant",
-  "beat": "plant",
-  "beef": "meat",
-  "beer": "plant",
-  "beet": "plant",
-  "bell pepper": "plant",
-  "berbere": "plant",
-  "black pepper": "plant",
-  "bourbon": "plant",
-  "brandy": "plant",
-  "bread": "plant",
-  "breadcrumbs": "plant",
-  "breading": "plant",
-  "broccoli": "plant",
-  "broth": "meat",
-  "butter": "dairy",
-  "buttermilk": "dairy",
-  "cabbage": "plant",
-  "cane Sugar": "plant",
-  "cardamom": "plant",
-  "carrot": "plant",
-  "caster sugar": "plant",
-  "castor sugar": "plant",
-  "cauliflower": "plant",
-  "cayenne pepper": "plant",
-  "celery": "plant",
-  "chard": "plant",
-  "cheese": "dairy",
-  "cherry": "plant",
-  "chervil": "plant",
-  "chicken": "meat",
-  "chicken#Breast": "meat",
-  "chickpea": "plant",
-  "chile peppers": "plant",
-  "chiles": "plant",
-  "chili flakes": "plant",
-  "chili pepper": "plant",
-  "chili powder": "plant",
-  "chilli": "plant",
-  "chive": "plant",
-  "chocolate": "plant",
-  "chocolate chip": "plant",
-  "ciabatta": "plant",
-  "cider vinegar": "plant",
-  "cilantro": "plant",
-  "cinnamon": "plant",
-  "clam": "meat",
-  "clarified butter": "dairy",
-  "clementine": "plant",
-  "clove": "plant",
-  "cm": "plant",
-  "cocoa": "plant",
-  "coconut": "plant",
-  "cod": "meat",
-  "coffee": "plant",
-  "cognac": "plant",
-  "condensed milk": "dairy",
-  "cookbook: Aji amarillo": "plant",
-  "cookbook: almond": "plant",
-  "cookbook: butter": "dairy",
-  "cookbook: cherry": "plant",
-  "cookbook: citrus": "plant",
-  "cookbook: currant": "plant",
-  "cookbook: flour": "plant",
-  "cookbook: icing sugar": "plant",
-  "cookbook: lemon": "plant",
-  "cookbook: milk": "dairy",
-  "cookbook: raisin": "plant",
-  "cookbook: salt": "plant",
-  "cookbook: sugar": "plant",
-  "cookbook: yeast": "plant",
-  "cookbook:Almond": "plant",
-  "cookbook:Baguette": "plant",
-  "cookbook:Baking Powder": "plant",
-  "cookbook:Baking Soda": "plant",
-  "cookbook:Balsamic vinegar": "plant",
-  "cookbook:Basil": "plant",
-  "cookbook:Basmati rice": "plant",
-  "cookbook:Bay Leaf": "plant",
-  "cookbook:Beans": "plant",
-  "cookbook:Beat": "plant",
-  "cookbook:Beef": "meat",
-  "cookbook:Bell Pepper": "plant",
-  "cookbook:Bittersweet chocolate": "plant",
-  "cookbook:Black Bean": "plant",
-  "cookbook:Black Pepper": "plant",
-  "cookbook:Bread Crumb": "plant",
-  "cookbook:Breadcrumbs": "plant",
-  "cookbook:Broccoli": "plant",
-  "cookbook:Brown Sugar": "plant",
-  "cookbook:Butter": "dairy",
-  "cookbook:Cabbage": "plant",
-  "cookbook:Canola Oil": "plant",
-  "cookbook:Caster Sugar": "plant",
-  "cookbook:Cayenne Pepper": "plant",
-  "cookbook:Cheddar Cheese": "dairy",
-  "cookbook:Cheese": "dairy",
-  "cookbook:Chicken": "meat",
-  "cookbook:Chicken Broth": "meat",
-  "cookbook:Chile Pepper": "plant",
-  "cookbook:Chili Pepper": "plant",
-  "cookbook:Chili Powder": "plant",
-  "cookbook:Chips": "plant",
-  "cookbook:Chocolate Chips": "plant",
-  "cookbook:Cilantro": "plant",
-  "cookbook:Clove": "plant",
-  "cookbook:Cocoa Powder": "plant",
-  "cookbook:Coconut": "plant",
-  "cookbook:Coconut Milk": "dairy",
-  "cookbook:Coffee concentrate": "plant",
-  "cookbook:Confectioners sugar": "plant",
-  "cookbook:Confectioners' Sugar": "plant",
-  "cookbook:Consomm\u00e9": "plant",
-  "cookbook:Corn Flour": "plant",
-  "cookbook:Cream": "dairy",
-  "cookbook:Cream Cheese": "dairy",
-  "cookbook:Cream of Tartar": "dairy",
-  "cookbook:Crumble": "plant",
-  "cookbook:Cucumber": "plant",
-  "cookbook:Cup": "plant",
-  "cookbook:Curry Powder": "plant",
-  "cookbook:Dark chocolate": "plant",
-  "cookbook:Dijon Mustard": "plant",
-  "cookbook:Egg": "plant",
-  "cookbook:Egg White": "plant",
-  "cookbook:Egg yolk": "plant",
-  "cookbook:Evaporated milk": "dairy",
-  "cookbook:Feta Cheese": "dairy",
-  "cookbook:Fish": "meat",
-  "cookbook:Flour": "plant",
-  "cookbook:Garam Masala": "plant",
-  "cookbook:Garlic": "plant",
-  "cookbook:Garlic Powder": "plant",
-  "cookbook:Garlic Press": "plant",
-  "cookbook:Giblets": "plant",
-  "cookbook:Ginger": "plant",
-  "cookbook:Granulated Sugar": "plant",
-  "cookbook:Green Onion": "plant",
-  "cookbook:Green onion": "plant",
-  "cookbook:Ground Beef": "meat",
-  "cookbook:Half and Half": "plant",
-  "cookbook:Hard Boiled Eggs": "egg",
-  "cookbook:Herbs and Spices": "plant",
-  "cookbook:Honey": "plant",
-  "cookbook:Jalape\u00f1o": "plant",
-  "cookbook:Ketchup": "plant",
-  "cookbook:Kidney Bean": "meat",
-  "cookbook:Lemon Juice": "plant",
-  "cookbook:Lettuce": "plant",
-  "cookbook:Lime": "plant",
-  "cookbook:Liquid Smoke": "plant",
-  "cookbook:MSG": "plant",
-  "cookbook:Macaroni": "plant",
-  "cookbook:Maize": "plant",
-  "cookbook:Maple Syrup": "plant",
-  "cookbook:Margarine": "plant",
-  "cookbook:Mascarpone Cheese": "dairy",
-  "cookbook:Mayonnaise": "plant",
-  "cookbook:Milk": "dairy",
-  "cookbook:Montreal Steak Seasoning": "plant",
-  "cookbook:Mozzarella Cheese": "dairy",
-  "cookbook:Mushroom": "plant",
-  "cookbook:Mustard": "plant",
-  "cookbook:Mustard Seed": "plant",
-  "cookbook:Nigella": "plant",
-  "cookbook:Oats": "plant",
-  "cookbook:Oil": "plant",
-  "cookbook:Olive": "plant",
-  "cookbook:Olive Oil": "plant",
-  "cookbook:Onion": "plant",
-  "cookbook:Orange": "plant",
-  "cookbook:Oregano": "plant",
-  "cookbook:Oyster": "meat",
-  "cookbook:Paprika": "plant",
-  "cookbook:Parmesan Cheese": "dairy",
-  "cookbook:Pasta": "plant",
-  "cookbook:Pea": "plant",
-  "cookbook:Pepper": "plant",
-  "cookbook:Pork": "meat",
-  "cookbook:Potato": "plant",
-  "cookbook:Powdered Sugar": "plant",
-  "cookbook:Pumpkin": "plant",
-  "cookbook:Raisin": "plant",
-  "cookbook:Red Chile Sauce": "plant",
-  "cookbook:Red Pepper": "plant",
-  "cookbook:Red Wine": "plant",
-  "cookbook:Red onion": "plant",
-  "cookbook:Rice": "plant",
-  "cookbook:Rolled oats": "plant",
-  "cookbook:Safflower Oil": "plant",
-  "cookbook:Salsa": "plant",
-  "cookbook:Salt": "plant",
-  "cookbook:San Francisco Sourdough Bread": "plant",
-  "cookbook:Sauerkraut": "plant",
-  "cookbook:Savory": "plant",
-  "cookbook:Semolina": "plant",
-  "cookbook:Separating Eggs": "egg",
-  "cookbook:Sesame Seed": "plant",
-  "cookbook:Shrimp": "meat",
-  "cookbook:Soup": "plant",
-  "cookbook:Sour Cream": "dairy",
-  "cookbook:Soy Milk": "dairy",
-  "cookbook:Soy Sauce": "plant",
-  "cookbook:Spelt": "plant",
-  "cookbook:Stock": "plant",
-  "cookbook:Sugar": "plant",
-  "cookbook:Sunflower Oil": "plant",
-  "cookbook:Sunflower Seeds": "plant",
-  "cookbook:Sweet Potato": "plant",
-  "cookbook:Sweet and Sour": "plant",
-  "cookbook:Sweeteners": "plant",
-  "cookbook:Tabasco Sauce": "plant",
-  "cookbook:Tablespoon": "plant",
-  "cookbook:Teaspoon": "plant",
-  "cookbook:Teriyaki Sauce": "plant",
-  "cookbook:Thyme": "plant",
-  "cookbook:Toast": "plant",
-  "cookbook:Tomato": "plant",
-  "cookbook:Tomato Paste": "plant",
-  "cookbook:Tomato Sauce": "plant",
-  "cookbook:Tortilla Chip": "plant",
-  "cookbook:Tsp": "plant",
-  "cookbook:Tuna": "meat",
-  "cookbook:Unsweetened chocolate": "plant",
-  "cookbook:Vanilla": "plant",
-  "cookbook:Vanilla Extract": "plant",
-  "cookbook:Vegetable Oil": "plant",
-  "cookbook:Vegetable oil": "plant",
-  "cookbook:Velveeta": "plant",
-  "cookbook:Vinegar": "plant",
-  "cookbook:Water": "plant",
-  "cookbook:Whipped Cream": "dairy",
-  "cookbook:White Wine": "plant",
-  "cookbook:Whole Wheat": "plant",
-  "cookbook:Wine": "plant",
-  "cookbook:Wine vinegar": "plant",
-  "cookbook:Worcestershire Sauce": "plant",
-  "cookbook:Yeast": "plant",
-  "cookbook:alcohol": "plant",
-  "cookbook:almond": "plant",
-  "cookbook:annatto": "plant",
-  "cookbook:apple": "plant",
-  "cookbook:apricot": "plant",
-  "cookbook:avocado": "plant",
-  "cookbook:bacon": "meat",
-  "cookbook:banana": "plant",
-  "cookbook:basil": "plant",
-  "cookbook:beans": "plant",
-  "cookbook:beef": "meat",
-  "cookbook:beer": "plant",
-  "cookbook:beet": "plant",
-  "cookbook:bitter melon": "plant",
-  "cookbook:black pepper": "plant",
-  "cookbook:blackcurrant": "plant",
-  "cookbook:bread": "plant",
-  "cookbook:breading": "plant",
-  "cookbook:bream": "plant",
-  "cookbook:broccoli": "plant",
-  "cookbook:broth": "meat",
-  "cookbook:butter": "dairy",
-  "cookbook:buttermilk": "dairy",
-  "cookbook:cabbage": "plant",
-  "cookbook:caraway": "plant",
-  "cookbook:cardamom": "plant",
-  "cookbook:carrot": "plant",
-  "cookbook:cashew": "plant",
-  "cookbook:cauliflower": "plant",
-  "cookbook:cayenne pepper": "plant",
-  "cookbook:celery": "plant",
-  "cookbook:cheddar cheese": "dairy",
-  "cookbook:cheese": "dairy",
-  "cookbook:chicken": "meat",
-  "cookbook:chickpea": "plant",
-  "cookbook:chicory": "plant",
-  "cookbook:chili peppers": "plant",
-  "cookbook:chilli pepper": "plant",
-  "cookbook:chocolate": "plant",
-  "cookbook:chocolate chips": "plant",
-  "cookbook:chop": "plant",
-  "cookbook:cider vinegar": "plant",
-  "cookbook:cilantro": "plant",
-  "cookbook:cinnamon": "plant",
-  "cookbook:clove": "plant",
-  "cookbook:cocoa": "plant",
-  "cookbook:cocoa powder": "plant",
-  "cookbook:coconut": "plant",
-  "cookbook:cod": "meat",
-  "cookbook:coffee": "plant",
-  "cookbook:condensed milk": "dairy",
-  "cookbook:coriander": "plant",
-  "cookbook:corn": "plant",
-  "cookbook:cornmeal": "plant",
-  "cookbook:cottage cheese": "dairy",
-  "cookbook:cream": "dairy",
-  "cookbook:cucumber": "plant",
-  "cookbook:cuisine of Vietnam": "plant",
-  "cookbook:cumin": "plant",
-  "cookbook:cup": "plant",
-  "cookbook:date": "plant",
-  "cookbook:deep frying": "plant",
-  "cookbook:dill": "plant",
-  "cookbook:duck": "meat",
-  "cookbook:egg": "plant",
-  "cookbook:egg yolk": "plant",
-  "cookbook:eggplant": "plant",
-  "cookbook:eggs": "plant",
-  "cookbook:evaporated milk": "dairy",
-  "cookbook:fenugreek": "plant",
-  "cookbook:flour": "plant",
-  "cookbook:frying": "plant",
-  "cookbook:garlic": "plant",
-  "cookbook:garlic powder": "plant",
-  "cookbook:ghee": "dairy",
-  "cookbook:ginger": "plant",
-  "cookbook:gram": "plant",
-  "cookbook:granola": "plant",
-  "cookbook:green beans": "plant",
-  "cookbook:green onion": "plant",
-  "cookbook:green pepper": "plant",
-  "cookbook:ham": "meat",
-  "cookbook:herbs": "plant",
-  "cookbook:honey": "plant",
-  "cookbook:leek": "plant",
-  "cookbook:lemon": "plant",
-  "cookbook:lettuce": "plant",
-  "cookbook:lime": "plant",
-  "cookbook:mL": "plant",
-  "cookbook:margarine": "plant",
-  "cookbook:marshmallow": "plant",
-  "cookbook:mayonnaise": "plant",
-  "cookbook:meat": "meat",
-  "cookbook:milk": "dairy",
-  "cookbook:milliliter": "plant",
-  "cookbook:mint": "plant",
-  "cookbook:molasses": "plant",
-  "cookbook:mozzarella": "plant",
-  "cookbook:mushroom": "plant",
-  "cookbook:mustard": "plant",
-  "cookbook:mutton": "meat",
-  "cookbook:nutmeg": "plant",
-  "cookbook:oats": "plant",
-  "cookbook:oil": "plant",
-  "cookbook:olive oil": "plant",
-  "cookbook:onion": "plant",
-  "cookbook:onions": "plant",
-  "cookbook:orange": "plant",
-  "cookbook:oranges": "plant",
-  "cookbook:oregano": "plant",
-  "cookbook:ounce": "plant",
-  "cookbook:papaya": "plant",
-  "cookbook:paprika": "plant",
-  "cookbook:parsley": "plant",
-  "cookbook:pasta": "plant",
-  "cookbook:peach": "plant",
-  "cookbook:peas": "plant",
-  "cookbook:pecan": "plant",
-  "cookbook:pepper": "plant",
-  "cookbook:phyllo dough": "plant",
-  "cookbook:pinch": "plant",
-  "cookbook:pistachio": "plant",
-  "cookbook:pork": "meat",
-  "cookbook:potato": "plant",
-  "cookbook:pound": "plant",
-  "cookbook:pumpkin": "plant",
-  "cookbook:radish": "plant",
-  "cookbook:raisin": "plant",
-  "cookbook:rennet": "plant",
-  "cookbook:rice": "plant",
-  "cookbook:rice vinegar": "plant",
-  "cookbook:ricotta": "dairy",
-  "cookbook:rosemary": "plant",
-  "cookbook:rum": "plant",
-  "cookbook:saffron": "plant",
-  "cookbook:sage": "plant",
-  "cookbook:salt": "plant",
-  "cookbook:semolina": "plant",
-  "cookbook:shortening": "plant",
-  "cookbook:shrimp": "meat",
-  "cookbook:slicing": "plant",
-  "cookbook:sorghum": "plant",
-  "cookbook:soup": "plant",
-  "cookbook:sour cream": "dairy",
-  "cookbook:soy sauce": "plant",
-  "cookbook:spaghetti": "plant",
-  "cookbook:spelt": "plant",
-  "cookbook:spinach": "plant",
-  "cookbook:stevia": "plant",
-  "cookbook:stock": "plant",
-  "cookbook:strawberry": "plant",
-  "cookbook:suet": "plant",
-  "cookbook:sugar": "plant",
-  "cookbook:tarragon": "plant",
-  "cookbook:teaspoon": "plant",
-  "cookbook:thyme": "plant",
-  "cookbook:toast": "plant",
-  "cookbook:tofu": "plant",
-  "cookbook:tomato": "plant",
-  "cookbook:tsp": "plant",
-  "cookbook:tuna": "meat",
-  "cookbook:turmeric": "plant",
-  "cookbook:vanilla": "plant",
-  "cookbook:vegetable oil": "plant",
-  "cookbook:vinegar": "plant",
-  "cookbook:walnut": "plant",
-  "cookbook:walnuts": "plant",
-  "cookbook:water": "plant",
-  "cookbook:white sugar": "plant",
-  "cookbook:yeast": "plant",
-  "cookbook:yogurt": "dairy",
-  "cookbook:zucchini": "plant",
-  "coriander": "plant",
-  "corn": "plant",
-  "cornmeal": "plant",
-  "cornstarch": "plant",
-  "couscous": "plant",
-  "crab": "meat",
-  "cracker": "plant",
-  "crayfish": "meat",
-  "cream": "dairy",
-  "crushed red pepper": "plant",
-  "cucumber": "plant",
-  "cumin": "plant",
-  "currant": "plant",
-  "custard": "egg",
-  "dl": "plant",
-  "egg": "egg",
-  "eggplant": "egg",
-  "eggs": "egg",
-  "endive": "plant",
-  "evaporated milk": "dairy",
-  "fennel": "plant",
-  "fig": "plant",
-  "fish": "meat",
-  "flour": "plant",
-  "g": "plant",
-  "game": "plant",
-  "garam masala": "plant",
-  "garlic": "plant",
-  "garlic powder": "plant",
-  "ghee": "dairy",
-  "ginger": "plant",
-  "green bean": "plant",
-  "green onion": "plant",
-  "green pepper": "plant",
-  "ground beef": "meat",
-  "haddock": "plant",
-  "ham": "meat",
-  "honey": "plant",
-  "https://en.wikibooks.org/wiki/Chicken Stock Chicken stock": "meat",
-  "https://en.wikibooks.org/wiki/Curry Powder Curry powder": "plant",
-  "https://en.wikibooks.org/wiki/Onion Onions": "plant",
-  "https://en.wikibooks.org/wiki/Rice Rice": "plant",
-  "https://en.wikibooks.org/wiki/Salt Salt": "plant",
-  "https://en.wikibooks.org/wiki/Thyme Thyme": "plant",
-  "https://en.wikibooks.org/wiki/Tomato Tomatoes": "plant",
-  "https://en.wikibooks.org/wiki/Vegetable Oil Vegetable oil": "plant",
-  "icing": "plant",
-  "icing sugar": "plant",
-  "image:Kasnocken ingredients.JPG": "plant",
-  "image:Main ingredients for  Szegedin Goulash.jpg": "plant",
-  "injera": "plant",
-  "jalapeno": "plant",
-  "jalape\u00f1o": "plant",
-  "jam": "plant",
-  "jelly": "plant",
-  "kefir": "dairy",
-  "kg": "plant",
-  "lamb": "meat",
-  "lard": "meat",
-  "lb": "plant",
-  "leek": "plant",
-  "lemon": "plant",
-  "lemon juice": "plant",
-  "lemon rind": "plant",
-  "lentil": "plant",
-  "lettuce": "plant",
-  "lime": "plant",
-  "limoncello": "plant",
-  "liver": "meat",
-  "lobster": "meat",
-  "mL": "plant",
-  "macaroni": "plant",
-  "maize": "plant",
-  "mango": "plant",
-  "margarine": "plant",
-  "marjoram": "plant",
-  "mayonnaise": "egg",
-  "meat": "meat",
-  "meringue": "egg",
-  "milk": "dairy",
-  "mint": "plant",
-  "mozzarella": "plant",
-  "mushroom": "plant",
-  "mussel": "meat",
-  "mustard": "plant",
-  "nut": "plant",
-  "nutmeg": "plant",
-  "oatmeal": "plant",
-  "oats": "plant",
-  "oil": "plant",
-  "okra": "plant",
-  "olive": "plant",
-  "olive Oil": "plant",
-  "olive oil": "plant",
-  "onion": "plant",
-  "onion powder": "plant",
-  "onions": "plant",
-  "orange": "plant",
-  "oregano": "plant",
-  "orzo": "plant",
-  "oyster": "meat",
-  "oz": "plant",
-  "paprika": "plant",
-  "parsley": "plant",
-  "pasta": "plant",
-  "pea": "plant",
-  "peach": "plant",
-  "peanut": "plant",
-  "peas": "plant",
-  "pepper": "plant",
-  "pepper#black pepper": "plant",
-  "peppercorn": "plant",
-  "pepperoni": "meat",
-  "pickle": "plant",
-  "pistachio": "plant",
-  "pork": "meat",
-  "potato": "plant",
-  "potatoes": "plant",
-  "powdered sugar": "plant",
-  "pumpkin": "plant",
-  "pur\u00e9e": "plant",
-  "rabbit": "plant",
-  "radish": "plant",
-  "raisin": "plant",
-  "red onion": "plant",
-  "red pepper flakes": "plant",
-  "rice": "plant",
-  "ricotta": "dairy",
-  "risotto": "plant",
-  "rolled oats": "plant",
-  "rosemary": "plant",
-  "rosewater": "plant",
-  "saffron": "plant",
-  "sage": "plant",
-  "salsa": "plant",
-  "salt": "plant",
-  "sauerkraut": "plant",
-  "sausage": "meat",
-  "savory": "plant",
-  "scallop": "meat",
-  "semolina": "plant",
-  "shallot": "plant",
-  "sherry": "plant",
-  "shortening": "plant",
-  "shrimp": "meat",
-  "sorrel": "plant",
-  "sour cream": "dairy",
-  "soy sauce": "plant",
-  "spinach": "plant",
-  "squash": "plant",
-  "steak": "plant",
-  "stock": "plant",
-  "strawberry": "plant",
-  "suet": "meat",
-  "sugar": "plant",
-  "sultana": "plant",
-  "taco": "plant",
-  "tbsp": "plant",
-  "tea": "plant",
-  "thyme": "plant",
-  "tilapia": "plant",
-  "tofu": "plant",
-  "tomato": "plant",
-  "tortilla": "plant",
-  "tsp": "plant",
-  "tumeric": "plant",
-  "tuna": "meat",
-  "turmeric": "plant",
-  "turnip": "plant",
-  "vanilla": "plant",
-  "vegetable oil": "plant",
-  "venison": "meat",
-  "vermouth": "plant",
-  "vinegar": "plant",
-  "w:Consomm\u00e9": "plant",
-  "w:Douglas fir": "plant",
-  "w:Extract": "plant",
-  "w:Fat content of milk": "dairy",
-  "w:Julienning": "plant",
-  "w:List of blue cheeses": "dairy",
-  "w:Marshmallow": "plant",
-  "w:Olive Oil": "plant",
-  "w:Ovaltine": "plant",
-  "w:Polenta": "plant",
-  "w:corn oil": "plant",
-  "w:en:Dubliner Cheese": "dairy",
-  "w:en:Potato starch": "plant",
-  "w:food coloring": "plant",
-  "w:ham hock": "meat",
-  "w:pig's trotter": "plant",
-  "w:sunflower": "plant",
-  "walnut": "plant",
-  "walnuts": "plant",
-  "water": "plant",
-  "wheat": "plant",
-  "wikipedia:Ounce#Definitions": "plant",
-  "wikipedia:Petitgrain": "plant",
-  "wikipedia:Sponge and dough": "plant",
-  "wikipedia:Straight dough": "plant",
-  "wikipedia:Swiss roll": "plant",
-  "wikipedia:baker percentage": "plant",
-  "wikipedia:bay leaf": "plant",
-  "wikipedia:beef stock": "meat",
-  "wikipedia:cheesecloth": "dairy",
-  "wikipedia:mushrooms": "plant",
-  "wikipedia:parsley": "plant",
-  "wikipedia:pur\u00e9e": "plant",
-  "wikipedia:red wine": "plant",
-  "wikipedia:thyme": "plant",
-  "wikipedia:tomato paste": "plant",
-  "wikt:can": "plant",
-  "wikt:chopped": "plant",
-  "wikt:clove": "plant",
-  "wikt:diced": "plant",
-  "wikt:drained": "plant",
-  "wikt:minced": "plant",
-  "wikt:thoroughly": "plant",
-  "wikt:to taste": "plant",
-  "wine": "plant",
-  "yeast": "plant",
-  "yeast extract": "plant",
-  "yoghurt": "dairy",
-  "yogurt": "dairy",
-  "zest": "plant",
-  "zucchini": "plant"
+  "Zhug": "plant",
+  "Zucchini": "plant"
  },
  "recipes": {
   "'Out of Salad Dressing' Salad Dressing": {
@@ -1827,10 +1411,10 @@
    "has_dairy": false
   },
   "Acid Drops": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Acorn Crusted Salmon": {
    "diet": "non-veg",
@@ -1895,7 +1479,7 @@
   "African Salad II": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Agbalumo Smoothie": {
@@ -1943,7 +1527,7 @@
   "Aj\u00ed de Gallina (Peruvian Chili Chicken)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Akabenz (Rwandan Fried Chicken)": {
@@ -1989,9 +1573,9 @@
    "has_dairy": true
   },
   "Albanian Mixed Vegetables": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Albanian Stewed Fig Pudding": {
@@ -2205,10 +1789,10 @@
    "has_dairy": true
   },
   "Ants on a Log": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Anzac Biscuits I": {
    "diet": "veg",
@@ -2229,9 +1813,9 @@
    "has_dairy": true
   },
   "Apple and Almond Cake": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Apple BBQ Sauce": {
@@ -2340,7 +1924,7 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Apple Tapioca": {
    "diet": "veg",
@@ -2553,9 +2137,9 @@
    "has_dairy": true
   },
   "Austrian Napkin Dumpling (Serviettenkn\u00f6del)": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Avocado Coconut Smoothie": {
@@ -2607,14 +2191,14 @@
    "has_dairy": false
   },
   "Baba Ganoush": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Babi Panggang Sauce": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -2685,15 +2269,15 @@
    "has_dairy": true
   },
   "Baingan Bartha (South Indian Eggplant with Chili) II": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Baingan Bartha (South Indian Eggplant with Coconut and Chili) I": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Baked Beans": {
@@ -2739,9 +2323,9 @@
    "has_dairy": true
   },
   "Baked Eggplant": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Baked Leeks": {
@@ -2757,9 +2341,9 @@
    "has_dairy": false
   },
   "Baked Oatmeal": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Baked Penne": {
@@ -2793,9 +2377,9 @@
    "has_dairy": true
   },
   "Baked Ziti": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Baking Powder Biscuits": {
@@ -2907,8 +2491,8 @@
    "has_dairy": true
   },
   "Banana Cream-Crunch Pie": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -2961,10 +2545,10 @@
    "has_dairy": true
   },
   "Banana Spirulina Pancakes": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Banana Split I": {
    "diet": "veg",
@@ -3225,14 +2809,14 @@
    "has_dairy": false
   },
   "Bean Balls": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
   "Bean Chili": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -3381,8 +2965,8 @@
    "has_dairy": false
   },
   "Beer Cheese Risotto": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -3489,15 +3073,15 @@
    "has_dairy": false
   },
   "Bint as-Sa\u1e25n (Yemenite Layered Pastry)": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Biryani": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Biscotti": {
@@ -3609,10 +3193,10 @@
    "has_dairy": false
   },
   "Blackberry Oat Bars (Gluten-Free)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Blackened Sirloin": {
    "diet": "non-veg",
@@ -3705,10 +3289,10 @@
    "has_dairy": false
   },
   "Bonga Fish Domoda (Gambian Fish in Peanut Sauce)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Booyah (Chicken Vegetable Stew)": {
    "diet": "non-veg",
@@ -3897,14 +3481,14 @@
    "has_dairy": true
   },
   "Broccoli Burgers": {
-   "diet": "vegan",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": false
   },
   "Broccoli Kugel": {
    "diet": "non-veg",
-   "has_meat": true,
+   "has_meat": false,
    "has_egg": true,
    "has_dairy": false
   },
@@ -3927,16 +3511,16 @@
    "has_dairy": true
   },
   "Brown Gravy": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
   "Brown Rice Breakfast Bowl": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Brown Rice Casserole": {
    "diet": "veg",
@@ -3978,7 +3562,7 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Browned Rice": {
    "diet": "vegan",
@@ -4143,10 +3727,10 @@
    "has_dairy": true
   },
   "Butternut Squash Soup": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Butterscotch Sauce": {
    "diet": "veg",
@@ -4155,8 +3739,8 @@
    "has_dairy": true
   },
   "Buttery Noodles with Cheese": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -4191,8 +3775,8 @@
    "has_dairy": true
   },
   "B\u00e9chamel Sauce (Beeton)": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -4203,9 +3787,9 @@
    "has_dairy": true
   },
   "B\u00eate Noire (Flourless Chocolate Cake)": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Cabbage Fufu": {
@@ -4239,9 +3823,9 @@
    "has_dairy": false
   },
   "Cachapa (Venezuelan Corn Pancakes)": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Cachupa (Cape Verdean Corn Stew)": {
@@ -4253,7 +3837,7 @@
   "Caesar Salad": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Caf\u00e9 au Lait": {
@@ -4341,8 +3925,8 @@
    "has_dairy": false
   },
   "Campfire S'mores": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -4407,14 +3991,14 @@
    "has_dairy": true
   },
   "Caponata (Sicilian Eggplant and Vegetables)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Cappelletti Pasta Soup (Cappelletti in Brodo)": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -4485,8 +4069,8 @@
    "has_dairy": false
   },
   "Carrot and Coriander Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -4601,7 +4185,7 @@
   "Century Egg with Ham and Ginger": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": false
   },
   "Chadian Gilled Fish": {
@@ -4911,8 +4495,8 @@
    "has_dairy": true
   },
   "Chestnut Puree": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -4943,7 +4527,7 @@
   "Chicken-fried Steak": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Chicken Alfredo": {
@@ -4973,7 +4557,7 @@
   "Chicken and Broccoli Casserole": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Chicken and Corn Empanadas": {
@@ -5244,7 +4828,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Chicken \u00e0 la King": {
    "diet": "non-veg",
@@ -5271,16 +4855,16 @@
    "has_dairy": false
   },
   "Chickpea Omelette": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Chickpea Stew": {
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Chikanda (Zambian Orchid Sausage)": {
    "diet": "vegan",
@@ -5301,8 +4885,8 @@
    "has_dairy": false
   },
   "Chili (Vegan)": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -5514,13 +5098,13 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Chocolate Cake with Coconut Topping (Vegan)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Chocolate Chip Balls": {
    "diet": "non-veg",
@@ -5571,9 +5155,9 @@
    "has_dairy": true
   },
   "Chocolate Chip Pancakes I": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Chocolate Chip Pancakes II": {
@@ -5583,15 +5167,15 @@
    "has_dairy": true
   },
   "Chocolate Chip Peanut Butter Toast": {
-   "diet": "veg",
-   "has_meat": false,
-   "has_egg": false,
-   "has_dairy": true
-  },
-  "Chocolate Chip Pumpkin Cookies": {
    "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
+   "has_dairy": false
+  },
+  "Chocolate Chip Pumpkin Cookies": {
+   "diet": "non-veg",
+   "has_meat": false,
+   "has_egg": true,
    "has_dairy": false
   },
   "Chocolate Chip Rolls": {
@@ -5607,9 +5191,9 @@
    "has_dairy": true
   },
   "Chocolate Crinkles": {
-   "diet": "vegan",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": false
   },
   "Chocolate Fudge": {
@@ -5661,9 +5245,9 @@
    "has_dairy": false
   },
   "Chocolate Noodles with Vanilla sauce": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Chocolate Orange Hot Cross Bun Trifle": {
@@ -5759,7 +5343,7 @@
   "Chorip\u00e1n (Argentine Chorizo Sandwich)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": false
   },
   "Choucroute (Sauerkraut with Meat and Potatoes)": {
@@ -6178,7 +5762,7 @@
   },
   "Consomm\u00e9": {
    "diet": "non-veg",
-   "has_meat": true,
+   "has_meat": false,
    "has_egg": true,
    "has_dairy": false
   },
@@ -6243,8 +5827,8 @@
    "has_dairy": false
   },
   "Corn Chowder I": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -6285,9 +5869,9 @@
    "has_dairy": true
   },
   "Corn Sticks": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Cornbread and Chicken Casserole": {
@@ -6297,15 +5881,15 @@
    "has_dairy": true
   },
   "Cornbread I": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Cornbread II": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Cornbread Stuffed Zucchini": {
@@ -6363,9 +5947,9 @@
    "has_dairy": true
   },
   "Cottage Cheese Pancakes": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Country Roast Chicken": {
@@ -6389,7 +5973,7 @@
   "Crab and Corn Salad": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": false
   },
   "Crab Dip": {
@@ -6461,12 +6045,12 @@
   "Cream of Duck and Mushroom Soup": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Cream of Mushroom Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -6501,8 +6085,8 @@
    "has_dairy": true
   },
   "Creamy Mushroom Pasta": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -6771,8 +6355,8 @@
    "has_dairy": false
   },
   "Curried Rice": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -6813,9 +6397,9 @@
    "has_dairy": true
   },
   "Custard Pie": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Cypriot Salad": {
@@ -6831,9 +6415,9 @@
    "has_dairy": false
   },
   "Dahi Baingana (Fried Eggplant in Yogurt)": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Daifuku (Sweet Filled Mochi)": {
@@ -6855,8 +6439,8 @@
    "has_dairy": false
   },
   "Dal Makhani (Black Gram with Cream)": {
-   "diet": "veg",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": true
   },
@@ -6975,10 +6559,10 @@
    "has_dairy": false
   },
   "Dek Ngoo (Pigeon Peas with Peanut Butter)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Deluxe Burgers": {
    "diet": "non-veg",
@@ -7066,9 +6650,9 @@
   },
   "Dog Biscuits": {
    "diet": "non-veg",
-   "has_meat": true,
+   "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Dokunu (Fermented Corn Dumplings)": {
    "diet": "vegan",
@@ -7086,7 +6670,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Doro Fitfit (Ethiopian Chicken Salad)": {
    "diet": "non-veg",
@@ -7260,7 +6844,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": false
+   "has_dairy": true
   },
   "Duxelles (Minced Mushrooms with Herbs)": {
    "diet": "veg",
@@ -7455,9 +7039,9 @@
    "has_dairy": false
   },
   "Egg Roast": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Egg Soda": {
@@ -7482,7 +7066,7 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Eggnog": {
    "diet": "non-veg",
@@ -7497,39 +7081,39 @@
    "has_dairy": true
   },
   "Eggplant and Chickpea Skillet": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Eggplant and Tahini (Moutabbal)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Eggplant Parmesan (Melanzane alla Parmigiana) I": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Eggplant Parmesan (Melanzane alla Parmigiana) II": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Eggplant Pasta": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Eggs Connaught": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Egyptian Cabbage Rolls (Mahshi Malfoof)": {
@@ -7575,8 +7159,8 @@
    "has_dairy": true
   },
   "Egyptian Okra": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -7601,7 +7185,7 @@
   "Egyptian Stuffed Eggplant (Mahshi Betinjan)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Egyptian Stuffed Grape Leaves (Warak Enab Mahshi)": {
@@ -7677,8 +7261,8 @@
    "has_dairy": false
   },
   "English Style Aged Cheese": {
-   "diet": "veg",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": true
   },
@@ -7697,7 +7281,7 @@
   "Entula (Ugandan Eggplant Stew)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Ertesuppe (Pea Soup)": {
@@ -7865,7 +7449,7 @@
   "Feij\u00e3o Tropeiro (Brazilian Beans and Sausage)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Fermented Soda": {
@@ -7911,8 +7495,8 @@
    "has_dairy": false
   },
   "Filipino-style Spaghetti": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -8055,9 +7639,9 @@
    "has_dairy": true
   },
   "Flourless Chocolate Cake": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Focaccia (Genovese)": {
@@ -8100,7 +7684,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Frapp\u00e9 Coffee": {
    "diet": "veg",
@@ -8109,8 +7693,8 @@
    "has_dairy": true
   },
   "Fred Steak Marinade": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -8154,7 +7738,7 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "French Omelette": {
    "diet": "non-veg",
@@ -8163,8 +7747,8 @@
    "has_dairy": true
   },
   "French Onion Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -8394,7 +7978,7 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Froga (Maltese Omelet)": {
    "diet": "non-veg",
@@ -8496,7 +8080,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Funje (Cassava Flour Pudding)": {
    "diet": "vegan",
@@ -8561,13 +8145,13 @@
   "Gambian Mbamba Soup": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Gambian Superkanja Soup": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Gambian Yassa Poulet": {
@@ -8577,8 +8161,8 @@
    "has_dairy": false
   },
   "Garbanzo Bean Stew": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -8754,7 +8338,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Ghavoot (Iranian Nut and Seed Powder)": {
    "diet": "vegan",
@@ -8817,10 +8401,10 @@
    "has_dairy": false
   },
   "Ginger Beer": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Ginger Biscuits": {
    "diet": "non-veg",
@@ -8851,12 +8435,6 @@
    "has_meat": false,
    "has_egg": false,
    "has_dairy": true
-  },
-  "Ginger Tea": {
-   "diet": "vegan",
-   "has_meat": false,
-   "has_egg": false,
-   "has_dairy": false
   },
   "Gingerbread": {
    "diet": "non-veg",
@@ -8889,8 +8467,8 @@
    "has_dairy": true
   },
   "Glace de Viande (Reduced Beef Sauce)": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -8913,8 +8491,8 @@
    "has_dairy": true
   },
   "Gluten Veggie Meat": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -9117,9 +8695,9 @@
    "has_dairy": false
   },
   "Grilled Aubergine": {
-   "diet": "non-veg",
-   "has_meat": true,
-   "has_egg": true,
+   "diet": "vegan",
+   "has_meat": false,
+   "has_egg": false,
    "has_dairy": false
   },
   "Grilled Bananas with Coffee Syrup": {
@@ -9153,9 +8731,9 @@
    "has_dairy": false
   },
   "Grilled Eggplant with Garlic Butter": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Grilled Filet Mignon": {
@@ -9365,7 +8943,7 @@
   "Gyuvetch (Bulgarian Casserole) I": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Habas con Jamon (Broad Beans with Ham)": {
@@ -9381,8 +8959,8 @@
    "has_dairy": false
   },
   "Habichuela con Dulce (Dominican Sweet Beans)": {
-   "diet": "veg",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": true
   },
@@ -9711,8 +9289,8 @@
    "has_dairy": true
   },
   "Hogao (Colombian Scallion Tomato Sauce)": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -10046,12 +9624,6 @@
    "has_egg": false,
    "has_dairy": true
   },
-  "Hot Cocoa": {
-   "diet": "vegan",
-   "has_meat": false,
-   "has_egg": false,
-   "has_dairy": false
-  },
   "Hot Fudge Sauce": {
    "diet": "veg",
    "has_meat": false,
@@ -10101,9 +9673,9 @@
    "has_dairy": true
   },
   "Huancayo Potatoes in Cream Sauce (Papas a la Huanca\u00edna)": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Huevos Rancheros": {
@@ -10173,8 +9745,8 @@
    "has_dairy": false
   },
   "Ibihaza (Rwandan Beans)": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -10245,10 +9817,10 @@
    "has_dairy": false
   },
   "Ifisashi n'Ubwoko (Rwandan Peanut Spinach Stew with Mushroom)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Ifumbe (Rwandan Cassava Fritters)": {
    "diet": "non-veg",
@@ -10287,10 +9859,10 @@
    "has_dairy": false
   },
   "Imitation Caramel Sauce (vegan)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Imitation Cheese (Vegan)": {
    "diet": "vegan",
@@ -10299,8 +9871,8 @@
    "has_dairy": false
   },
   "Indian Beans": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -10455,9 +10027,9 @@
    "has_dairy": false
   },
   "Isombe (Rwandan Cassava Leaves with Eggplant)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Isombe na Kariyo (Cassava Leaves with Pumpkin)": {
@@ -10605,9 +10177,9 @@
    "has_dairy": false
   },
   "Jahnun (Yemenite Layered Pastry)": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Jailhouse Chili": {
@@ -10695,8 +10267,8 @@
    "has_dairy": false
   },
   "Jamaican Rice and Peas": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -10754,12 +10326,6 @@
    "has_egg": false,
    "has_dairy": false
   },
-  "Jollof Rice": {
-   "diet": "non-veg",
-   "has_meat": true,
-   "has_egg": false,
-   "has_dairy": false
-  },
   "Julia Child's Boeuf Bourguignon": {
    "diet": "non-veg",
    "has_meat": true,
@@ -10767,9 +10333,9 @@
    "has_dairy": true
   },
   "Ka'ak (Savory Ring-Shaped Biscuit)": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Kabab Barg (Persian Grilled Meat)": {
@@ -10836,7 +10402,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Kanom Piak Poon (Thai Coconut and Pandan Pudding)": {
    "diet": "vegan",
@@ -10851,9 +10417,9 @@
    "has_dairy": false
   },
   "Kare-Kare (Oxtail and Vegetables in Peanut Sauce)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Kari Ayam (Indonesian Chicken Curry)": {
@@ -10899,21 +10465,21 @@
    "has_dairy": false
   },
   "Kawlata (Maltese Vegetable and Pork Soup)": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
   "Kedgeree (Rice and Smoked Fish)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Kedjenou Chicken (Chicken and Vegetable Stew)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Kek Batik (Malaysian Tiffin)": {
@@ -11058,7 +10624,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Kipspek (Bacon-wrapped Chicken)": {
    "diet": "non-veg",
@@ -11255,13 +10821,13 @@
   "Kwek-Kwek (Deep-Fried Quail Eggs)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Kyopulo (Eggplant with Peppers and Tomatoes)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Kyselo (Czech Sourdough Mushroom Soup)": {
@@ -11602,7 +11168,7 @@
   },
   "Lentil Rice Loaf": {
    "diet": "non-veg",
-   "has_meat": true,
+   "has_meat": false,
    "has_egg": true,
    "has_dairy": false
   },
@@ -11651,7 +11217,7 @@
   "Liberian Eggplant Stew": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Liberian Fried Fish": {
@@ -11687,7 +11253,7 @@
   "Liberian Palm Oil Stew": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Liberian Pepper Soup": {
@@ -11873,8 +11439,8 @@
   "Luwombo (Ugandan Steamed Meat and Vegetables)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
-   "has_dairy": true
+   "has_egg": false,
+   "has_dairy": false
   },
   "L\u00e1ngos (Hungarian Fried Flatbread)": {
    "diet": "non-veg",
@@ -11901,10 +11467,10 @@
    "has_dairy": true
   },
   "Macaroni and Cheese (Vegan)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Macaroni and Cheese I": {
    "diet": "veg",
@@ -11933,7 +11499,7 @@
   "Machacado con Huevo (Eggs with Shredded Beef)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Macho Nachos": {
@@ -11970,19 +11536,19 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Maff\u00e9 (West African Peanut Stew) II": {
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Maff\u00e9 (West African Peanut Stew) III": {
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Mafrum bil Lahm (Libyan Baked Meat and Potatoes)": {
    "diet": "non-veg",
@@ -11997,9 +11563,9 @@
    "has_dairy": true
   },
   "Maharashtrian Baingan Bartha (South Indian Eggplant with Chili)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Maharashtrian Deep Fried Chickpea Dough Curry Snacks (Pakoda)": {
@@ -12009,9 +11575,9 @@
    "has_dairy": false
   },
   "Mahshi (Egyptian Stuffed Vegetables)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Maitorieska (Finnish Barley Flatbread)": {
@@ -12069,8 +11635,8 @@
    "has_dairy": false
   },
   "Maltese Rabbit Stew (Stuffat tal-Fenek)": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -12564,7 +12130,7 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Meringues with Roasted Raspberries and Hazelnut Creme Anglaise": {
    "diet": "non-veg",
@@ -12663,9 +12229,9 @@
    "has_dairy": false
   },
   "Microwave 1-2-3 Cake": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Microwave Applesauce": {
@@ -12675,9 +12241,9 @@
    "has_dairy": false
   },
   "Microwave Chocolate Cake I": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Microwave Chocolate Cake II": {
@@ -12809,7 +12375,7 @@
   "Minestra": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Minestrone alla Capucina": {
@@ -12819,8 +12385,8 @@
    "has_dairy": true
   },
   "Minestrone alla Casalinga": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -12879,8 +12445,8 @@
    "has_dairy": false
   },
   "Mixed Pickled Vegetables (Acar Campur)": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -13119,10 +12685,10 @@
    "has_dairy": true
   },
   "Muboora (Zimbabwean Pumpkin Leaves Stew)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Muceere (Ugandan Pumpkin Stew)": {
    "diet": "vegan",
@@ -13179,8 +12745,8 @@
    "has_dairy": true
   },
   "Mushroom Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -13203,8 +12769,8 @@
    "has_dairy": false
   },
   "Muskrat Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -13332,7 +12898,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": true,
-   "has_dairy": false
+   "has_dairy": true
   },
   "Nesquik \u00e0 la Caf\u00e9": {
    "diet": "vegan",
@@ -13347,9 +12913,9 @@
    "has_dairy": true
   },
   "Never Fail Pie Crust": {
-   "diet": "vegan",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": false
   },
   "New England Clam Chowder": {
@@ -13504,14 +13070,14 @@
   },
   "Nigerian Egg Stew": {
    "diet": "non-veg",
-   "has_meat": true,
+   "has_meat": false,
    "has_egg": true,
    "has_dairy": false
   },
   "Nigerian Eggplant Fufu": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Nigerian Ewa Agoyin": {
@@ -13527,8 +13093,8 @@
    "has_dairy": true
   },
   "Nigerian Fried Noodles": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -13673,7 +13239,7 @@
   "Ni\u00e7oise Salad": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Nkhwani wa Ndiwo (Malawian Vegetable Fritters)": {
@@ -13702,13 +13268,13 @@
   },
   "No-Bake Chocolate Cake": {
    "diet": "non-veg",
-   "has_meat": true,
+   "has_meat": false,
    "has_egg": true,
    "has_dairy": false
   },
   "No-Bake Chocolate Chip Cookie Pie": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -13733,7 +13299,7 @@
   "Nonpareil Sauce (Hartshorne)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Noodles for Soup": {
@@ -13791,8 +13357,8 @@
    "has_dairy": true
   },
   "Nutty Buddy Chocolate Cookie Bars": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -13827,10 +13393,10 @@
    "has_dairy": true
   },
   "Oat Rice": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Oaties": {
    "diet": "veg",
@@ -13923,8 +13489,8 @@
    "has_dairy": false
   },
   "Okpa (Boiled Bambara Bean Pudding)": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -13989,8 +13555,8 @@
    "has_dairy": false
   },
   "Onion Dip": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -14151,10 +13717,10 @@
    "has_dairy": true
   },
   "Oven Pancakes (Vegan)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Oven Ribs": {
    "diet": "vegan",
@@ -14313,10 +13879,10 @@
    "has_dairy": true
   },
   "Pancakes (Vegan)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Pancakes with Honey": {
    "diet": "non-veg",
@@ -14466,7 +14032,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Pasta Soup for Kids": {
    "diet": "non-veg",
@@ -14583,10 +14149,10 @@
    "has_dairy": true
   },
   "Peanut Butter and Jelly Sandwich": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Peanut Butter Banana Oatmeal": {
    "diet": "veg",
@@ -14595,10 +14161,10 @@
    "has_dairy": true
   },
   "Peanut Butter Banana Smoothie": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Peanut Butter Cookies": {
    "diet": "non-veg",
@@ -14607,10 +14173,10 @@
    "has_dairy": true
   },
   "Peanut Butter Cookies (Egg-Free)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Peanut Butter Fudge": {
    "diet": "veg",
@@ -14649,16 +14215,16 @@
    "has_dairy": false
   },
   "Peanut Sauce (Saus Kacang)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Peanut Sauce (Vegan)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Pear-Cranberry Crisp": {
    "diet": "veg",
@@ -14667,10 +14233,10 @@
    "has_dairy": true
   },
   "Pear and Almond Smoothie (Vegan)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Pear Chutney": {
    "diet": "vegan",
@@ -14697,9 +14263,9 @@
    "has_dairy": true
   },
   "Pecan Blondies": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Pecan Spinach Pasta": {
@@ -14789,7 +14355,7 @@
   "Peruvian Molded Rice (Arroz Tapado)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Pesto I": {
@@ -14826,7 +14392,7 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": false
+   "has_dairy": true
   },
   "Piadina (Thin Italian Flatbread)": {
    "diet": "vegan",
@@ -14913,9 +14479,9 @@
    "has_dairy": false
   },
   "Pinakbet": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Pineapple Bread": {
@@ -15267,8 +14833,8 @@
    "has_dairy": false
   },
   "Potato and Cabbage Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -15285,8 +14851,8 @@
    "has_dairy": false
   },
   "Potato and Leek Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -15299,7 +14865,7 @@
   "Potato and Sausage Casserole (Papa Turmada)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Potato Balls": {
@@ -15311,7 +14877,7 @@
   "Potato Casserole (Rakott Krumpli)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Potato Castle": {
@@ -15383,7 +14949,7 @@
   "Potato Salad": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Potato Salad (Southern Ontario Style)": {
@@ -15405,8 +14971,8 @@
    "has_dairy": true
   },
   "Potato Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -15453,9 +15019,9 @@
    "has_dairy": false
   },
   "Potatoes with Green Sauce": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Pouch-Roasted Snapper": {
@@ -15495,9 +15061,9 @@
    "has_dairy": false
   },
   "Prepared White Mustard": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Preserved Lemon": {
@@ -15711,8 +15277,8 @@
    "has_dairy": true
   },
   "Queens Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -15777,8 +15343,8 @@
    "has_dairy": true
   },
   "Quick Risotto": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -15819,8 +15385,8 @@
    "has_dairy": false
   },
   "Rabbit with Abbey Beer (Konijn met Paterbier)": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -15879,8 +15445,8 @@
    "has_dairy": true
   },
   "Rajma (Sindhi Kidney Bean Curry)": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -15927,9 +15493,9 @@
    "has_dairy": true
   },
   "Ratatouille I": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Ratatouille II": {
@@ -15993,8 +15559,8 @@
    "has_dairy": true
   },
   "Red Lentil Soup": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -16077,8 +15643,8 @@
    "has_dairy": false
   },
   "Rice an' Peas": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -16167,9 +15733,9 @@
    "has_dairy": false
   },
   "Rice with Lemon Coconut and Eggplant (Vangibhat)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Rice with Milk (Arroz con Leche)": {
@@ -16221,8 +15787,8 @@
    "has_dairy": true
   },
   "Risotto ai Funghi": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -16371,8 +15937,8 @@
    "has_dairy": false
   },
   "Roasted Vegetable Pasta": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -16409,12 +15975,12 @@
   "Rolitos (Gibraltarian Beef Rolls)": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Roman Sauce I": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -16437,9 +16003,9 @@
    "has_dairy": false
   },
   "Romanian Roasted Eggplant Spread I": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Romanian Roasted Eggplant Spread II": {
@@ -16461,12 +16027,6 @@
    "has_dairy": false
   },
   "Rosehip Soup": {
-   "diet": "vegan",
-   "has_meat": false,
-   "has_egg": false,
-   "has_dairy": false
-  },
-  "Rosehip Tea": {
    "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
@@ -16554,7 +16114,7 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Roz bel Laban (Egyptian Rice Pudding)": {
    "diet": "veg",
@@ -16623,8 +16183,8 @@
    "has_dairy": true
   },
   "Saffron Rice and Beans": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -16635,9 +16195,9 @@
    "has_dairy": false
   },
   "Sai Bhaji (Sindhi Vegetable Curry)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Sailor's Sauce (Hartshorne)": {
@@ -16863,8 +16423,8 @@
    "has_dairy": false
   },
   "Sauce Mornay": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -16961,7 +16521,7 @@
   "Scalloped Oysters": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Scheiterhaufen (Austrian Bread Pudding)": {
@@ -17073,8 +16633,8 @@
    "has_dairy": false
   },
   "Seasoned Salt II": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -17133,8 +16693,8 @@
    "has_dairy": false
   },
   "Semolina Minestrone": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -17289,9 +16849,9 @@
    "has_dairy": true
   },
   "Shirred Egg": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Shitha": {
@@ -17369,7 +16929,7 @@
   "Silog": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Silvash Gombotz (Hungarian Plum Dumplings)": {
@@ -17415,8 +16975,8 @@
    "has_dairy": false
   },
   "Simple Chocolate Cheese Pie": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -17445,8 +17005,8 @@
    "has_dairy": true
   },
   "Simple Restaurant Miso Soup": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -17730,13 +17290,13 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Snickerdoodles II": {
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Snickerdoodles IV": {
    "diet": "non-veg",
@@ -17820,7 +17380,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": true,
-   "has_dairy": false
+   "has_dairy": true
   },
   "Soup du Pecheur (Fisherman Soup)": {
    "diet": "non-veg",
@@ -17943,9 +17503,9 @@
    "has_dairy": true
   },
   "Southwestern Scramble": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Soy-Lentil-Vegetable Stew": {
@@ -18219,9 +17779,9 @@
    "has_dairy": false
   },
   "Spicy Corn Bread": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Spicy Crab and Arugula Salad": {
@@ -18608,12 +18168,6 @@
    "has_egg": true,
    "has_dairy": true
   },
-  "Stracciatella II": {
-   "diet": "non-veg",
-   "has_meat": true,
-   "has_egg": true,
-   "has_dairy": false
-  },
   "Strawberry-Vanilla Lassi": {
    "diet": "veg",
    "has_meat": false,
@@ -18801,9 +18355,9 @@
    "has_dairy": true
   },
   "Sudanese Ful Medames": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Sugar Pie": {
@@ -18846,7 +18400,7 @@
    "diet": "non-veg",
    "has_meat": false,
    "has_egg": true,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Super Foamy Milkshake": {
    "diet": "veg",
@@ -19091,7 +18645,7 @@
   "Sydney Smith's Salad Dressing": {
    "diet": "non-veg",
    "has_meat": true,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Sylheti Beef Curry": {
@@ -19221,8 +18775,8 @@
    "has_dairy": true
   },
   "Tadka Dhal (Spiced Lentil Curry) I": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -19275,9 +18829,9 @@
    "has_dairy": true
   },
   "Tamate Ka Kut (Hyderabadi Tomato Curry)": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Tamil Spice Mix (Milagai Podi)": {
@@ -19410,7 +18964,7 @@
    "diet": "non-veg",
    "has_meat": true,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Tchari (Jollof Rice)": {
    "diet": "non-veg",
@@ -19539,8 +19093,8 @@
    "has_dairy": true
   },
   "Thai Green Curry Paste": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -19569,15 +19123,15 @@
    "has_dairy": false
   },
   "Thai Red Curry Paste": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
   "Thai Rice Balls in Coconut Milk (Bua Loi)": {
-   "diet": "vegan",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": false
   },
   "Thai Shrimp": {
@@ -19611,8 +19165,8 @@
    "has_dairy": false
   },
   "Three Bean Confetti Salad": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -19629,10 +19183,10 @@
    "has_dairy": true
   },
   "Three Sisters Stew": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Thumbprint Jam Cookies": {
    "diet": "non-veg",
@@ -19767,8 +19321,8 @@
    "has_dairy": false
   },
   "Tofu Tamale Pie": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "veg",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": true
   },
@@ -19875,9 +19429,9 @@
    "has_dairy": true
   },
   "Tortilla Canaria": {
-   "diet": "vegan",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": false
   },
   "Tortilla de Patatas": {
@@ -20103,10 +19657,10 @@
    "has_dairy": false
   },
   "Turkish Delight": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Turkish Dolma Pilav": {
    "diet": "veg",
@@ -20373,9 +19927,9 @@
    "has_dairy": false
   },
   "Vegetable Stuffed Mushrooms": {
-   "diet": "non-veg",
+   "diet": "veg",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": true
   },
   "Vegetarian Rassolnik": {
@@ -20673,9 +20227,9 @@
    "has_dairy": true
   },
   "Whole-Wheat Chocolate Cake with Nuts": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "Whole Wheat Bread": {
@@ -20685,10 +20239,10 @@
    "has_dairy": true
   },
   "Whole Wheat Bread (Vegan)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Whole Wheat Irish Soda Bread": {
    "diet": "veg",
@@ -20703,10 +20257,10 @@
    "has_dairy": true
   },
   "Whole Wheat Pancakes (Vegan)": {
-   "diet": "veg",
+   "diet": "vegan",
    "has_meat": false,
    "has_egg": false,
-   "has_dairy": true
+   "has_dairy": false
   },
   "Whole Wheat Waffles": {
    "diet": "non-veg",
@@ -20841,8 +20395,8 @@
    "has_dairy": true
   },
   "Yellow Curry Paste": {
-   "diet": "non-veg",
-   "has_meat": true,
+   "diet": "vegan",
+   "has_meat": false,
    "has_egg": false,
    "has_dairy": false
   },
@@ -20961,9 +20515,9 @@
    "has_dairy": true
   },
   "Zacusca (Romanian Vegetable Spread)": {
-   "diet": "non-veg",
+   "diet": "vegan",
    "has_meat": false,
-   "has_egg": true,
+   "has_egg": false,
    "has_dairy": false
   },
   "Zalabiyeh (Sweet Fritters) II": {
@@ -20973,8 +20527,8 @@
    "has_dairy": false
   },
   "Zambian Beans and Rice": {
-   "diet": "vegan",
-   "has_meat": false,
+   "diet": "non-veg",
+   "has_meat": true,
    "has_egg": false,
    "has_dairy": false
   },
@@ -21099,15 +20653,15 @@
    "has_dairy": true
   },
   "\u00c6bleskiver (Danish Spherical Pancakes)": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "\u00c7\u0131lb\u0131r (Turkish Eggs with Yogurt)": {
-   "diet": "veg",
+   "diet": "non-veg",
    "has_meat": false,
-   "has_egg": false,
+   "has_egg": true,
    "has_dairy": true
   },
   "\u015al\u0105sko Modro Kapusta (Red Cabbage with Onion and Bacon)": {

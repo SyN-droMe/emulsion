@@ -292,15 +292,30 @@ function setPantry(text) {
   /* A dish only counts if it uses at least one thing you actually typed. Without this,
    * anything built purely from assumed staples (simple syrup, boiled water) shows up as
    * "makeable" no matter what you own, which is noise dressed up as a result. */
-  const makeable = [], nearly = [];
+  const makeable = [], nearly = [], rest = [];
   for (let i = 0; i < state.n; i++) {
     if (!allowed(i) || state.matched[i] === 0) continue;
     if (state.missing[i] === 0) makeable.push(i);
     else if (state.missing[i] <= 2) nearly.push(i);
+    else rest.push(i);
   }
-  state.pantryHits = { makeable, nearly };
-  document.getElementById('pantryRead').textContent =
-    `${makeable.length} makeable now · ${nearly.length} within 2 ingredients`;
+  /* A single uncommon ingredient often has nothing within two, and showing
+   * "0 makeable now / 0 within 2" with an empty panel reads as broken rather than as
+   * an answer. Fall back to the nearest dishes that use it, sorted by shortfall. */
+  const fallback = (makeable.length || nearly.length)
+    ? [] : rest.sort((a, b) => state.missing[a] - state.missing[b]).slice(0, 10);
+  state.pantryHits = { makeable, nearly, fallback };
+
+  const read = document.getElementById('pantryRead');
+  if (makeable.length || nearly.length) {
+    read.textContent =
+      `${makeable.length} makeable now · ${nearly.length} within 2 ingredients`;
+  } else if (fallback.length) {
+    read.textContent =
+      `Nothing within 2. Closest ${fallback.length} dishes using what you have:`;
+  } else {
+    read.textContent = 'No dish uses any of those. Check the spelling?';
+  }
   renderPantryList();
 }
 
@@ -318,10 +333,11 @@ function renderPantryList() {
   box.innerHTML = '';
   if (!state.pantryHits) return;
 
-  const { makeable, nearly } = state.pantryHits;
+  const { makeable, nearly, fallback } = state.pantryHits;
   const rows = [
     ...makeable.slice(0, 12).map((i) => [i, 'now']),
     ...nearly.slice(0, 12).map((i) => [i, `-${state.missing[i]}`]),
+    ...(fallback || []).map((i) => [i, `-${state.missing[i]}`]),
   ];
   for (const [i, badge] of rows) {
     const row = document.createElement('div');

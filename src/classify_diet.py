@@ -26,6 +26,8 @@ import time
 from collections import Counter
 from pathlib import Path
 
+import re
+import unicodedata
 import requests
 
 API = "https://en.wikibooks.org/w/api.php"
@@ -75,6 +77,38 @@ NAME_DAIRY_WORDS = (
 )
 
 
+# Plant-derived things whose NAMES contain a dairy word. Substring matching read all
+# of these as dairy, which is the mirror image of the bug that read butter-containing
+# recipes as vegan: "Almond Milk", "Soy Milk", "Oat Milk", "Coconut Milk", "Peanut
+# Butter", "Cashew Butter" and "Cream of Tartar" are not animal products.
+PLANT_SOURCE = re.compile(
+    r"\b(?:almond|soy|soya|oat|rice|coconut|cashew|peanut|hemp|flax|sesame|hazelnut"
+    r"|macadamia|walnut|pistachio|pea|cocoa|shea|apple|tartar)\b"
+)
+DAIRY_HEAD = re.compile(r"\b(?:milk|butter|cream|yogurt|yoghurt|curd)s?\b")
+
+# Names where a meat or dairy word is embedded in an unrelated word. Verified by
+# classifying the full 1,758-entry ingredient vocabulary and reading every positive,
+# so this covers the corpus rather than guessing: "ham" inside Graham Cracker and
+# Champagne, "egg" inside Eggplant, "butter" inside Butternut Squash.
+NAME_OVERRIDES = {
+    "eggplant": "plant",
+    "eggplants": "plant",
+    "butternut squash": "plant",
+    "graham cracker": "plant",
+    "graham crackers": "plant",
+    "graham flour": "plant",
+    "champagne": "plant",
+    "champagne vinaigrette": "plant",
+    "champagne vinegar": "plant",
+    "cream of tartar": "plant",
+    # Bechamel is milk, butter and flour, so it is dairy. It was being read as meat
+    # because "ham" sits inside "Bechamel".
+    "bechamel sauce": "dairy",
+    "bechamel": "dairy",
+}
+
+
 def fetch_categories(titles: list[str]) -> dict[str, list[str]]:
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
@@ -116,10 +150,21 @@ def classify_ingredient(name: str, categories: list[str]) -> str:
         return "egg"
     if cats & DAIRY_CATEGORIES:
         return "dairy"
+    # Checked before the name heuristics, since the whole point is to beat them.
+    folded = unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
+    if folded in NAME_OVERRIDES:
+        return NAME_OVERRIDES[folded]
     if any(word in low for word in NAME_MEAT_WORDS):
         return "meat"
-    if low.startswith("egg") or low.endswith(" egg") or low.endswith(" eggs"):
+    # Word boundaries, not a prefix test: "eggplant" starts with "egg" and was being
+    # labelled an egg product, which made Romanian Roasted Eggplant Spread non-veg off
+    # an ingredient list of eggplant, oil, onion and salt.
+    if re.search(r"\begg(?:s|whites?|yolks?)?\b", low):
         return "egg"
+    # A plant-source qualifier beats the dairy word it qualifies, so "Coconut Milk" is
+    # plant while plain "Milk" stays dairy.
+    if PLANT_SOURCE.search(low) and DAIRY_HEAD.search(low):
+        return "plant"
     # Checked after meat so that e.g. "buttermilk fried chicken" stays non-veg.
     if any(word in low for word in NAME_DAIRY_WORDS):
         return "dairy"

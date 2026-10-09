@@ -12,13 +12,14 @@ Run: python tests/test_pipeline.py
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.classify_diet import classify_ingredient
-from src.parse import parse_recipe
+from src.parse import normalise_target, parse_recipe
 
 PASS, FAIL = "PASS", "FAIL"
 
@@ -117,6 +118,36 @@ def test_recipe_without_method_rejected() -> bool:
     return check("a page with no procedure is not a usable recipe", recipe is None)
 
 
+def test_link_prefix_variants_stripped() -> bool:
+    """411 distinct ingredient names carried a visible prefix across 278 recipes,
+    because only the exact-case "Cookbook:" was stripped. Those names then failed
+    every lowercase blocklist check, so units and techniques rode in with them."""
+    cases = {
+        "cookbook:butter": "Butter",          # lowercase prefix
+        "Cookbook : Bouillon Cube": "Bouillon Cube",   # spaced colon
+        "Coobook:Grating": "Grating",         # typo that exists in the corpus
+        "Cookbook:Paneer": "Paneer",
+        "Feta_Cheese": "Feta Cheese",
+    }
+    bad = [t for t, want in cases.items() if normalise_target(t) != want]
+    return check("every Cookbook: prefix variant is stripped", not bad, f"failed: {bad}")
+
+
+def test_non_ingredient_links_rejected() -> bool:
+    """Ingredient sections also link to categories, images, other wikis and section
+    anchors. Beef#Brisket through Beef#Sirloin looked like six separate ingredients."""
+    rejected = ["wikt:minced", "w:ham hock", "wikipedia:parsley", "Category:Recipes for cake",
+                "image:Kasnocken ingredients.JPG", "https://en.wikibooks.org/wiki/Rice Rice",
+                "Brewing/Ingredients"]
+    bad = [t for t in rejected if normalise_target(t) is not None]
+    folded = normalise_target("Beef#Brisket")
+    return check(
+        "cross-wiki, category, image and anchor links are not ingredients",
+        not bad and folded == "Beef",
+        f"accepted: {bad}, Beef#Brisket -> {folded}",
+    )
+
+
 # --- diet classification -------------------------------------------------------
 
 def test_obvious_animal_products() -> bool:
@@ -158,6 +189,84 @@ def test_bare_meat_caught() -> bool:
     return check(
         "the ingredient literally named 'Meat' is not a plant",
         classify_ingredient("Meat", ["ingredients"]) == "meat",
+    )
+
+
+def test_egg_word_boundary() -> bool:
+    """"Eggplant" starts with "egg", so a prefix test labelled it an egg product and
+    made Romanian Roasted Eggplant Spread non-veg off eggplant, oil, onion and salt."""
+    plant = [n for n in ("Eggplant", "Eggplants") if classify_ingredient(n, ["ingredients"]) != "plant"]
+    eggs = [n for n in ("Egg", "Eggs", "Egg White", "Egg Yolk")
+            if classify_ingredient(n, ["ingredients"]) != "egg"]
+    return check(
+        "eggplant is not an egg, but eggs still are",
+        not plant and not eggs,
+        f"misread as egg: {plant}, missed: {eggs}",
+    )
+
+
+def test_plant_milks_are_not_dairy() -> bool:
+    """The mirror of the vegan-dairy bug: substring matching on "milk" and "butter"
+    made Coconut Milk, Soy Milk and Peanut Butter animal products."""
+    cases = ["Coconut Milk", "Soy Milk", "Almond Milk", "Oat Milk", "Rice Milk",
+             "Peanut Butter", "Cashew Butter", "Almond Butter", "Cream of Tartar"]
+    bad = [n for n in cases if classify_ingredient(n, ["ingredients"]) != "plant"]
+    real = [n for n in ("Milk", "Butter", "Cream", "Buttermilk", "Ghee")
+            if classify_ingredient(n, ["ingredients"]) != "dairy"]
+    return check(
+        "plant milks and nut butters are not dairy, real dairy still is",
+        not bad and not real,
+        f"called dairy: {bad}, lost dairy: {real}",
+    )
+
+
+def test_embedded_words_not_animal() -> bool:
+    """"ham" inside Graham Cracker and Champagne, "butter" inside Butternut Squash."""
+    cases = ["Graham Cracker", "Champagne", "Butternut Squash"]
+    bad = [n for n in cases if classify_ingredient(n, ["ingredients"]) != "plant"]
+    meat = [n for n in ("Catfish", "Shellfish", "Crawfish", "Hamburger", "Meat")
+            if classify_ingredient(n, ["ingredients"]) != "meat"]
+    return check(
+        "animal words embedded in unrelated words do not trigger",
+        not bad and not meat,
+        f"false positives: {bad}, lost meat: {meat}",
+    )
+
+
+def test_no_ingredient_name_carries_a_prefix() -> bool:
+    """Guards the shipped artifact, not just the function."""
+    path = Path("docs/data/graph.json")
+    if not path.exists():
+        return check("no shipped ingredient name carries a link prefix", True, "(not built, skipped)")
+    graph = json.loads(path.read_text(encoding="utf-8"))
+    pattern = re.compile(r"cookbook|^(?:w|wikt|wikipedia|image|category)\s*:|#|^http|/", re.I)
+    bad = sorted({i for n in graph["nodes"] for i in n["ingredients"] if pattern.search(i)})
+    return check(
+        "no shipped ingredient name carries a link prefix or anchor",
+        not bad,
+        f"{len(bad)} offenders, e.g. {bad[:4]}",
+    )
+
+
+def test_no_nonveg_recipe_without_animal_ingredients() -> bool:
+    """The complaint that started this: a dish labelled non-veg whose ingredients are
+    eggplant, oil, onion and salt."""
+    recipes_path, diet_path = Path("data/recipes.json"), Path("data/diet.json")
+    if not (recipes_path.exists() and diet_path.exists()):
+        return check("every non-veg recipe has an animal ingredient", True, "(no data, skipped)")
+    recipes = json.loads(recipes_path.read_text(encoding="utf-8"))
+    diet = json.loads(diet_path.read_text(encoding="utf-8"))
+    classes = diet["ingredients"]
+    ghosts = [
+        r["title"]
+        for r in recipes
+        if diet["recipes"].get(r["title"], {}).get("diet") == "non-veg"
+        and not any(classes.get(i) in ("meat", "egg", "dairy") for i in r["ingredients"])
+    ]
+    return check(
+        "every non-veg recipe actually contains an animal ingredient",
+        not ghosts,
+        f"{len(ghosts)} ghosts, e.g. {ghosts[:3]}",
     )
 
 
@@ -206,10 +315,17 @@ if __name__ == "__main__":
         test_units_and_techniques_excluded,
         test_underscores_folded,
         test_recipe_without_method_rejected,
+        test_link_prefix_variants_stripped,
+        test_non_ingredient_links_rejected,
         test_obvious_animal_products,
         test_hidden_animal_products,
         test_generic_dairy_caught,
         test_bare_meat_caught,
+        test_egg_word_boundary,
+        test_plant_milks_are_not_dairy,
+        test_embedded_words_not_animal,
+        test_no_ingredient_name_carries_a_prefix,
+        test_no_nonveg_recipe_without_animal_ingredients,
         test_artifact_consistency,
         test_no_vegan_recipe_contains_dairy,
     ]

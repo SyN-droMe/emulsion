@@ -37,6 +37,48 @@ UNIT_PAGES = {
     "weights and measures", "metric", "us customary units",
 }
 
+# Equipment and recipe/technique pages that get linked inside ingredient lines. Like
+# PREP_PAGES these are not reachable from any Wikibooks category, so they have to be
+# named. "Separating Eggs" and "Basic Scrambled Eggs" are instructional pages, not
+# things you put in a bowl.
+NON_INGREDIENT_PAGES = {
+    "cheesecloth", "garlic press", "separating eggs", "basic scrambled eggs",
+    "hard boiled eggs", "hard cooked eggs", "soft boiled eggs", "fried eggs",
+    "basted egg", "beat", "crumble", "breading", "toast", "stock", "soup",
+    "herbs and spices", "sweeteners", "vegan cuisine", "cuisine of vietnam",
+}
+
+# Link targets come in more shapes than just [[Cookbook:Thing|label]]. Cross-wiki and
+# namespace links are not ingredients, and are dropped outright.
+CROSSWIKI = re.compile(r"^(?:w|wikt|wikipedia|wikispecies|commons|image|file|category|media|s|q)\s*:", re.I)
+# The prefix is written as Cookbook:, cookbook:, "Cookbook : " and even the typo
+# Coobook: in this corpus. Matching only the exact-case "Cookbook:" left 411 distinct
+# ingredient names carrying a visible prefix across 278 recipes, and because those
+# names then failed every lowercase blocklist check, units and techniques rode in with
+# them. It also split the vocabulary: "cookbook:butter" scored as unrelated to "Butter".
+COOKBOOK_PREFIX = re.compile(r"^coo?k?book\s*:\s*", re.I)
+
+
+def normalise_target(target: str) -> str | None:
+    """A wikilink target to a canonical ingredient page name, or None if it is not one."""
+    name = target.strip()
+    if not name or name.lower().startswith(("http://", "https://")):
+        return None
+    # [[Cookbook:Beef#Brisket]] points at the Beef page. Keeping the anchor made
+    # Beef#Brisket, Beef#Chuck, Beef#Loin and three more look like six ingredients.
+    name = name.split("#", 1)[0].strip()
+    if not name or CROSSWIKI.match(name):
+        return None
+    name = COOKBOOK_PREFIX.sub("", name).strip()
+    # Subpage paths are book structure, not ingredients (Brewing/Ingredients).
+    if not name or "/" in name:
+        return None
+    name = name.replace("_", " ").strip()
+    # MediaWiki page titles are case insensitive in the first character only, so
+    # "butter" and "Butter" are one page while "Olive oil" and "Olive Oil" are two.
+    return name[0].upper() + name[1:] if name else None
+
+
 # Section headings whose list items are ingredients.
 INGREDIENT_HEADINGS = {"ingredients", "ingredient", "for the sauce", "for the dough"}
 PROCEDURE_HEADINGS = {"procedure", "directions", "method", "preparation", "instructions"}
@@ -131,16 +173,17 @@ def parse_recipe(title: str, wikitext: str) -> dict | None:
             # format still links ingredients the same way, so harvest links from the
             # whole section and let the blocklist do the filtering.
             for target, _ in LINK.findall(body):
-                name = target.replace("Cookbook:", "").strip()
-                if not name or name.startswith(("File:", "Image:", "Category:")):
+                name = normalise_target(target)
+                if name is None:
                     continue
-                # MediaWiki treats "Feta_Cheese" and "Feta Cheese" as the same page,
-                # so underscore variants must be folded in or the vocabulary
-                # fragments into duplicate entities for one ingredient.
-                name = name.replace("_", " ").strip()
                 name = _aliases().get(name, name)  # canonicalise synonyms
                 low = name.lower()
-                if low in UNIT_PAGES or low in PREP_PAGES or low in _blocklist():
+                if (
+                    low in UNIT_PAGES
+                    or low in PREP_PAGES
+                    or low in NON_INGREDIENT_PAGES
+                    or low in _blocklist()
+                ):
                     continue
                 ingredients.append(name)
             for line in body.splitlines():

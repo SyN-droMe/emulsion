@@ -1,6 +1,6 @@
 # Emulsion
 
-An interactive map of 3,226 recipes where you can route between any two dishes, either
+An interactive map of 3,221 recipes where you can route between any two dishes, either
 by what they are **made of** or by how they are **made**.
 
 An emulsion is two things that do not naturally mix held together anyway, which is
@@ -76,11 +76,11 @@ the way the design predicts:
 
 | Slider | Path | Smoothness |
 |---|---|---|
-| ingredients | via Thai Stir-Fried Pumpkin, Filipino Spring Rolls, Albanian Meat with Walnuts, Holland Tea Cakes | 0.30 |
-| balanced | via Thai Shrimp, Shrimp Curry, Sindhi Chickpea Confection, Pralin, Marly Sponge | 0.26 |
-| technique | via Lo Mein, Tuna Casserole, Bulgarian Casserole, Bread Pudding, Very Simple Cookies | 0.11 |
+| ingredients | via West African Fried Rice, Thai Fried Rice, Thai Stir-Fried Pumpkin, Fried Tiger Lily Pastries, Passover Hazelnut Loaf Cake, Brown Butter Biscuits, Sachertorte | 0.38 |
+| balanced | via Nigerian Fried Noodles, Southwest Pasta, Pasta with Hot Dogs, Corny Souffle, 1-2-3-4 Cake, Chocolate Chip Balls | 0.34 |
+| technique | via Lo Mein, Tuna Casserole, Bulgarian Casserole II, Bread Pudding, Very Simple Cookies | 0.09 |
 
-The ingredient route bridges savoury to sweet through nuts. The technique route goes
+The ingredient route bridges savoury to sweet through rice, then nuts. The technique route goes
 through casseroles and baked dishes, connecting things that share a *method* and almost
 no ingredients. Smoothness measures ingredient continuity, so ingredient-weighted
 routing scoring highest on it is the expected result rather than a lucky one.
@@ -90,49 +90,58 @@ over 200 random recipe pairs:
 
 | Strategy | Reachable | Median steps | Smoothness | Worst gap |
 |---|---|---|---|---|
-| ingredients only | 96% | 7 | 0.327 | 0.178 |
-| 70/30 ingredients | 98% | 7 | 0.304 | 0.166 |
-| balanced | 100% | 7 | 0.285 | 0.145 |
-| 30/70 ingredients | 99% | 6 | 0.246 | 0.102 |
-| technique only | 100% | 7 | 0.167 | 0.036 |
+| ingredients only | 98% | 7 | 0.312 | 0.179 |
+| 70/30 ingredients | 98% | 6 | 0.302 | 0.176 |
+| balanced | 99% | 6 | 0.274 | 0.144 |
+| 30/70 ingredients | 100% | 7 | 0.240 | 0.102 |
+| technique only | 99% | 7 | 0.169 | 0.043 |
 
-Smoothness falls monotonically as the slider moves toward technique, so the single route
-above was not a fluke. "Worst gap" is the average of each route's single worst
-consecutive-step overlap, which is what actually makes a path feel jarring: one bad jump
-ruins a route even when its average looks fine. Technique-only routing sits at 0.036
-there, meaning nearly every technique route contains a step with essentially no
+Both smoothness and worst gap fall monotonically as the slider moves toward technique,
+so the single route above was not a fluke. "Worst gap" is the average of each route's
+single worst consecutive-step overlap, which is what actually makes a path feel jarring:
+one bad jump ruins a route even when its average looks fine. Technique-only routing sits
+at 0.043 there, meaning nearly every technique route contains a step with essentially no
 ingredient continuity at all.
 
-The thing I did not expect is the **reachability tradeoff**. Ingredient-only routing has
-the *worst* connectivity at 96%, while technique-only and balanced both reach 100%.
-Ingredient space fragments, because a recipe with an unusual ingredient set has no close
-neighbours and strands itself, whereas every dish shares cooking methods with something.
-So balanced is the best default on evidence rather than on taste, which is why the
-slider starts there.
+There is also a **reachability tradeoff**, though a smaller one than I first measured.
+Ingredient-only routing has the worst connectivity at 98% while the technique-weighted
+settings reach 99 to 100%. Ingredient space fragments, because a recipe with an unusual
+ingredient set has no close neighbours and strands itself, whereas every dish shares
+cooking methods with something. The effect is real but it is two pairs in two hundred,
+so I would not lean on it hard. Balanced starts the slider because it keeps most of the
+ingredient smoothness without the fragmentation, not because the gap is dramatic.
 
 **Position encodes real structure.** Comparing each dish's eight spatial neighbours
 against chance:
 
 | Label | Neighbours sharing it | Chance | Lift |
 |---|---|---|---|
-| cuisine | 23.9% | 4.5% | 5.3x |
-| course | 27.1% | 5.4% | 5.0x |
-| diet | 64.3% | 41.6% | 1.5x |
+| cuisine | 19.3% | 4.5% | 4.3x |
+| course | 27.2% | 5.4% | 5.0x |
+| diet | 64.5% | 40.9% | 1.6x |
 
 **Cuisines cluster in proportion to how distinctive their pantry is**, which I think is
-the most interesting thing to fall out of this. Ethiopian is the tightest cluster in the
-whole map at 69% (teff, berbere, injera: nothing else in the corpus uses them). Indian
-is at 51% off 116 recipes. But English recipes score **0%**, completely scattered,
-because puddings and pies and roasts are built from the same butter, flour, sugar and
-onion as everything else in a Western-leaning corpus. There is nothing in ingredient or
-technique space that marks a dish as English.
+the most interesting thing to fall out of this. Ethiopian is the tightest in the map at
+62%, off only 19 recipes, because teff, berbere and injera appear nowhere else in the
+corpus. Nigerian sits at 46% and Indian at 45% on much larger samples of 62 and 116.
+At the other end, American scores **5%** and Japanese 11%, completely scattered, because
+an American recipe here is built from the same butter, flour, sugar and onion as
+everything else in a Western-leaning corpus. There is nothing in ingredient or technique
+space that marks a dish as American.
 
 So when the map fails to cluster something, the failure is explainable, which I find
 more convincing than if everything had clustered neatly.
 
+One caveat on my own numbers: an earlier version of this README reported a 5.3x cuisine
+lift with English at 0%. Fixing the ingredient-parsing bugs listed under Data changed
+the vocabulary enough to move every figure in these tables, and English came up to 12%.
+The direction of each finding survived, the exact values did not, which is roughly what
+you would expect when a quarter of the vocabulary turns out to have been noise.
+
 ## Limitations
 
-I would rather state these than have someone find them.
+I would rather state these than have someone find them. Several of the ones below
+started as someone else finding them.
 
 * **Diet labels are derived, not given.** Wikibooks has no diet field, so I classify
   ingredients and infer from there. Wikibooks' own ingredient categories handle obvious
@@ -145,7 +154,7 @@ I would rather state these than have someone find them.
 * **"Veg" here means the Indian convention**: egg counts as non-veg, dairy does not.
   Western vegetarian usually includes egg, so `has_egg` and `has_dairy` are kept as
   separate fields in the data rather than baked into one opaque label.
-* **Cuisine coverage is partial.** 964 of 3,226 recipes have a cuisine label, because
+* **Cuisine coverage is partial.** 963 of 3,221 recipes have a cuisine label, because
   that comes from page categories and not every page is categorised. Unlabelled dishes
   show grey and are excluded when you filter by cuisine, so a cuisine filter is a filter
   on *labelled* dishes, not on the whole corpus. Chocolate Sandesh contains paneer and is
@@ -162,16 +171,21 @@ I would rather state these than have someone find them.
   coincident points apart just enough to hover them individually rather than merging
   them, since they really are separate recipes.
 * **Ingredients that appear only once are dropped** from the TF-IDF vocabulary
-  (`min_df=2`), taking it from 1,758 distinct ingredients down to 972. A single-use
+  (`min_df=2`), taking it from 1,342 distinct ingredients down to 851. A single-use
   ingredient can only create a cluster of one.
+* **Diet classification is name based where categories fail**, and names are a weaker
+  signal than I would like. I verified it by classifying the whole vocabulary and
+  reading every animal-product positive, which is tractable at 1,342 names and is how
+  the eggplant and plant-milk errors surfaced, but a new ingredient could still slip
+  through a gap I have not thought of.
 
 ## Data
 
 Recipes come from the [Wikibooks Cookbook](https://en.wikibooks.org/wiki/Cookbook:Recipes),
-3,226 usable recipes out of 3,796 pages, fetched through the MediaWiki API.
+3,221 usable recipes out of 3,796 pages, fetched through the MediaWiki API.
 
-Getting clean data took more work than the modelling did. Four things were silently
-wrong before I checked the output properly:
+Getting clean data took more work than the modelling did, and it is where every real
+bug in this project has been. Seven things were silently wrong:
 
 1. A bullet-list parser was dropping about a quarter of all recipes, because recipes
    like Afghan Bread and Afang Soup put their ingredients in a wikitable instead.
@@ -184,6 +198,24 @@ wrong before I checked the output properly:
 4. MediaWiki treats `Feta_Cheese` and `Feta Cheese` as the same page, but I was counting
    them as two ingredients, which fragmented the vocabulary and weakened every
    similarity score with no visible symptom.
+5. I stripped only the exact-case `Cookbook:` prefix, so 411 distinct ingredient names
+   kept a visible one across 278 recipes: `cookbook:butter`, `Cookbook : Bouillon Cube`,
+   even the typo `Coobook:Grating`. Worse than ugly, those names then failed every
+   lowercase blocklist check, so units and techniques rode straight in behind them, and
+   `cookbook:butter` scored as unrelated to `Butter`. Someone looking at a dish called
+   out `Cookbook:Bread crumbs` to me, which is how I found the other 410.
+6. Ingredient sections link to more than ingredients. Categories, images, Wiktionary
+   entries for words like "minced", and section anchors all arrived looking the same.
+   `Beef#Brisket` through `Beef#Sirloin` counted as six distinct ingredients instead of
+   one page. Folding anchors and dropping other namespaces took the vocabulary from
+   1,758 names to 1,342, which is a quarter of it that was never real.
+7. `Eggplant` was classified as an egg product, because the egg test was a prefix check
+   and "eggplant" starts with "egg". Romanian Roasted Eggplant Spread came out non-veg
+   off an ingredient list of eggplant, oil, onion and salt. The same substring sloppiness
+   ran the other way too: `Coconut Milk`, `Soy Milk` and `Peanut Butter` were all dairy,
+   `Graham Cracker` and `Champagne` were meat (both contain "ham"), and `Butternut
+   Squash` was dairy. Word boundaries plus a plant-source rule fixed the class of bug
+   rather than the instances.
 
 ## Licensing
 
