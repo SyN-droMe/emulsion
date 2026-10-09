@@ -331,20 +331,20 @@ function setPantry(text) {
    * answer than a 1-ingredient garnish you can also make. */
   makeable.sort((a, b) => total(b) - total(a));
   nearly.sort(byCoverage);
-  const fallback = (makeable.length || nearly.length)
-    ? [] : rest.sort(byCoverage).slice(0, 10);
+  rest.sort(byCoverage);
   state.coverage = coverage;
-  state.pantryHits = { makeable, nearly, fallback };
+  state.pantryHits = { makeable, nearly, rest };
 
+  const using = makeable.length + nearly.length + rest.length;
   const read = document.getElementById('pantryRead');
-  if (makeable.length || nearly.length) {
-    read.textContent =
-      `${makeable.length} makeable now · ${nearly.length} within 2 ingredients`;
-  } else if (fallback.length) {
-    read.textContent =
-      `Nothing within 2 ingredients. Best coverage of what you have:`;
-  } else {
+  if (!using) {
     read.textContent = 'No dish uses any of those. Check the spelling?';
+  } else {
+    /* "What can I cook" and "what uses this" are different questions, and one
+     * ingredient only ever answers the second. Both counts are shown so a single
+     * ingredient gives a real answer instead of two zeroes. */
+    read.textContent = `${using} dish${using > 1 ? 'es' : ''} use this · ` +
+      `${makeable.length} makeable now · ${nearly.length} within 2`;
   }
   renderPantryList();
 }
@@ -363,13 +363,14 @@ function renderPantryList() {
   box.innerHTML = '';
   if (!state.pantryHits) return;
 
-  const { makeable, nearly, fallback } = state.pantryHits;
+  const { makeable, nearly, rest } = state.pantryHits;
   const have = (i) => `${state.matched[i]} of ${state.matched[i] + state.missing[i]}`;
+  // Capped only to keep the DOM small; the list scrolls.
   const rows = [
-    ...makeable.slice(0, 12).map((i) => [i, 'all ' + (state.matched[i] + state.missing[i])]),
-    ...nearly.slice(0, 12).map((i) => [i, have(i)]),
-    ...(fallback || []).map((i) => [i, have(i)]),
-  ];
+    ...makeable.map((i) => [i, 'all ' + (state.matched[i] + state.missing[i])]),
+    ...nearly.map((i) => [i, have(i)]),
+    ...(rest || []).map((i) => [i, have(i)]),
+  ].slice(0, 80);
   for (const [i, badge] of rows) {
     const row = document.createElement('div');
     row.innerHTML = `<span>${state.nodes[i].title}</span>` +
@@ -433,7 +434,11 @@ function draw() {
       const uses = state.matched && state.matched[i] > 0;
       if (uses && short === 0) { fill = 'rgba(127,195,120,.95)'; radius = 3.4; }
       else if (uses && short <= 2) { fill = 'rgba(214,183,96,.72)'; radius = 2.6; }
-      else fill = 'rgba(120,114,104,.14)';
+      // Uses something you typed but needs more than two others. Dim, but findable:
+      // with one ingredient this is the only band that ever has members, and fading
+      // it out left the map looking empty.
+      else if (uses) { fill = 'rgba(150,160,190,.5)'; radius = 2.2; }
+      else fill = 'rgba(120,114,104,.12)';
     }
     else if (hue !== null) fill = `hsla(${hue},42%,62%,.82)`;
     else fill = 'rgba(148,141,128,.5)';
