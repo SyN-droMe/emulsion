@@ -8,6 +8,13 @@
   /* Behind text that sits over the map. Dots read straight through the title
      otherwise and the tagline becomes unreadable when you zoom in. */
   --bg-clear:rgba(15,19,23,0);
+  /* Surfaces that sit on top of the map. These were warm browns left over from the
+     previous palette, which read as a different theme next to the cool background. */
+  --panel:rgba(20,26,32,.92);
+  --field:#161c22;
+  --hover:#1d262e;
+  --field-on:#16262e;
+  --tip:rgba(13,17,21,.96);
   --serif:'Petrona', serif;
   --sans:'Inter', sans-serif;
   --mono:'JetBrains Mono', monospace;
@@ -41,7 +48,7 @@ a:hover{ color:var(--ink); }
 
 #panel{
   position:fixed; top:26px; right:26px; width:296px; z-index:10; pointer-events:auto;
-  background:rgba(18,16,14,.92); border:1px solid var(--line); border-radius:10px;
+  background:var(--panel); border:1px solid var(--line); border-radius:10px;
   padding:16px; backdrop-filter:blur(8px);
   max-height:calc(100vh - 52px); overflow-y:auto;
 }
@@ -54,7 +61,7 @@ a:hover{ color:var(--ink); }
 .mono{ font-family:var(--mono); font-size:11.5px; color:var(--dim); }
 
 input[type=text]{
-  width:100%; background:#1b1814; border:1px solid var(--line); border-radius:6px;
+  width:100%; background:var(--field); border:1px solid var(--line); border-radius:6px;
   padding:8px 10px; color:var(--ink); font-family:var(--sans); font-size:13px;
 }
 input[type=text]:focus{ outline:none; border-color:var(--accent); }
@@ -64,7 +71,7 @@ input[type=text]:focus{ outline:none; border-color:var(--accent); }
   display:flex; align-items:baseline; justify-content:space-between; gap:8px;
   padding:6px 8px; border-radius:5px; cursor:pointer; font-size:13px;
 }
-#results div:hover, #pantryList div:hover{ background:#221e19; color:var(--accent); }
+#results div:hover, #pantryList div:hover{ background:var(--hover); color:var(--accent); }
 #pantryList{ max-height:168px; }
 .badge{
   flex:none; font-family:var(--mono, ui-monospace, monospace); font-size:11px;
@@ -74,15 +81,15 @@ input[type=text]:focus{ outline:none; border-color:var(--accent); }
 
 .seg{ display:flex; gap:4px; margin-bottom:8px; }
 .seg button{
-  flex:1; background:#1b1814; border:1px solid var(--line); color:var(--dim);
+  flex:1; background:var(--field); border:1px solid var(--line); color:var(--dim);
   border-radius:5px; padding:5px 0; font-family:var(--sans); font-size:11.5px;
   cursor:pointer;
 }
 .seg button:hover{ color:var(--ink); }
-.seg button.on{ border-color:var(--accent); color:var(--accent); background:#241c16; }
+.seg button.on{ border-color:var(--accent); color:var(--accent); background:var(--field-on); }
 
 select{
-  width:100%; background:#1b1814; border:1px solid var(--line); border-radius:6px;
+  width:100%; background:var(--field); border:1px solid var(--line); border-radius:6px;
   padding:7px 9px; color:var(--ink); font-family:var(--sans); font-size:12.5px;
 }
 select:focus{ outline:none; border-color:var(--accent); }
@@ -110,7 +117,7 @@ input[type=range]{ width:100%; accent-color:var(--accent); }
 
 #tooltip{
   position:fixed; pointer-events:none; z-index:5; max-width:290px;
-  background:rgba(12,10,9,.96); border:1px solid var(--line); border-radius:8px;
+  background:var(--tip); border:1px solid var(--line); border-radius:8px;
   padding:10px 12px;
 }
 #tooltip .t{ font-family:var(--serif); font-size:16px; font-weight:600; }
@@ -147,6 +154,6 @@ a.ext{
   color:var(--dim); text-decoration:none; border-bottom:1px solid transparent;
 }
 a.ext:hover{ color:var(--accent); border-bottom-color:var(--accent); }
-#results div:hover a.ext, #pantryList div:hover a.ext{ color:var(--fg, #f2efe8); }
+#results div:hover a.ext, #pantryList div:hover a.ext{ color:var(--ink); }
 #results div:hover a.ext:hover, #pantryList div:hover a.ext:hover{ color:var(--accent); }
 #routeState a.ext{ font-size:11px; }
