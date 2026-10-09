@@ -134,7 +134,11 @@ def parse_recipe(title: str, wikitext: str) -> dict | None:
                 name = target.replace("Cookbook:", "").strip()
                 if not name or name.startswith(("File:", "Image:", "Category:")):
                     continue
-                name = _aliases().get(name, name)  # canonicalise synonyms first
+                # MediaWiki treats "Feta_Cheese" and "Feta Cheese" as the same page,
+                # so underscore variants must be folded in or the vocabulary
+                # fragments into duplicate entities for one ingredient.
+                name = name.replace("_", " ").strip()
+                name = _aliases().get(name, name)  # canonicalise synonyms
                 low = name.lower()
                 if low in UNIT_PAGES or low in PREP_PAGES or low in _blocklist():
                     continue

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emulsion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:wght@500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="map"></canvas>
+
+<header id="chrome">
+  <h1>Emulsion</h1>
+  <p class="tagline">3,226 recipes as a navigable map. Route between any two dishes by
+    what they're <em>made of</em> or by how they're <em>made</em>.</p>
+</header>
+
+<aside id="panel">
+  <div class="block">
+    <label class="lbl" for="search">Find a dish</label>
+    <input id="search" type="text" autocomplete="off" placeholder="pad thai, guacamole, ...">
+    <div id="results"></div>
+  </div>
+
+  <div class="block">
+    <label class="lbl">Filter</label>
+    <div id="diet" class="seg">
+      <button data-diet="all" class="on">all</button>
+      <button data-diet="veg">veg</button>
+      <button data-diet="vegan">vegan</button>
+      <button data-diet="non-veg">non-veg</button>
+    </div>
+    <select id="cuisine"><option value="all">every cuisine</option></select>
+    <div id="filterRead" class="mono"></div>
+  </div>
+
+  <div class="block">
+    <label class="lbl" for="alpha">Similarity</label>
+    <input id="alpha" type="range" min="0" max="100" value="50">
+    <div class="ends"><span>technique</span><span>ingredients</span></div>
+    <div id="alphaRead" class="mono">50% ingredients / 50% technique</div>
+  </div>
+
+  <div class="block">
+    <label class="lbl">Route</label>
+    <div id="routeState" class="hint">Click a dish on the map to set the start.</div>
+    <div id="routeList"></div>
+    <button id="clear" class="ghost" hidden>clear route</button>
+  </div>
+</aside>
+
+<div id="tooltip" hidden></div>
+
+<footer id="credit">
+  Recipes from <a href="https://en.wikibooks.org/wiki/Cookbook:Recipes" target="_blank">Wikibooks Cookbook</a>,
+  CC BY-SA 4.0 &middot; <span class="mono" id="stat"></span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

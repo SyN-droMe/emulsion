@@ -23,7 +23,7 @@ import numpy as np
 K_NEIGHBOURS = 12
 
 
-def load(path: Path = Path("web/data/graph.json")) -> dict:
+def load(path: Path = Path("docs/data/graph.json")) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
@@ -101,7 +101,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Route between two recipes")
     parser.add_argument("start")
     parser.add_argument("end")
-    parser.add_argument("--graph", type=Path, default=Path("web/data/graph.json"))
+    parser.add_argument("--graph", type=Path, default=Path("docs/data/graph.json"))
     args = parser.parse_args()
 
     graph = load(args.graph)

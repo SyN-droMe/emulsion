@@ -1219,7 +1219,7 @@
    "Bread",
    "Bread Crumbs",
    "Butter",
-   "Feta_Cheese",
+   "Feta Cheese",
    "Flour",
    "Meat",
    "Mint",
@@ -1363,7 +1363,7 @@
    "Feta Cheese",
    "Green Onion",
    "Oil and Fat",
-   "Olive_Oil",
+   "Olive Oil",
    "Phyllo Dough",
    "Salt",
    "Spinach",
@@ -5054,7 +5054,7 @@
  {
   "title": "Baba Ganoush",
   "ingredients": [
-   "Cayenne_pepper",
+   "Cayenne Pepper",
    "Clove",
    "Eggplant",
    "Garlic",
@@ -6759,8 +6759,8 @@
  {
   "title": "Banana Chocolate Chip Muffins",
   "ingredients": [
-   "Baking_Powder",
-   "Baking_Soda",
+   "Baking Powder",
+   "Baking Soda",
    "Banana",
    "Butter",
    "Buttermilk",
@@ -6768,7 +6768,7 @@
    "Egg",
    "Einkorn",
    "Flour",
-   "Olive_Oil",
+   "Olive Oil",
    "Salt",
    "Sugar",
    "Sugar#Highly refined (white)",
@@ -9438,13 +9438,12 @@
  {
   "title": "Beef Stew I",
   "ingredients": [
-   "Bay_Leaf",
+   "Bay Leaf",
    "Beef",
    "Broth and Stock",
    "Carrot",
    "Celery",
    "Flour",
-   "Fluid_Ounce",
    "Marjoram",
    "Oil and Fat",
    "Oregano",
@@ -13696,9 +13695,9 @@
  {
   "title": "Bubble Tea",
   "ingredients": [
-   "Granulated_Sugar",
    "Honey",
    "Milk",
+   "Sugar",
    "Tapioca Pearls",
    "Tea"
   ],
@@ -20570,11 +20569,11 @@
    "Carrot",
    "Celery",
    "Chicken",
-   "Green_Onion",
+   "Green Onion",
    "Hard Cooked Eggs",
-   "Lemon_Juice",
+   "Lemon",
    "Mayonnaise",
-   "Mushroom_Soup",
+   "Mushroom Soup",
    "Mustard",
    "Parsley",
    "Pepper",
@@ -21686,24 +21685,23 @@
  {
   "title": "Chili con Bambi",
   "ingredients": [
-   "Bay_Leaf",
+   "Bay Leaf",
    "Broth and Stock",
    "Carrot",
    "Cayenne Pepper",
    "Celery",
-   "Corn_Oil",
+   "Common Bean",
    "Cumin",
    "Dehydrated Broth",
    "Garlic",
    "Hard Cider",
-   "Kidney_Bean",
-   "Olive_Oil",
+   "Olive Oil",
    "Onion",
    "Oregano",
    "Paprika",
    "Salt",
-   "Sunflower_Oil",
-   "Tomato_Paste",
+   "Tomato Paste",
+   "Vegetable Oil",
    "Venison",
    "g"
   ],
@@ -23105,10 +23103,10 @@
  {
   "title": "Chocolate Chip Cookies I",
   "ingredients": [
-   "Baking_Soda",
-   "Brown_Sugar",
+   "Baking Soda",
+   "Brown Sugar",
    "Butter",
-   "Chocolate_chip",
+   "Chocolate",
    "Cinnamon",
    "Egg",
    "Flour",
@@ -23117,7 +23115,7 @@
    "Orange",
    "Salt",
    "Sugar",
-   "Vanilla_Extract",
+   "Vanilla",
    "Wheat Flour"
   ],
   "ingredient_lines": [
@@ -28349,7 +28347,7 @@
   "ingredients": [
    "Bread Crumbs",
    "Butter",
-   "B\u00e9chamel_Sauce_Louisiannaise",
+   "B\u00e9chamel Sauce (Louisiannaise)",
    "Crab",
    "Egg",
    "Green Onion",
@@ -28479,7 +28477,7 @@
    "Butter",
    "Chocolate",
    "Cranberry",
-   "Marshmallow_Creme",
+   "Marshmallow",
    "Sour Cream",
    "Sugar",
    "Vanilla",
@@ -29709,11 +29707,11 @@
   "title": "Crushed Tomato Sauce",
   "ingredients": [
    "Basil",
-   "Black_Pepper",
    "Garlic",
-   "Italian_Seasoning",
+   "Italian Seasoning",
    "Olive Oil",
    "Onion",
+   "Pepper",
    "Salt",
    "Shallot",
    "Tomato"
@@ -34926,12 +34924,12 @@
    "Basil",
    "Bell Pepper",
    "Chiles",
-   "Cuisine_of_Italy",
+   "Cuisine of Italy",
    "Eggplant",
    "Garlic",
    "Herbs and Spices",
    "Marjoram",
-   "Olive_Oil",
+   "Olive Oil",
    "Onion",
    "Oregano",
    "Parsley",
@@ -36823,7 +36821,7 @@
    "Chili Powder",
    "Falafel",
    "Gluten",
-   "Soy_sauce",
+   "Soy Sauce",
    "Vegetable Oil"
   ],
   "ingredient_lines": [
@@ -36884,8 +36882,8 @@
   "title": "Fancy Cr\u00eapes",
   "ingredients": [
    "Butter",
+   "Cream",
    "Egg",
-   "Heavy_Cream",
    "Milk",
    "Orange",
    "Salt",
@@ -38546,7 +38544,7 @@
    "Salt",
    "Wheat Flour",
    "cookbook:Yeast",
-   "wikipedia:Sponge_and_dough",
+   "wikipedia:Sponge and dough",
    "wikipedia:Straight dough",
    "wikipedia:baker percentage"
   ],
@@ -40500,7 +40498,7 @@
    "Cheddar Cheese",
    "Cheese",
    "Emmental Cheese",
-   "Hot_Dog",
+   "Hot Dog",
    "Mozzarella Cheese"
   ],
   "ingredient_lines": [
@@ -41763,7 +41761,7 @@
   "title": "Garlic Croutons I",
   "ingredients": [
    "Garlic",
-   "Olive_oil",
+   "Olive Oil",
    "Salt"
   ],
   "ingredient_lines": [
@@ -48138,7 +48136,7 @@
    "Pine needles",
    "Sugar",
    "Water",
-   "w:Douglas_fir"
+   "w:Douglas fir"
   ],
   "ingredient_lines": [
    "\u00bd cup (120 ml) edible pine needles (preferably Douglas fir)",
@@ -51373,7 +51371,7 @@
    "Margarine",
    "Sugar",
    "Vanilla",
-   "Vegan_cuisine#Milks (Nut, Grain and Legume Liquids)",
+   "Vegan cuisine#Milks (Nut, Grain and Legume Liquids)",
    "Water"
   ],
   "ingredient_lines": [
@@ -54153,7 +54151,7 @@
   "ingredients": [
    "Bacon",
    "Beef",
-   "Cheddar_Cheese",
+   "Cheddar Cheese",
    "Egg",
    "Hot Dog"
   ],
@@ -54210,14 +54208,14 @@
  {
   "title": "Jollof Rice",
   "ingredients": [
-   "https://en.wikibooks.org/wiki/Chicken_Stock Chicken stock",
-   "https://en.wikibooks.org/wiki/Curry_Powder Curry powder",
+   "https://en.wikibooks.org/wiki/Chicken Stock Chicken stock",
+   "https://en.wikibooks.org/wiki/Curry Powder Curry powder",
    "https://en.wikibooks.org/wiki/Onion Onions",
    "https://en.wikibooks.org/wiki/Rice Rice",
    "https://en.wikibooks.org/wiki/Salt Salt",
    "https://en.wikibooks.org/wiki/Thyme Thyme",
    "https://en.wikibooks.org/wiki/Tomato Tomatoes",
-   "https://en.wikibooks.org/wiki/Vegetable_Oil Vegetable oil"
+   "https://en.wikibooks.org/wiki/Vegetable Oil Vegetable oil"
   ],
   "ingredient_lines": [],
   "steps": [
@@ -55130,7 +55128,7 @@
    "Salt",
    "Water",
    "Wheat Flour",
-   "image:Kasnocken_ingredients.JPG"
+   "image:Kasnocken ingredients.JPG"
   ],
   "ingredient_lines": [
    "\u00bc L water",
@@ -64853,7 +64851,7 @@
   "title": "Meat and Rice-Stuffed Bell Peppers",
   "ingredients": [
    "Beef",
-   "Bell_Pepper",
+   "Bell Pepper",
    "Meat",
    "Pepper",
    "Pork",
@@ -67487,7 +67485,7 @@
    "Miso",
    "Mushroom",
    "Seaweed",
-   "Sesame_Oil",
+   "Sesame Oil",
    "Shrimp",
    "Tofu",
    "Water"
@@ -82778,7 +82776,7 @@
    "Potato",
    "Salt",
    "Savory",
-   "Soy_sauce",
+   "Soy Sauce",
    "Spelt",
    "Tomato",
    "onion"
@@ -84511,8 +84509,8 @@
  {
   "title": "Quiche Batter",
   "ingredients": [
+   "Cream",
    "Egg",
-   "Heavy_Cream",
    "Milk",
    "Nutmeg",
    "Pepper",
@@ -84544,7 +84542,7 @@
    "Comt\u00e9 Cheese",
    "Emmental Cheese",
    "Grater",
-   "Onion_Confit",
+   "Onion Confit",
    "Pepper",
    "Pork",
    "Quiche Batter",
@@ -87688,9 +87686,9 @@
    "Biltong",
    "Butternut Squash",
    "Cucumber",
-   "Feta_Cheese",
+   "Feta Cheese",
    "Mint",
-   "Olive_Oil",
+   "Olive Oil",
    "Parsley",
    "Pepper",
    "Rice",
@@ -90404,11 +90402,11 @@
   "title": "Salmorejo (Spanish Tomato Garlic Pur\u00e9e)",
   "ingredients": [
    "Garlic",
-   "Olive_Oil",
+   "Olive Oil",
    "Salt",
    "Tomato",
    "Vinegar",
-   "White_Bread",
+   "White Bread",
    "g",
    "mL"
   ],
@@ -91002,7 +91000,7 @@
   "title": "Sandwich Layer-Cake",
   "ingredients": [
    "Bread",
-   "Cottage_Cheese",
+   "Cottage Cheese",
    "Dill",
    "Egg",
    "Lemon",
@@ -91012,7 +91010,7 @@
    "Pepper",
    "Salt",
    "Shrimp",
-   "Sour_Cream"
+   "Sour Cream"
   ],
   "ingredient_lines": [
    "3\u20134 eggs",
@@ -92764,7 +92762,7 @@
    "Gluten",
    "Oregano",
    "Seitan",
-   "Soy_sauce",
+   "Soy Sauce",
    "Thyme",
    "Tofu",
    "Vegetable Oil"
@@ -92796,7 +92794,7 @@
    "Gluten",
    "Onion",
    "Seitan",
-   "Soy_sauce"
+   "Soy Sauce"
   ],
   "ingredient_lines": [
    "1\u00bc cup water",
@@ -98545,7 +98543,7 @@
   "title": "Spanish Potato Omelette",
   "ingredients": [
    "Egg",
-   "Olive_Oil",
+   "Olive Oil",
    "Onion",
    "Potato",
    "Salt"
@@ -104747,7 +104745,7 @@
    "Salt",
    "Shatkora",
    "Tomato",
-   "Vegetable_oil",
+   "Vegetable Oil",
    "Yogurt"
   ],
   "ingredient_lines": [
@@ -104966,7 +104964,7 @@
    "Sauerkraut",
    "Sour Cream",
    "Tomato Paste",
-   "image:Main_ingredients_for_ Szegedin_Goulash.jpg"
+   "image:Main ingredients for  Szegedin Goulash.jpg"
   ],
   "ingredient_lines": [
    "100 g lard",
@@ -105294,9 +105292,9 @@
   "title": "Taco Meat",
   "ingredients": [
    "Beef",
-   "Chili_powder",
+   "Chili Powder",
    "Cumin",
-   "Garlic_Powder",
+   "Garlic Powder",
    "Onion",
    "Onion Powder",
    "Oregano",
@@ -105369,7 +105367,7 @@
    "Corn",
    "Pulses",
    "Tomato",
-   "Tortilla_chips",
+   "Tortilla chips",
    "Turkey",
    "Water"
   ],
@@ -107921,7 +107919,7 @@
    "Corn",
    "Dehydrated Broth",
    "Flour",
-   "Green_beans",
+   "Green Bean",
    "Pepper",
    "Potato",
    "Salt",
@@ -109930,8 +109928,8 @@
    "Pea",
    "Rice",
    "Salt",
-   "Sunflower_Oil",
-   "Tomato"
+   "Tomato",
+   "Vegetable Oil"
   ],
   "ingredient_lines": [
    "425 ml basmati rice",
@@ -112716,24 +112714,23 @@
  {
   "title": "Venison Bolognese Sauce",
   "ingredients": [
-   "Bay_Leaf",
+   "Bay Leaf",
    "Broth and Stock",
    "Carrot",
-   "Corn_Oil",
    "Dehydrated Broth",
    "Garlic",
    "Grater",
    "Hard Cider",
-   "Herbes_de_Provence",
+   "Herbes de Provence",
    "Mushroom",
-   "Olive_Oil",
+   "Olive Oil",
    "Onion",
    "Parmesan Cheese",
-   "Pasta_of_Italy",
+   "Pasta",
    "Pepper",
    "Salt",
-   "Sunflower_Oil",
-   "Tomato_Paste",
+   "Tomato Paste",
+   "Vegetable Oil",
    "Wine",
    "g"
   ],

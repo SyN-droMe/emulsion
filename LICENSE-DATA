@@ -1,0 +1,42 @@
+RECIPE DATA LICENSE
+===================
+
+The recipe content in this repository is derived from the Wikibooks Cookbook
+(https://en.wikibooks.org/wiki/Cookbook:Recipes), which is licensed under
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+
+Full license text: https://creativecommons.org/licenses/by-sa/4.0/
+
+WHAT THIS COVERS
+----------------
+
+Everything derived from Wikibooks recipe pages, specifically:
+
+  docs/data/graph.json    recipe titles, ingredient lists, step counts,
+                          cuisine/course labels, and the embedding vectors
+                          computed from recipe text
+  data/recipes.json       parsed recipe records
+  data/labels.json        cuisine and course labels from page categories
+  data/diet.json          diet classification derived from ingredients
+
+These are adaptations of CC BY-SA content and are therefore also released
+under CC BY-SA 4.0.
+
+ATTRIBUTION
+-----------
+
+Recipe content from Wikibooks Cookbook contributors, used under CC BY-SA 4.0.
+Individual page histories (listing each contributor) are available at
+https://en.wikibooks.org/wiki/Cookbook:Recipes and on each recipe's page.
+
+No changes were made to the recipe text itself. The adaptations consist of
+parsing it into structured fields, normalising ingredient names against
+Wikibooks' own redirects, deriving cuisine/course/diet labels, and computing
+numerical embeddings from the text.
+
+IF YOU REUSE THIS DATA
+----------------------
+
+CC BY-SA requires that you credit Wikibooks Cookbook and release your
+derivative under the same license. The code is MIT (see LICENSE) and carries
+no such requirement, so the two can be reused on different terms.
