@@ -1,10 +1,14 @@
-/
+# The page and its code must never be served from cache without revalidating.
+# Versioned query strings were worse than useless here: a browser holding an old
+# index.html keeps requesting the old app.js?v=N URL, which it also has cached, so it
+# never sees a new build at all. Same URL every time plus no-cache fixes that.
+/*
   Cache-Control: no-cache
 /index.html
   Cache-Control: no-cache
-/*.js
+/app.js
   Cache-Control: no-cache
-/*.css
+/style.css
   Cache-Control: no-cache
 /data/*
   Cache-Control: public, max-age=3600
