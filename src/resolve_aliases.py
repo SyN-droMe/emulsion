@@ -79,13 +79,15 @@ def resolve(names: list[str]) -> tuple[dict[str, str], set[str]]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Resolve ingredient redirects")
-    parser.add_argument("--recipes", type=Path, default=Path("data/recipes.json"))
+    parser.add_argument("--vocab", type=Path, default=Path("data/vocab_raw.json"))
     parser.add_argument("--aliases-out", type=Path, default=Path("data/aliases.json"))
     parser.add_argument("--blocklist", type=Path, default=Path("data/blocklist.json"))
     args = parser.parse_args()
 
-    recipes = json.loads(args.recipes.read_text(encoding="utf-8"))
-    vocabulary = sorted({i for r in recipes for i in r["ingredients"]})
+    # Raw, pre-alias names from parse.py. Reading data/recipes.json here instead would
+    # feed this already-canonicalised names, so no redirect would be detected and the
+    # map it writes would be empty.
+    vocabulary = sorted(json.loads(args.vocab.read_text(encoding="utf-8")))
     print(f"resolving {len(vocabulary)} ingredient names")
 
     aliases, blocked = resolve(vocabulary)

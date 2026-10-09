@@ -1,6 +1,6 @@
 # Emulsion
 
-An interactive map of 3,221 recipes where you can route between any two dishes, either
+An interactive map of 3,222 recipes where you can route between any two dishes, either
 by what they are **made of** or by how they are **made**.
 
 An emulsion is two things that do not naturally mix held together anyway, which is
@@ -73,73 +73,75 @@ different corners of the projection.
 
 ## What I found
 
-**The slider does what it claims.** Routing Pad Thai to Chocolate Chip Cookies produces
-three different paths, and the ingredient-overlap smoothness of each path orders exactly
-the way the design predicts:
+**The slider does what it claims, but not from one example.** Routing Pad Thai to
+Chocolate Chip Cookies I at three slider positions:
 
 | Slider | Path | Smoothness |
 |---|---|---|
-| ingredients | via West African Fried Rice, Thai Fried Rice, Thai Stir-Fried Pumpkin, Fried Tiger Lily Pastries, Passover Hazelnut Loaf Cake, Brown Butter Biscuits, Sachertorte | 0.38 |
-| balanced | via Nigerian Fried Noodles, Southwest Pasta, Pasta with Hot Dogs, Corny Souffle, 1-2-3-4 Cake, Chocolate Chip Balls | 0.34 |
-| technique | via Lo Mein, Tuna Casserole, Bulgarian Casserole II, Bread Pudding, Very Simple Cookies | 0.09 |
+| ingredients | via Spicy Black Beans, Homemade Tempeh, Raspberry Vinegar, Chess Pie, Hilda Rolls, Custard Creams, Chocolate Chip Cookies II | 0.39 |
+| balanced | via Zambian Vegetable Stir-Fry, Carrots Kinpira Style, Carrot Cake Smoothie, Carrot Kugel, Egg White Carrot Brownies, Sachertorte, Chocolate Chip Cookies III | 0.40 |
+| technique | via Lo Mein, Tuna Casserole, Bulgarian Casserole II, Bread Pudding, Very Simple Cookies | 0.12 |
 
-The ingredient route bridges savoury to sweet through rice, then nuts. The technique route goes
-through casseroles and baked dishes, connecting things that share a *method* and almost
-no ingredients. Smoothness measures ingredient continuity, so ingredient-weighted
-routing scoring highest on it is the expected result rather than a lucky one.
+Technique routing separates clearly, going through casseroles and baked things that
+share a *method* and almost no ingredients. But ingredients and balanced come out level
+here, and balanced is a hundredth higher, which is the opposite of what the design
+predicts. That is the whole reason the next table exists: on one pair the difference
+between neighbouring slider positions is inside the noise.
 
 One route is an anecdote though, so `src/compare_spaces.py` runs the same comparison
 over 200 random recipe pairs:
 
 | Strategy | Reachable | Median steps | Smoothness | Worst gap |
 |---|---|---|---|---|
-| ingredients only | 98% | 7 | 0.312 | 0.179 |
-| 70/30 ingredients | 98% | 6 | 0.302 | 0.176 |
-| balanced | 99% | 6 | 0.274 | 0.144 |
-| 30/70 ingredients | 100% | 7 | 0.240 | 0.102 |
-| technique only | 99% | 7 | 0.169 | 0.043 |
+| ingredients only | 98% | 7 | 0.358 | 0.211 |
+| 70/30 ingredients | 98% | 6 | 0.351 | 0.210 |
+| balanced | 98% | 7 | 0.326 | 0.170 |
+| 30/70 ingredients | 98% | 7 | 0.284 | 0.127 |
+| technique only | 98% | 7 | 0.203 | 0.058 |
 
 Both smoothness and worst gap fall monotonically as the slider moves toward technique,
-so the single route above was not a fluke. "Worst gap" is the average of each route's
-single worst consecutive-step overlap, which is what actually makes a path feel jarring:
-one bad jump ruins a route even when its average looks fine. Technique-only routing sits
-at 0.043 there, meaning nearly every technique route contains a step with essentially no
-ingredient continuity at all.
+across 200 pairs, which is the actual evidence for the claim the single route above
+failed to show. "Worst gap" is the average of each route's single worst
+consecutive-step overlap, which is what makes a path feel jarring: one bad jump ruins a
+route even when its average looks fine. Technique-only sits at 0.058 there, meaning
+nearly every technique route contains a step with essentially no ingredient continuity.
 
-There is also a **reachability tradeoff**, though a smaller one than I first measured.
-Ingredient-only routing has the worst connectivity at 98% while the technique-weighted
-settings reach 99 to 100%. Ingredient space fragments, because a recipe with an unusual
-ingredient set has no close neighbours and strands itself, whereas every dish shares
-cooking methods with something. The effect is real but it is two pairs in two hundred,
-so I would not lean on it hard. Balanced starts the slider because it keeps most of the
-ingredient smoothness without the fragmentation, not because the gap is dramatic.
+**A finding I previously reported here has gone away.** I had a reachability tradeoff,
+ingredient-only routing connecting 96% of pairs against 100% for balanced, and I used it
+to argue the default slider position was evidence-based. After fixing the ingredient
+merging described under Data, reachability is 98% at every slider position and the
+effect is gone. It was an artifact of a fragmented vocabulary: unmerged synonyms left
+recipes with no close ingredient neighbours, so they stranded. With the synonyms merged
+they have neighbours, and nothing strands. So the slider still starts balanced, but that
+is now a design choice about showing structure from both spaces, not a result. I would
+rather say that than keep the tidier story.
 
 **Position encodes real structure.** Comparing each dish's eight spatial neighbours
 against chance:
 
 | Label | Neighbours sharing it | Chance | Lift |
 |---|---|---|---|
-| cuisine | 19.3% | 4.5% | 4.3x |
-| course | 27.2% | 5.4% | 5.0x |
-| diet | 64.5% | 40.9% | 1.6x |
+| cuisine | 19.0% | 4.5% | 4.2x |
+| course | 28.7% | 5.4% | 5.3x |
+| diet | 65.6% | 41.8% | 1.6x |
 
 **Cuisines cluster in proportion to how distinctive their pantry is**, which I think is
-the most interesting thing to fall out of this. Ethiopian is the tightest in the map at
-62%, off only 19 recipes, because teff, berbere and injera appear nowhere else in the
-corpus. Nigerian sits at 46% and Indian at 45% on much larger samples of 62 and 116.
-At the other end, American scores **5%** and Japanese 11%, completely scattered, because
-an American recipe here is built from the same butter, flour, sugar and onion as
-everything else in a Western-leaning corpus. There is nothing in ingredient or technique
-space that marks a dish as American.
+the most interesting thing to fall out of this. Indian is the tightest cluster of any
+decent size at 47% off 116 recipes, with Nigerian at 42% and Italian at 41%. Ethiopian
+hits 49% but off only 19 recipes, so I would not lean on it. At the other end American
+scores **3%** and English 11%, completely scattered, because a recipe filed under either
+is built from the same butter, flour, sugar and onion as everything else in a
+Western-leaning corpus. There is nothing in ingredient or technique space that marks a
+dish as American.
 
 So when the map fails to cluster something, the failure is explainable, which I find
 more convincing than if everything had clustered neatly.
 
-One caveat on my own numbers: an earlier version of this README reported a 5.3x cuisine
-lift with English at 0%. Fixing the ingredient-parsing bugs listed under Data changed
-the vocabulary enough to move every figure in these tables, and English came up to 12%.
-The direction of each finding survived, the exact values did not, which is roughly what
-you would expect when a quarter of the vocabulary turns out to have been noise.
+One caveat on my own numbers: earlier versions of this README reported a 5.3x cuisine
+lift, then 4.3x, with Ethiopian at 69% and English at 0%. Each ingredient-parsing fix
+under Data changed the vocabulary enough to move every figure in these tables. The
+direction of each finding survived and the exact values did not, which is what you would
+expect when a third of the vocabulary turns out to have been noise or duplication.
 
 ## Limitations
 
@@ -157,7 +159,7 @@ started as someone else finding them.
 * **"Veg" here means the Indian convention**: egg counts as non-veg, dairy does not.
   Western vegetarian usually includes egg, so `has_egg` and `has_dairy` are kept as
   separate fields in the data rather than baked into one opaque label.
-* **Cuisine coverage is partial.** 963 of 3,221 recipes have a cuisine label, because
+* **Cuisine coverage is partial.** 964 of 3,222 recipes have a cuisine label, because
   that comes from page categories and not every page is categorised. Unlabelled dishes
   show grey and are excluded when you filter by cuisine, so a cuisine filter is a filter
   on *labelled* dishes, not on the whole corpus. Chocolate Sandesh contains paneer and is
@@ -182,21 +184,21 @@ started as someone else finding them.
   coincident points apart just enough to hover them individually rather than merging
   them, since they really are separate recipes.
 * **Ingredients that appear only once are dropped** from the TF-IDF vocabulary
-  (`min_df=2`), taking it from 1,342 distinct ingredients down to 851. A single-use
+  (`min_df=2`), taking it from 1,052 distinct ingredients down to 646. A single-use
   ingredient can only create a cluster of one.
 * **Diet classification is name based where categories fail**, and names are a weaker
   signal than I would like. I verified it by classifying the whole vocabulary and
-  reading every animal-product positive, which is tractable at 1,342 names and is how
+  reading every animal-product positive, which is tractable at 1,052 names and is how
   the eggplant and plant-milk errors surfaced, but a new ingredient could still slip
   through a gap I have not thought of.
 
 ## Data
 
 Recipes come from the [Wikibooks Cookbook](https://en.wikibooks.org/wiki/Cookbook:Recipes),
-3,221 usable recipes out of 3,796 pages, fetched through the MediaWiki API.
+3,222 usable recipes out of 3,796 pages, fetched through the MediaWiki API.
 
 Getting clean data took more work than the modelling did, and it is where every real
-bug in this project has been. Seven things were silently wrong:
+bug in this project has been. Eight things were silently wrong:
 
 1. A bullet-list parser was dropping about a quarter of all recipes, because recipes
    like Afghan Bread and Afang Soup put their ingredients in a wikitable instead.
@@ -220,7 +222,16 @@ bug in this project has been. Seven things were silently wrong:
    `Beef#Brisket` through `Beef#Sirloin` counted as six distinct ingredients instead of
    one page. Folding anchors and dropping other namespaces took the vocabulary from
    1,758 names to 1,342, which is a quarter of it that was never real.
-7. `Eggplant` was classified as an egg product, because the egg test was a prefix check
+7. The alias rebuild ate itself. `resolve_aliases.py` took its vocabulary from
+   `recipes.json`, but `parse.py` has already applied the alias map by the time that
+   file is written, so the names it checked had their redirects resolved already,
+   nothing looked like a redirect, and it wrote a map with 5 entries instead of 388.
+   Running parse, then resolve, then parse again therefore discarded every synonym
+   merge: `Bell Pepper` came back as `Capsicum` and one dish listed both `Clarified
+   Butter` and `Ghee`, which is the same thing twice. Someone spotting that duplicate
+   is how I found it. `parse.py` now emits the raw pre-alias vocabulary and
+   `resolve_aliases.py` reads that, so the order you run them in no longer matters.
+8. `Eggplant` was classified as an egg product, because the egg test was a prefix check
    and "eggplant" starts with "egg". Romanian Roasted Eggplant Spread came out non-veg
    off an ingredient list of eggplant, oil, onion and salt. The same substring sloppiness
    ran the other way too: `Coconut Milk`, `Soy Milk` and `Peanut Butter` were all dairy,
@@ -278,6 +289,7 @@ src/classify_diet.py    ingredient classification and recipe diet labels
 src/embed.py            both embedding spaces, UMAP layout, point separation
 src/route.py            reference routing and the path smoothness metric
 src/compare_spaces.py   embedding strategy comparison over many random routes
+src/find_synonyms.py    looks for one food under two page names, for manual review
 tests/test_pipeline.py  regression tests, one per bug that actually happened
 docs/                   the site itself, served by GitHub Pages
 ```

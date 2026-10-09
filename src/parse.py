@@ -85,6 +85,14 @@ PROCEDURE_HEADINGS = {"procedure", "directions", "method", "preparation", "instr
 
 _ALIAS_CACHE: dict[str, str] | None = None
 
+# Every ingredient name as it appeared in the wikitext, BEFORE the alias map is applied.
+# resolve_aliases.py needs these: if it reads the already-canonicalised output instead,
+# the names it checks have had their redirects applied, nothing looks like a redirect
+# any more, and it writes an almost empty alias map. Running parse -> resolve -> parse
+# then silently discards every synonym merge, which is exactly how 373 of them were
+# lost in one rebuild and Bell Pepper came back as Capsicum.
+RAW_NAMES: set[str] = set()
+
 
 def _aliases(path: Path = Path("data/aliases.json")) -> dict[str, str]:
     """Synonym map from resolve_aliases.py, e.g. All-purpose flour -> Wheat Flour.
@@ -176,7 +184,15 @@ def parse_recipe(title: str, wikitext: str) -> dict | None:
                 name = normalise_target(target)
                 if name is None:
                     continue
-                name = _aliases().get(name, name)  # canonicalise synonyms
+                RAW_NAMES.add(name)   # pre-alias, for resolve_aliases.py
+                aliased = _aliases().get(name, name)  # canonicalise synonyms
+                # The alias map can reintroduce a target the normaliser just rejected:
+                # Cookbook:Crumble redirects to Category:Recipes for crumble, so the
+                # substitution hands back a category name. A page that redirects to a
+                # recipe category is a dish type, not an ingredient, so drop it.
+                name = normalise_target(aliased)
+                if name is None:
+                    continue
                 low = name.lower()
                 if (
                     low in UNIT_PAGES
@@ -236,6 +252,9 @@ def main() -> None:
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(recipes, indent=1), encoding="utf-8")
+    Path("data/vocab_raw.json").write_text(
+        json.dumps(sorted(RAW_NAMES), indent=1), encoding="utf-8"
+    )
 
     counts = Counter(i for r in recipes for i in r["ingredients"])
     with_cuisine = sum(1 for r in recipes if r["cuisine"])

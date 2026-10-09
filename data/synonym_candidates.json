@@ -1,0 +1,74 @@
+[
+ {
+  "keep": "Sugar",
+  "merge": "Dulce de Leche",
+  "keep_uses": 833,
+  "merge_uses": 1,
+  "cooccur": 1,
+  "claimed_by": "Dulce de Leche"
+ },
+ {
+  "keep": "Garlic",
+  "merge": "Ginger Garlic Paste",
+  "keep_uses": 695,
+  "merge_uses": 11,
+  "cooccur": 1,
+  "claimed_by": "Ginger Garlic Paste"
+ },
+ {
+  "keep": "Water",
+  "merge": "Simple Syrup",
+  "keep_uses": 391,
+  "merge_uses": 3,
+  "cooccur": 0,
+  "claimed_by": "Simple Syrup"
+ },
+ {
+  "keep": "Paprika",
+  "merge": "Suya Spice",
+  "keep_uses": 240,
+  "merge_uses": 1,
+  "cooccur": 0,
+  "claimed_by": "Suya Spice"
+ },
+ {
+  "keep": "Ginger",
+  "merge": "Suya Spice",
+  "keep_uses": 210,
+  "merge_uses": 1,
+  "cooccur": 1,
+  "claimed_by": "Suya Spice"
+ },
+ {
+  "keep": "Eggplant",
+  "merge": "Garden Egg",
+  "keep_uses": 41,
+  "merge_uses": 1,
+  "cooccur": 0,
+  "claimed_by": "Eggplant"
+ },
+ {
+  "keep": "Zucchini",
+  "merge": "Bitter Melon",
+  "keep_uses": 27,
+  "merge_uses": 3,
+  "cooccur": 0,
+  "claimed_by": "Bitter Melon"
+ },
+ {
+  "keep": "Onion Powder",
+  "merge": "Suya Spice",
+  "keep_uses": 21,
+  "merge_uses": 1,
+  "cooccur": 0,
+  "claimed_by": "Suya Spice"
+ },
+ {
+  "keep": "African Pear",
+  "merge": "Ube",
+  "keep_uses": 1,
+  "merge_uses": 1,
+  "cooccur": 0,
+  "claimed_by": "African Pear"
+ }
+]

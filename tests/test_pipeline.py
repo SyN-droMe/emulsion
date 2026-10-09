@@ -270,6 +270,44 @@ def test_no_nonveg_recipe_without_animal_ingredients() -> bool:
     )
 
 
+def test_alias_map_is_not_empty() -> bool:
+    """The rebuild trap: resolve_aliases.py once read the already-canonicalised
+    recipes.json, found nothing that still looked like a redirect, and wrote a 5-entry
+    alias map. The next parse then dropped all 388 synonym merges, and Bell Pepper came
+    back as Capsicum while one dish listed both Clarified Butter and Ghee."""
+    path = Path("data/aliases.json")
+    if not path.exists():
+        return check("alias map holds the synonym merges", True, "(no data, skipped)")
+    aliases = json.loads(path.read_text(encoding="utf-8"))
+    known = {"Ghee": "Clarified Butter", "Capsicum": "Bell Pepper", "Maize": "Corn"}
+    missing = [k for k, v in known.items() if aliases.get(k) != v]
+    return check(
+        "alias map holds the synonym merges",
+        len(aliases) > 200 and not missing,
+        f"{len(aliases)} entries, missing: {missing}",
+    )
+
+
+def test_no_recipe_lists_one_food_twice() -> bool:
+    """A recipe should not contain two names for the same ingredient."""
+    path = Path("data/recipes.json")
+    if not path.exists():
+        return check("no recipe lists one food under two names", True, "(no data, skipped)")
+    recipes = json.loads(path.read_text(encoding="utf-8"))
+    same = [("Clarified Butter", "Ghee"), ("Bell Pepper", "Capsicum"), ("Corn", "Maize"),
+            ("Chili Powder", "Chilli Powder"), ("Green Onion", "Scallion")]
+    offenders = [
+        (r["title"], a, b)
+        for r in recipes for a, b in same
+        if a in r["ingredients"] and b in r["ingredients"]
+    ]
+    return check(
+        "no recipe lists one food under two names",
+        not offenders,
+        f"{len(offenders)} offenders, e.g. {offenders[:2]}",
+    )
+
+
 # --- shipped artifact ----------------------------------------------------------
 
 def test_artifact_consistency() -> bool:
@@ -326,6 +364,8 @@ if __name__ == "__main__":
         test_embedded_words_not_animal,
         test_no_ingredient_name_carries_a_prefix,
         test_no_nonveg_recipe_without_animal_ingredients,
+        test_alias_map_is_not_empty,
+        test_no_recipe_lists_one_food_twice,
         test_artifact_consistency,
         test_no_vegan_recipe_contains_dairy,
     ]
