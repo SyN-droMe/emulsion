@@ -31,6 +31,12 @@ const state = {
 };
 
 const canvas = document.getElementById('map');
+// Palette lives in style.css; the canvas reads it rather than repeating hex codes.
+let ACCENT = '#5bb8d4';
+try {
+  ACCENT = getComputedStyle(document.documentElement)
+    .getPropertyValue('--accent').trim() || ACCENT;
+} catch { /* no computed styles available; the literal above is the same value */ }
 const ctx = canvas.getContext('2d');
 const tooltip = document.getElementById('tooltip');
 
@@ -52,8 +58,9 @@ async function load() {
   state.ing = flatten(g.ingredient_vecs);
   state.tec = flatten(g.technique_vecs);
 
-  document.getElementById('stat').textContent =
-    `${state.n} dishes · ${g.meta.dims}d × 2 spaces · ${g.nodes.filter(n=>n.cuisine).length} cuisine-labelled · all client-side`;
+  /* The headline count comes from the data, not the markup. It was hardcoded as 3,226
+   * and drifted to a different number from the footer as the parser improved. */
+  document.getElementById('count').textContent = state.n.toLocaleString();
 
   const counts = {};
   for (const node of state.nodes) if (node.cuisine) counts[node.cuisine] = (counts[node.cuisine] || 0) + 1;
@@ -406,7 +413,7 @@ function draw() {
   }
 
   if (state.path.length > 1) {
-    ctx.strokeStyle = '#e2733a';
+    ctx.strokeStyle = ACCENT;
     ctx.lineWidth = 2 * dpr;
     ctx.beginPath();
     state.path.forEach((idx, step) => {
@@ -427,7 +434,7 @@ function draw() {
     // two colour scales at once is unreadable.
     let radius = special ? 4.6 : ok ? 2.1 : 1.1;
     let fill;
-    if (special) fill = '#e2733a';
+    if (special) fill = ACCENT;
     else if (!ok) fill = 'rgba(120,114,104,.16)';
     else if (state.missing) {
       const short = state.missing[i];
@@ -437,7 +444,7 @@ function draw() {
       // Uses something you typed but needs more than two others. Dim, but findable:
       // with one ingredient this is the only band that ever has members, and fading
       // it out left the map looking empty.
-      else if (uses) { fill = 'rgba(150,160,190,.5)'; radius = 2.2; }
+      else if (uses) { fill = 'rgba(170,150,215,.52)'; radius = 2.2; }
       else fill = 'rgba(120,114,104,.12)';
     }
     else if (hue !== null) fill = `hsla(${hue},42%,62%,.82)`;
