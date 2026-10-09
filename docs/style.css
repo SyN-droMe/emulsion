@@ -120,3 +120,13 @@ input[type=range]{ width:100%; accent-color:var(--accent); }
   #panel{ position:fixed; top:auto; bottom:14px; left:14px; right:14px; width:auto; max-height:44vh; }
   #credit{ display:none; }
 }
+
+/* Pantry colour coding: green for what you have, red for what you are missing.
+ * Only rendered when a pantry is set, so the tooltip stays plain otherwise. */
+#tooltip .i .have{ color:#7fc378; }
+#tooltip .i .need{ color:#d6705f; }
+#tooltip .src{
+  margin-top:6px; font-family:var(--mono); font-size:10px; color:var(--dim);
+}
+a.dish{ color:inherit; text-decoration:none; border-bottom:1px dotted var(--dim); }
+a.dish:hover{ color:var(--accent); border-bottom-color:var(--accent); }

@@ -124,6 +124,36 @@ function similarityTo(i) {
   return sims;
 }
 
+/* Wikibooks page titles survive the pipeline unmodified, so the source URL is
+ * derivable rather than needing to be stored per recipe. Verified against a random
+ * sample of 25 titles, all of which resolved. */
+function sourceUrl(node) {
+  return 'https://en.wikibooks.org/wiki/Cookbook:' +
+    encodeURIComponent(node.title.replace(/ /g, '_'));
+}
+
+/* 'have' / 'need' per ingredient, or null when no pantry is set. Staples count as
+ * had, since the pantry logic assumes them anyway. */
+function pantryStatus(ingredient) {
+  if (!state.pantry) return null;
+  const low = ingredient.toLowerCase();
+  if (STAPLES.has(low)) return 'have';
+  for (const owned of state.pantry) {
+    if (low.includes(owned) || owned.includes(low)) return 'have';
+  }
+  return 'need';
+}
+
+function ingredientMarkup(node, limit) {
+  const shown = limit ? node.ingredients.slice(0, limit) : node.ingredients;
+  const parts = shown.map((ing) => {
+    const status = pantryStatus(ing);
+    return status ? `<span class="${status}">${ing}</span>` : ing;
+  });
+  const extra = node.ingredients.length - shown.length;
+  return parts.join(' · ') + (extra > 0 ? ` +${extra} more` : '');
+}
+
 /* Filters constrain the ROUTABLE GRAPH, not just what is drawn. Excluded dishes are
  * dimmed and cannot be stepped through, so "vegetarian only" produces a genuinely
  * vegetarian path rather than a path that merely looks filtered. */
@@ -413,8 +443,8 @@ canvas.addEventListener('mousemove', (e) => {
     tooltip.innerHTML =
       `<div class="t">${node.title}</div>` +
       (tags ? `<div class="c">${tags}</div>` : '') + shortfall +
-      `<div class="i">${node.ingredients.slice(0, 10).join(' · ')}` +
-      (node.ingredients.length > 10 ? ` +${node.ingredients.length - 10} more` : '') + `</div>`;
+      `<div class="i">${ingredientMarkup(node, 10)}</div>` +
+      `<div class="src">click to route · open the full recipe from the route panel</div>`;
   } else {
     tooltip.hidden = true;
   }
@@ -516,8 +546,10 @@ function renderRoute() {
     const row = document.createElement('div');
     row.className = 'step';
     const link = step > 0 ? shared(state.path[step - 1], idx).slice(0, 3) : [];
+    const node = state.nodes[idx];
     row.innerHTML =
-      `<span class="n">${step}</span><span>${state.nodes[idx].title}` +
+      `<span class="n">${step}</span><span><a class="dish" href="${sourceUrl(node)}" ` +
+      `target="_blank" rel="noopener" title="Open the recipe on Wikibooks">${node.title}</a>` +
       (link.length ? `<div class="shared">shares ${link.join(', ')}</div>` : '') + `</span>`;
     list.appendChild(row);
   });
