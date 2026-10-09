@@ -299,11 +299,25 @@ function setPantry(text) {
     else if (state.missing[i] <= 2) nearly.push(i);
     else rest.push(i);
   }
-  /* A single uncommon ingredient often has nothing within two, and showing
-   * "0 makeable now / 0 within 2" with an empty panel reads as broken rather than as
-   * an answer. Fall back to the nearest dishes that use it, sorted by shortfall. */
+  /* Ranking by coverage, not by absolute shortfall. "Missing 2" means something very
+   * different for a 3-ingredient dish than for a 20-ingredient one, and the absolute
+   * band has a hard ceiling: a pantry of P items can only ever reach dishes with P+2
+   * ingredients or fewer, which puts 80% of the map out of range for a one-item
+   * pantry no matter what that item is. That is why typing "paneer" alone reported
+   * nothing: the smallest paneer dish has 4 ingredients, so its best possible
+   * shortfall is 3, permanently past the cutoff. */
+  const total = (i) => state.matched[i] + state.missing[i];
+  const coverage = (i) => state.matched[i] / total(i);
+  const byCoverage = (a, b) => coverage(b) - coverage(a);
+  /* Everything makeable has coverage 1, so ranking those by coverage does nothing and
+   * leaves them in index order, which offered "Garlic Salt" at the top of 13 dishes.
+   * Substantial dishes first instead: a 9-ingredient curry you can make is a better
+   * answer than a 1-ingredient garnish you can also make. */
+  makeable.sort((a, b) => total(b) - total(a));
+  nearly.sort(byCoverage);
   const fallback = (makeable.length || nearly.length)
-    ? [] : rest.sort((a, b) => state.missing[a] - state.missing[b]).slice(0, 10);
+    ? [] : rest.sort(byCoverage).slice(0, 10);
+  state.coverage = coverage;
   state.pantryHits = { makeable, nearly, fallback };
 
   const read = document.getElementById('pantryRead');
@@ -312,7 +326,7 @@ function setPantry(text) {
       `${makeable.length} makeable now · ${nearly.length} within 2 ingredients`;
   } else if (fallback.length) {
     read.textContent =
-      `Nothing within 2. Closest ${fallback.length} dishes using what you have:`;
+      `Nothing within 2 ingredients. Best coverage of what you have:`;
   } else {
     read.textContent = 'No dish uses any of those. Check the spelling?';
   }
@@ -334,10 +348,11 @@ function renderPantryList() {
   if (!state.pantryHits) return;
 
   const { makeable, nearly, fallback } = state.pantryHits;
+  const have = (i) => `${state.matched[i]} of ${state.matched[i] + state.missing[i]}`;
   const rows = [
-    ...makeable.slice(0, 12).map((i) => [i, 'now']),
-    ...nearly.slice(0, 12).map((i) => [i, `-${state.missing[i]}`]),
-    ...(fallback || []).map((i) => [i, `-${state.missing[i]}`]),
+    ...makeable.slice(0, 12).map((i) => [i, 'all ' + (state.matched[i] + state.missing[i])]),
+    ...nearly.slice(0, 12).map((i) => [i, have(i)]),
+    ...(fallback || []).map((i) => [i, have(i)]),
   ];
   for (const [i, badge] of rows) {
     const row = document.createElement('div');

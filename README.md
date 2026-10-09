@@ -162,6 +162,14 @@ started as someone else finding them.
 * **Pantry matching is substring based**, in both directions, so "onion" correctly finds
   "Red Onion" but "cream" also matches "Cream of Tartar". The looser rule catches far
   more real matches than it invents false ones, so I kept it.
+* **The pantry bands have a hard ceiling.** "Within two ingredients" is an absolute
+  count, so a pantry of P items can only ever reach dishes with P+2 ingredients or
+  fewer. With a single item that is 19% of the corpus no matter what the item is, which
+  is why typing just "paneer" reported nothing: the smallest paneer dish has four
+  ingredients, so its best possible shortfall is three. The panel now falls back to
+  ranking by coverage, you have 1 of 4 rather than "missing 3", but the bands
+  themselves are still absolute because "missing two things" is how people actually
+  think about a shopping trip.
 * **UMAP distances are only locally meaningful.** You cannot read "Indian is twice as
   far from Italian as from Thai" off this map. Cluster sizes and the gaps between
   distant clusters do not mean anything either. Local neighbourhoods are the only thing
