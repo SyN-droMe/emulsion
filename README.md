@@ -12,56 +12,68 @@ disagree completely about which dishes are related.
 
 ## What you can do
 
-* **Search** by dish name or by ingredient. Five recipes use paneer; only two say so in
-  the title.
+* **Search** by dish name or by ingredient.
 * **Click two dishes** to route between them. You get the path plus the ingredients each
   step shares with the one before it.
 * **Drag the slider** between pure technique and pure ingredients. With a route active it
-  re-routes live, and watching the same A to B path change is the thing worth playing
-  with.
-* **Filter** by diet or by any of 71 cuisines. Filters constrain what the router can walk
-  through, so "veg only" gives a genuinely vegetarian path rather than one that just
-  looks filtered.
+  re-routes live, and watching the same A to B path change is something you can play around with.
+* **Filter** by diet or cuisine. The filter also limits what a route may pass through, so
+  a veg route is actually veg.
 * **Type what is in your kitchen** into the pantry box. You get every dish that uses it,
   ranked by how much of it you already have, makeable ones first. Salt, water, pepper,
   oil and sugar are assumed.
 * **Open the real recipe** from any search result, pantry match or route step. The map
   only encodes how dishes relate; the instructions live on Wikibooks.
 
-## The two spaces
+## Two ways to measure "similar"
 
-The point is that the two modalities are different *in kind*, not two text embeddings of
-the same thing.
+Every dish gets measured against every other dish twice, and the two measures are
+genuinely different kinds of thing rather than two versions of the same one. The slider
+decides how much of each to use.
 
-**Ingredients** use TF-IDF over canonical ingredient entities. Wikibooks links
-ingredients to their own pages, so `[[Cookbook:Fish Sauce|fish sauce]]` gives a clean
-entity rather than me parsing "2 tablespoons fish sauce" out of prose. TF-IDF rather
-than raw overlap because salt and flour turn up in a quarter of all recipes, and
-weighting by rarity is what makes "both use tamarind" count for more than "both use
-salt".
+**By ingredients.** Each recipe becomes a list of what goes in it. Wikibooks links every
+ingredient to its own page, so `[[Cookbook:Fish Sauce|fish sauce]]` arrives as a clean
+name and I never have to pull "2 tablespoons fish sauce" apart myself.
 
-**Technique** uses sentence embeddings (all-MiniLM-L6-v2) over the procedure text. Fuzzy
-and semantic on purpose, so "braise" lands near "simmer gently" with no shared words.
+Shared ingredients are not worth the same, though. Salt and flour appear in a quarter of
+all recipes, so two dishes both using salt tells you nothing, while two dishes both using
+tamarind tells you a lot. So rarer ingredients count for more. That weighting is TF-IDF.
 
-Both reduce to 64 dimensions with PCA and ship as JSON. The browser recomputes cosine
-similarity locally on every slider move, which is why there is no server.
+**By technique.** The instructions go through a sentence model (all-MiniLM-L6-v2) that
+turns text into numbers based on meaning rather than exact words. That way "braise" ends
+up close to "simmer gently" even though they share no words at all.
 
-## Why routes look the way they do
+Each dish ends up as two lists of 64 numbers, one per measure, and both lists ship to the
+browser inside the page. Moving the slider just reweights them and recompares, which is
+why nothing talks to a server.
 
-Positions come from UMAP on the blended space, computed once offline and frozen. The
-slider changes **which edges exist**, never where dishes sit. I tried it the other way
-first; recomputing the layout mid-drag makes every dot jump and destroys any sense of a
-stable place you can learn.
+## How the map is laid out
 
-The cost is that edges sometimes connect dots that look far apart, and routes zig-zag
-instead of tracing a tidy line. The layout is a lossy squash of 128 dimensions into 2
-while the routing still uses all 128, so two dishes can be genuine nearest neighbours
-and still land in opposite corners.
+The 64 numbers per dish are what the routing uses, but you cannot draw 64 dimensions.
+UMAP is the step that turns them into an x and y for the screen: it looks for a 2D
+arrangement where dishes that sat near each other in the full data still sit near each
+other on screen.
+
+That is a compression, and it has to throw something away. What UMAP preserves is local
+neighbourhoods, so the dishes immediately around any dot really are its closest
+relatives. What it does not preserve is the big picture. Distances between far-apart
+clusters, and the sizes of the clusters themselves, are side effects of the layout rather
+than facts about food.
+
+The layout is computed once, offline, and then frozen. The slider changes **which dishes
+connect to which**, never where any dish sits. I tried it the other way first, and
+recomputing the layout mid-drag makes every dot jump around, which destroys any sense of
+a stable place you can learn.
+
+The visible cost is that routes sometimes zig-zag across the screen instead of tracing a
+tidy line. Routing uses all 64 numbers per space while the picture only has two, so two
+dishes can be genuine nearest neighbours and still get drawn in opposite corners.
 
 ## What I found
 
-Smoothness here means the average ingredient overlap between consecutive steps of a
-route. Across 200 random pairs:
+**Smoothness** is how much consecutive dishes in a route share ingredients, from 0 to 1.
+A smooth route changes one thing at a time; a rough one jumps. Averaged over 200 random
+pairs of dishes:
 
 | Strategy | Reachable | Median steps | Smoothness | Worst gap |
 |---|---|---|---|---|
@@ -71,20 +83,22 @@ route. Across 200 random pairs:
 | 30/70 ingredients | 98% | 7 | 0.284 | 0.127 |
 | technique only | 98% | 7 | 0.203 | 0.058 |
 
-Smoothness and worst gap both fall monotonically toward technique, which is what the
-design predicts. "Worst gap" is each route's single worst step, averaged, and it matters
-more than the mean: one jarring jump ruins a path even when the average looks fine.
-Technique-only sits at 0.058, so nearly every technique route contains a step with no
-ingredient continuity at all.
+Smoothness drops steadily as the slider moves from ingredients to technique, which is
+exactly what the design is supposed to do. Weight ingredients and you get paths that
+change ingredients gradually. Weight technique and you get paths through dishes that are
+cooked the same way but made of completely different things.
 
-Worth saying that a single route does not show this. Pad Thai to Chocolate Chip Cookies
-comes out at 0.39 on ingredients and 0.40 on balanced, the wrong way round. Only
-technique separates clearly, at 0.12, via Lo Mein, Tuna Casserole and Bread Pudding. On
-one pair the gap between neighbouring slider positions is inside the noise, which is why
-the table above exists.
+**Worst gap** is the single most abrupt step in a route, averaged across routes. It
+matters more than the average, because one jarring jump ruins a path even when the rest
+of it is fine. Technique-only sits at 0.058, which means almost every technique route
+contains one step where the two dishes share essentially no ingredients.
 
-**Position encodes real structure.** Comparing each dish's eight spatial neighbours
-against chance:
+These are averages over 200 pairs rather than one example on purpose. On any single pair
+of dishes, neighbouring slider positions land close enough together that the ordering can
+come out backwards by chance.
+
+**Position encodes real structure.** For each dish I checked how often its eight nearest
+dots on screen share its label, against how often that would happen by chance:
 
 | Label | Neighbours sharing it | Chance | Lift |
 |---|---|---|---|
@@ -97,56 +111,58 @@ favourite thing to fall out of this. Indian is the tightest cluster of any real 
 47% off 116 recipes, Nigerian 42%, Italian 41%. At the other end American scores **3%**
 and English 11%, completely scattered, because a dish filed under either is built from
 the same butter, flour, sugar and onion as everything else in a Western-leaning corpus.
-Nothing in ingredient or technique space marks a dish as American. An explainable
-failure convinces me more than everything clustering neatly.
+Nothing in the ingredients or the method marks a dish as American. An explainable failure
+convinces me more than everything clustering neatly.
 
 ## Limitations
 
 * **Diet labels are derived, not given.** Wikibooks has no diet field, so I classify
-  ingredients and infer upward. Their categories handle the obvious cases but miss the
+  ingredients and work upward. Their categories handle the obvious cases but miss the
   ones that matter: `Fish Sauce` is filed only under "Condiments", `Gelatin` under
-  "Thickeners". I keep an explicit list of those traps, but it is still a heuristic. If
-  you have an actual dietary restriction, read the ingredient list, not my label.
+  "Thickeners". I keep an explicit list of those traps, but it is still a guess. If you
+  have an actual dietary restriction, read the ingredient list, not my label.
 * **"Veg" means the Indian convention**: egg is non-veg, dairy is not. `has_egg` and
   `has_dairy` stay as separate fields rather than getting baked into one opaque label.
-* **Cuisine coverage is partial.** 964 of 3,222 recipes have a cuisine label, since that
-  comes from page categories and not every page is categorised. A cuisine filter is
-  therefore a filter on labelled dishes, not on the corpus.
-* **UMAP distances are only locally meaningful.** You cannot read "Indian is twice as
-  far from Italian as from Thai" off this map. Cluster sizes and the gaps between
-  distant clusters do not mean anything either.
+* **Cuisine coverage is partial.** Only 964 of 3,222 recipes have a cuisine label, since
+  that comes from page categories and not every page is categorised. Filtering by cuisine
+  therefore filters labelled dishes, not the whole map.
+* **You cannot read distances off the map.** Local neighbourhoods are meaningful; the
+  gaps between distant clusters and the sizes of clusters are not.
 * **The pantry bands are absolute**, so a pantry of N items can only reach dishes with
-  N+2 ingredients or fewer. One ingredient can never make anything "within two", which
-  is why the panel lists everything that uses it instead.
-* **The corpus has near-duplicates.** Guacamole I, II and III sit at 0.99 similarity, as
-  do Chocolate Chip Cookies I through IV. I push coincident points apart just enough to
-  hover them separately, since they really are different recipes.
-* **Single-use ingredients are dropped** from the TF-IDF vocabulary (`min_df=2`), taking
-  it from 1,052 names to 646. An ingredient used once can only make a cluster of one.
+  N+2 ingredients or fewer. One ingredient can never make anything "within two", which is
+  why the panel lists everything that uses it instead.
+* **The corpus has near-duplicates.** Guacamole I, II and III are 99% identical, as are
+  Chocolate Chip Cookies I through IV. I nudge overlapping dots apart just enough to hover
+  them separately, since they really are different recipes.
+* **Ingredients used in only one recipe are ignored.** An ingredient that appears once
+  cannot tell you two dishes are alike, so it is dropped before any similarity is
+  computed. That takes 1,052 ingredient names down to 646.
 
 ## Data
 
-3,222 usable recipes out of 3,796 Wikibooks Cookbook pages, via the MediaWiki API.
+3,222 usable recipes out of 3,796 Wikibooks Cookbook pages, pulled through the MediaWiki
+API.
 
-Getting the data clean took more work than the modelling, and it is where every real bug
-in this project has been. The pattern was always the same: nothing threw an error, the
-map just quietly meant less than it claimed. A bullet-list parser was dropping a quarter
-of the corpus because those recipes use wikitables. "Chopping" was the fourth most
-common ingredient, since ingredient lines link to technique pages exactly like they link
-to ingredients. `Eggplant` was classified as an egg product because the egg test was a
-prefix check. And a rebuild once wrote an alias map with 5 entries instead of 388, which
-undid every synonym merge and left one dish listing both Clarified Butter and Ghee.
+Cleaning that data took longer than the modelling and is where every real bug in this
+project has been. None of them threw an error. The map just quietly meant less than it
+claimed, which is the part worth knowing: a parser that only read bullet lists was
+silently dropping a quarter of the corpus because those recipes use tables instead, and
+"Chopping" was the fourth most common ingredient in the whole set, because ingredient
+lines link to technique pages exactly like they link to ingredients.
 
 The tests in `tests/test_pipeline.py` are one per bug that actually shipped, so they are
 regression tests rather than decoration.
 
 ## Licensing
 
-Code is MIT. The recipe data is CC BY-SA 4.0, inherited from Wikibooks, so derivatives
-of the data have to stay CC BY-SA and credit Wikibooks. See [LICENSE](LICENSE) and
+Code is MIT. The recipe data is CC BY-SA 4.0, inherited from Wikibooks, so derivatives of
+the data have to stay CC BY-SA and credit Wikibooks. See [LICENSE](LICENSE) and
 [LICENSE-DATA](LICENSE-DATA).
 
-## Running it
+## Rebuilding it yourself
+
+The live demo needs none of this. These steps are for cloning the repo and rebuilding the
+data from scratch, or changing how similarity works and seeing what moves.
 
 ```bash
 python -m venv .venv && .venv/Scripts/activate      # or source .venv/bin/activate
@@ -159,13 +175,13 @@ python src/resolve_aliases.py       # merge ingredient synonyms
 python src/parse.py                 # re-parse with the merges applied
 python src/fetch_cuisines.py        # cuisine and course from page categories
 python src/classify_diet.py         # derive veg / vegan / non-veg
-python src/embed.py                 # embeddings, layout, shipped artifact
+python src/embed.py                 # both measures, layout, shipped data file
 
 python -m http.server 8000 -d docs  # then open localhost:8000
 ```
 
-Route from the command line, which is how I validated the idea before building any
-interface:
+Routing also runs from the command line, which is how I checked the idea worked before
+building any interface:
 
 ```bash
 python src/route.py "Pad Thai" "Chocolate Chip Cookies I"
@@ -177,12 +193,12 @@ python tests/test_pipeline.py
 
 ```
 src/crawl.py            MediaWiki API crawl, batched 50 pages per request
-src/parse.py            wikitext parsing, ingredient entity extraction
+src/parse.py            wikitext parsing, ingredient extraction
 src/fetch_blocklist.py  pulls Wikibooks unit and technique categories
 src/resolve_aliases.py  redirect resolution: synonym merging, technique filtering
 src/fetch_cuisines.py   cuisine and course labels from page categories
 src/classify_diet.py    ingredient classification and recipe diet labels
-src/embed.py            both embedding spaces, UMAP layout, point separation
+src/embed.py            both similarity measures, UMAP layout, point separation
 src/route.py            reference routing and the smoothness metric
 src/compare_spaces.py   strategy comparison over many random routes
 src/find_synonyms.py    looks for one food under two page names, for manual review
