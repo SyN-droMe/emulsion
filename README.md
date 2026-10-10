@@ -19,9 +19,11 @@ than wandering.*
 
 ## What you can do
 
-* **Search** by dish name or by ingredient.
-* **Click two dishes** to route between them. You get the path plus the ingredients each
-  step shares with the one before it.
+* **Pick two dishes, A and B**, either by searching or by clicking dots on the map. The
+  panel shows which one is picked and which it wants next, and the route appears once
+  both are set, with the ingredients each step shares with the one before it.
+* **Search** by dish name or by ingredient. Searching finds dishes that merely use an
+  ingredient, not only ones with it in the title.
 * **Drag the slider** between pure technique and pure ingredients. With a route active it
   re-routes live, and watching the same A to B path change is something you can play around with.
 * **Filter** by diet or cuisine. The filter also limits what a route may pass through, so
@@ -29,8 +31,8 @@ than wandering.*
 * **Type what is in your kitchen** into the pantry box. You get every dish that uses it,
   ranked by how much of it you already have, makeable ones first. Salt, water, pepper,
   oil and sugar are assumed.
-* **Open the real recipe** from any search result, pantry match or route step. The map
-  only encodes how dishes relate; the instructions live on Wikibooks.
+* **Open the real recipe** from either picked dish, any pantry match or any route step.
+  The map only encodes how dishes relate; the instructions live on Wikibooks.
 
 ## Two ways to measure "similar"
 
