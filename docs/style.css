@@ -157,3 +157,30 @@ a.ext:hover{ color:var(--accent); border-bottom-color:var(--accent); }
 #results div:hover a.ext, #pantryList div:hover a.ext{ color:var(--ink); }
 #results div:hover a.ext:hover, #pantryList div:hover a.ext:hover{ color:var(--accent); }
 #routeState a.ext{ font-size:11px; }
+
+/* The two picks, shown right under the search box. New users selected a dish, saw a
+   4px dot change colour somewhere on a map of 3,222 of them, and had no idea anything
+   had happened or what to do next. The only text that said so was the route block at
+   the bottom of the panel, nowhere near where they were looking. */
+#picks{ margin-top:10px; display:flex; flex-direction:column; gap:5px; }
+.pick{
+  display:flex; align-items:center; gap:8px; font-size:12.5px;
+  padding:7px 9px; border-radius:6px; border:1px solid var(--line);
+  background:var(--field); color:var(--dim);
+}
+.pick.set{ color:var(--ink); border-color:var(--accent); }
+.pick.next{ border-style:dashed; border-color:var(--accent); color:var(--ink); }
+.pick .slot{
+  flex:none; width:17px; height:17px; border-radius:50%; font-family:var(--mono);
+  font-size:10px; display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--line); color:var(--dim);
+}
+.pick.set .slot{ background:var(--accent); border-color:var(--accent); color:#0f1317; }
+.pick.next .slot{ border-color:var(--accent); color:var(--accent); }
+.pick .who{ flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.pick .x{
+  flex:none; background:none; border:none; cursor:pointer; padding:0 2px;
+  font-family:var(--mono); font-size:10px; color:var(--dim);
+}
+.pick .x:hover{ color:var(--accent); }
+#pickHint{ margin-top:7px; font-size:11.5px; color:var(--dim); line-height:1.45; }

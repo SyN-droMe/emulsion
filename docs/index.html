@@ -25,6 +25,19 @@
     <label class="lbl" for="search" id="searchLbl">Find a dish</label>
     <input id="search" type="text" autocomplete="off" placeholder="pad thai, guacamole, ...">
     <div id="results"></div>
+    <div id="picks">
+      <div class="pick" id="pickA">
+        <span class="slot">A</span><span class="who">nothing picked yet</span>
+        <a class="ext" target="_blank" rel="noopener" hidden>recipe</a>
+        <button class="x" type="button" hidden>clear</button>
+      </div>
+      <div class="pick" id="pickB">
+        <span class="slot">B</span><span class="who">nothing picked yet</span>
+        <a class="ext" target="_blank" rel="noopener" hidden>recipe</a>
+        <button class="x" type="button" hidden>clear</button>
+      </div>
+    </div>
+    <div id="pickHint" class="hint">Search a dish, or click any dot, to pick A.</div>
   </div>
 
   <div class="block">
@@ -55,7 +68,7 @@
 
   <div class="block">
     <label class="lbl">Route</label>
-    <div id="routeState" class="hint">Click a dish on the map to set the start.</div>
+    <div id="routeState" class="hint">Pick two dishes above to see a route.</div>
     <div id="routeList"></div>
     <button id="clear" class="ghost" hidden>clear route</button>
   </div>

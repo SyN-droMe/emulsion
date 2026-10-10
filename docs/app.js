@@ -63,6 +63,7 @@ async function load() {
    * and drifted to a different number from the footer as the parser improved. */
   document.getElementById('count').textContent = state.n.toLocaleString();
   updateSearchLabel();
+  renderPicks();
 
   const counts = {};
   for (const node of state.nodes) if (node.cuisine) counts[node.cuisine] = (counts[node.cuisine] || 0) + 1;
@@ -98,6 +99,7 @@ function applyFilterChange() {
   updateFilterRead();
   renderRoute();
   updateSearchLabel();
+  renderPicks();
   draw();
 }
 
@@ -362,6 +364,39 @@ function setPantry(text) {
 /* Routing by search only works if you can tell what the next pick will do. Without
  * this the panel still says "Find a dish" after you have chosen a start, so picking a
  * second dish looks like it replaced the first rather than completing a route. */
+/* Shows which dishes are picked and what to do next, directly under the search box.
+ * A selected dot is 4px wide on a map of 3,222 of them, so the map alone cannot tell
+ * anyone that their click registered, let alone that a second pick is wanted. */
+function renderPicks() {
+  const slots = [
+    { el: document.getElementById('pickA'), idx: state.start, fallback: 'nothing picked yet' },
+    { el: document.getElementById('pickB'), idx: state.end, fallback: 'nothing picked yet' },
+  ];
+  const nextSlot = state.start < 0 ? 0 : (state.end < 0 ? 1 : -1);
+
+  slots.forEach((slot, i) => {
+    if (!slot.el) return;
+    const who = slot.el.querySelector('.who');
+    const clear = slot.el.querySelector('.x');
+    const link = slot.el.querySelector('.ext');
+    const picked = slot.idx >= 0;
+    if (link) {
+      link.hidden = !picked;
+      if (picked) link.href = sourceUrl(state.nodes[slot.idx]);
+    }
+    who.textContent = picked ? state.nodes[slot.idx].title
+      : (i === nextSlot ? 'pick this one next' : slot.fallback);
+    slot.el.className = 'pick' + (picked ? ' set' : (i === nextSlot ? ' next' : ''));
+    if (clear) clear.hidden = !picked;
+  });
+
+  const hint = document.getElementById('pickHint');
+  if (!hint) return;
+  if (state.start < 0) hint.textContent = 'Search a dish, or click any dot, to pick A.';
+  else if (state.end < 0) hint.textContent = 'Now pick B the same way. The route appears below.';
+  else hint.textContent = 'Drag the Similarity slider to re-route between the two.';
+}
+
 function updateSearchLabel() {
   const label = document.getElementById('searchLbl');
   if (!label) return;
@@ -489,12 +524,30 @@ function draw() {
    * skipped when its box would overlap one already drawn. Endpoints are drawn first
    * so they win the space, and long titles near the right edge get pulled back inside
    * instead of running off screen. */
+  /* A ring around each picked dish. The dot itself only grows from 2px to 4.6px, which
+   * is not a visible change on a map this dense, so people could not tell their click
+   * had done anything. */
+  for (const idx of [state.start, state.end]) {
+    if (idx < 0) continue;
+    const [x, y] = toScreen(state.nodes[idx]);
+    ctx.beginPath();
+    ctx.arc(x, y, 8 * dpr, 0, Math.PI * 2);
+    ctx.strokeStyle = ACCENT;
+    ctx.lineWidth = 1.4 * dpr;
+    ctx.stroke();
+  }
+
   ctx.font = `${12 * dpr}px Inter, sans-serif`;
   ctx.textBaseline = 'alphabetic';
-  const labelled = state.path.length ? state.path : (state.hover >= 0 ? [state.hover] : []);
+  // Picked dishes stay labelled whether or not a route exists yet, so picking one
+  // puts its name on the map instead of silently recolouring a dot.
+  const picked = state.path.length
+    ? state.path
+    : [state.start, state.end].filter((i) => i >= 0);
+  const labelled = state.hover >= 0 && !picked.includes(state.hover)
+    ? [...picked, state.hover] : picked;
   const order = state.path.length
-    ? [state.path[0], state.path[state.path.length - 1],
-       ...state.path.slice(1, -1)]
+    ? [state.path[0], state.path[state.path.length - 1], ...state.path.slice(1, -1)]
     : labelled;
 
   const placed = [];
@@ -632,6 +685,7 @@ function select(i) {
   }
   renderRoute();
   updateSearchLabel();
+  renderPicks();
   draw();
 }
 
@@ -654,9 +708,7 @@ function renderRoute() {
   clear.hidden = false;
 
   if (state.end < 0) {
-    const from = state.nodes[state.start];
-    stateEl.innerHTML = `From <strong>${from.title}</strong>. ` +
-      `Click a destination, or ${recipeLink(from)}.`;
+    stateEl.textContent = 'Pick B above to see the route.';
     return;
   }
   if (!state.path.length) {
@@ -691,9 +743,20 @@ function renderRoute() {
   });
 }
 
+document.getElementById('pickA').querySelector('.x').addEventListener('click', () => {
+  // Clearing the start with a destination still set would leave a dangling end, so
+  // the destination is promoted into the empty start slot instead of vanishing.
+  state.start = state.end; state.end = -1; state.path = [];
+  renderRoute(); updateSearchLabel(); renderPicks(); draw();
+});
+document.getElementById('pickB').querySelector('.x').addEventListener('click', () => {
+  state.end = -1; state.path = [];
+  renderRoute(); updateSearchLabel(); renderPicks(); draw();
+});
+
 document.getElementById('clear').addEventListener('click', () => {
   state.start = state.end = -1; state.path = [];
-  renderRoute(); updateSearchLabel(); draw();
+  renderRoute(); updateSearchLabel(); renderPicks(); draw();
 });
 
 /* ---------- slider + search ---------- */

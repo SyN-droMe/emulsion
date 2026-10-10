@@ -23,6 +23,12 @@ function makeEl(id) {
     addEventListener(type, fn) { (this.handlers || (this.handlers = {}))[type] = fn; },
     appendChild(child) { this.children.push(child); },
     querySelectorAll: () => [],
+    // Elements built from markup have inner parts; hand back a stub per selector so
+    // the pick slots (.who, .x) behave like the real nodes.
+    querySelector(sel) {
+      const parts = this.parts || (this.parts = {});
+      return parts[sel] || (parts[sel] = makeEl(this.id + sel));
+    },
     getContext: () => new Proxy({}, {
       get: (_t, k) => (k === 'measureText' ? () => ({ width: 80 }) : () => {}),
       set: () => true,
@@ -146,6 +152,30 @@ async function main() {
   const usesNothing = state.matched && [...state.matched].every((m, i) =>
     m > 0 || !(hits.makeable.includes(i) || hits.nearly.includes(i)));
   check('dishes matching only assumed staples are not highlighted', usesNothing);
+
+  /* New users picked a dish, saw a 4px dot recolour somewhere in 3,222 of them, and
+   * could not tell anything had happened or what to do next. */
+  const h = indexOf(state, 'Hummus I');
+  api.select(h >= 0 ? h : 0);
+  const slotA = els['pickA'].querySelector('.who');
+  const slotB = els['pickB'].querySelector('.who');
+  const hint = els['pickHint'];
+  check('picking a dish names it in slot A',
+    slotA.textContent === state.nodes[state.start].title,
+    'A=' + slotA.textContent);
+  check('slot B asks for the next pick', /next/i.test(slotB.textContent),
+    'B=' + slotB.textContent);
+  check('the hint says what to do next', /pick b/i.test(hint.textContent),
+    'hint=' + hint.textContent);
+
+  const g = indexOf(state, 'Guacamole I');
+  api.select(g >= 0 ? g : indexOf(state, 'Falafel'));
+  check('both slots fill once a route exists',
+    slotA.textContent === state.nodes[state.start].title
+      && slotB.textContent === state.nodes[state.end].title,
+    'A=' + slotA.textContent + ' B=' + slotB.textContent);
+  check('the hint moves on to the slider', /slider/i.test(hint.textContent),
+    'hint=' + hint.textContent);
 
   console.log(`\n${failures === 0 ? 'all' : failures} ${failures === 0 ? 'checks passed' : 'failed'}`);
   if (failures) process.exit(1);
